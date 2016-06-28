@@ -1,0 +1,2581 @@
+[
+    {
+        "text": "woman.in.trable.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "woman.in.trable.choice.1",
+                "actions": [
+                    {
+                        "text": "woman.in.trable.choice.1.action.1",
+                        "need": {
+                            "needMoney": 10
+                        },
+                        "action": {
+                            "changeLife": -1,
+                            "changeMoney": -10
+                        }
+                    },{
+                        "text": "woman.in.trable.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "woman.in.trable.choice.2",
+                "actions": [
+                    {
+                        "text": "woman.in.trable.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "woman.in.trable.choice.2.action.2",
+                        "need": {
+                            "needMoney": 20
+                        },
+                        "action": {
+                        	"changeLife": -1,
+                            "changeMoney": -20
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "goblin.in.a.bar.text",
+        "type": 0,
+        "place": "-3",
+        "once": true,
+        "choices": [
+            {
+                "text": "goblin.in.a.bar.choice.1",
+                "actions": [
+                    {
+                        "text": "goblin.in.a.bar.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 2
+                        }
+                    },{
+                        "text": "goblin.in.a.bar.choice.1.action.2",
+                        "need": {
+                            "needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20,
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "goblin.in.a.bar.choice.2",
+                "actions": [
+                    {
+                        "text": "goblin.in.a.bar.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "goblin.in.a.bar.choice.2.action.2",
+                        "action": {
+                        	"addQuest": 3
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "goblins.shop.text",
+        "type": 1,
+        "place": "4",
+        "once": true,
+        "choices": [
+            {
+                "text": "goblins.shop.choice.1",
+                "need": {
+                    "needMoney": 100
+                },
+                "actions": [
+                    {
+                        "text": "goblins.shop.choice.1.action.1",
+                        "action": {
+                        	"changeItem": "+screws",
+                        	"changeMoney": -100
+                        }
+                    },{
+                        "text": "goblins.shop.choice.1.action.2",
+                        "need": {
+                        	"needItems": "-eyeglasses"
+                        },
+                        "action": {
+                        	"changeItem": "+eyeglasses",
+                        	"changeMoney": -100
+                        }
+                    }
+                ]
+            },{
+                "text": "goblins.shop.choice.2",
+                "actions": [
+                    {
+                        "text": "goblins.shop.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "goblins.shop.choice.2.action.2",
+                        "action": {
+                            "changeLife": -1
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "goblins.revenge.text",
+        "type": 1,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "goblins.revenge.choice.1",
+                "actions": [
+                    {
+                        "text": "goblins.revenge.choice.1.action.1",
+                        "action": {
+                        	"changeLife": -5
+                        }
+                    },{
+                        "text": "goblins.revenge.choice.1.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "goblins.revenge.choice.2",
+                "actions": [
+                    {
+                        "text": "goblins.revenge.choice.2.action.1",
+                        "need": {
+                        	"needMoney": 30
+                        },
+                        "action": {
+                        	"changeMoney": -30
+                        }
+                    },{
+                        "text": "goblins.revenge.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "scientist.friend.text",
+        "type": 0,
+        "place": "3",
+        "once": true,
+        "choices": [
+            {
+                "text": "scientist.friend.choice.1",
+                "actions": [
+                    {
+                        "text": "scientist.friend.choice.1.action.1",
+                        "action": {
+                            "moveTo": 10
+                        }
+                    },{
+                        "text": "scientist.friend.choice.1.action.1",
+                        "action": {
+                            "moveTo": 10
+                        }
+                    },{
+                        "text": "scientist.friend.choice.1.action.2",
+                        "need": {
+                            "needLife": 5
+                        },
+                        "action": {
+                        	"changeLife": -4
+                        }
+                    },{
+                        "text": "scientist.friend.choice.1.action.2",
+                        "need": {
+                            "needLife": 5
+                        },
+                        "action": {
+                            "changeLife": -4
+                        }
+                    },{
+                        "text": "scientist.friend.choice.1.action.2",
+                        "need": {
+                            "needLife": 5
+                        },
+                        "action": {
+                            "changeLife": -4
+                        }
+                    },{
+                        "text": "scientist.friend.choice.1.action.3",
+                        "need": {
+                            "unneedLife": 20
+                        },
+                        "action": {
+                        	"changeLife": 20
+                        }
+                    }
+                ]
+            },{
+                "text": "scientist.friend.choice.2",
+                "actions": [
+                    {
+                        "text": "scientist.friend.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 5
+                        }
+                    }
+                ]
+            },{
+                "text": "scientist.friend.choice.3",
+                "actions": [
+                    {
+                        "text": "scientist.friend.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "retranslator.getting.text",
+        "type": 1,
+        "place": "11",
+        "once": true,
+        "choices": [
+            {
+                "text": "retranslator.getting.choice.1",
+                "need": {
+                    "needMoney": 20
+                },
+                "actions": [
+                    {
+                        "text": "retranslator.getting.choice.1.action.1",
+                        "action": {
+                            "changeMoney": -20,
+                        	"addQuest": 6
+                        }
+                    }
+                ]
+            },{
+                "text": "retranslator.getting.choice.2",
+                "actions": [
+                    {
+                        "text": "retranslator.getting.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "retranslator.experiment.text",
+        "type": 1,
+        "place": "3",
+        "once": true,
+        "choices": [
+            {
+                "text": "retranslator.experiment.choice.1",
+                "actions": [
+                    {
+                        "text": "retranslator.experiment.choice.1.action.1",
+                        "need": {
+                            "unneedLife": 20
+                        },
+                        "action": {
+                        	"changeLife": 20
+                        }
+                    },{
+                        "text": "retranslator.experiment.choice.1.action.1",
+                        "need": {
+                            "unneedLife": 20
+                        },
+                        "action": {
+                            "changeLife": 20
+                        }
+                    },{
+                        "text": "retranslator.experiment.choice.1.action.1",
+                        "need": {
+                            "unneedLife": 20
+                        },
+                        "action": {
+                            "changeLife": 20
+                        }
+                    },{
+                        "text": "retranslator.experiment.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "retranslator.experiment.choice.2",
+                "actions": [
+                    {
+                        "text": "retranslator.experiment.choice.2.action.1",
+                        "action": {
+                            "addQuest": 7
+                        }
+                    }
+                ]
+            },{
+                "text": "retranslator.experiment.choice.3",
+                "actions": [
+                    {
+                        "text": "retranslator.experiment.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "lost.scientist.text",
+        "type": 2,
+        "place": "4",
+        "once": true,
+        "choices": [
+            {
+                "text": "lost.scientist.choice.1",
+                "actions": [
+                    {
+                        "text": "lost.scientist.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "lost.scientist.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "lost.scientist.choice.2",
+                "actions": [
+                    {
+                        "text": "lost.scientist.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "lost.scientist.choice.2.action.2",
+                        "action": {
+                        	"moveTo": 3
+                        }
+                    }
+                ]
+            },{
+                "text": "lost.scientist.choice.3",
+                "actions": [
+                    {
+                        "text": "lost.scientist.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "lost.scientist.choice.4",
+                "actions": [
+                    {
+                        "text": "lost.scientist.choice.4.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "old.underground.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "old.underground.choice.1",
+                "actions": [
+                    {
+                        "text": "old.underground.choice.1.action.1",
+                        "action": {
+                        	"changeLife": -3
+                        }
+                    },{
+                        "text": "old.underground.choice.1.action.2",
+                        "action": {
+                        	"changeItem": "cables"
+                        }
+                    },{
+                        "text": "old.underground.choice.1.action.3",
+                        "action": {
+                        	"changeMoney": 40
+                        }
+                    }
+                ]
+            },{
+                "text": "old.underground.choice.2",
+                "actions": [
+                    {
+                        "text": "old.underground.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "all.questions.answer.text",
+        "type": 0,
+        "place": "-3",
+        "once": true,
+        "choices": [
+            {
+                "text": "all.questions.answer.choice.1",
+                "actions": [
+                    {
+                        "text": "all.questions.answer.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 10
+                        }
+                    }
+                ]
+            },{
+                "text": "all.questions.answer.choice.2",
+                "actions": [
+                    {
+                        "text": "all.questions.answer.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "lection.text",
+        "type": 1,
+        "place": "12",
+        "once": true,
+        "choices": [
+            {
+                "text": "lection.choice.1",
+                "actions": [
+                    {
+                        "text": "lection.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 11
+                        }
+                    },{
+                        "text": "lection.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "lection.choice.2",
+                "actions": [
+                    {
+                        "text": "lection.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 11
+                        }
+                    },{
+                        "text": "lection.choice.2.action.2",
+                        "action": {
+                        	"changeLife": 5
+                        }
+                    },{
+                        "text": "lection.choice.2.action.2",
+                        "action": {
+                            "changeLife": 5
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "book.worm.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "book.worm.choice.1",
+                "actions": [
+                    {
+                        "text": "book.worm.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 13
+                        }
+                    },{
+                        "text": "book.worm.choice.1.action.2",
+                        "action": {
+                        	"addQuest": 12
+                        }
+                    }
+                ]
+            },{
+                "text": "book.worm.choice.2",
+                "actions": [
+                    {
+                        "text": "book.worm.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 13
+                        }
+                    },{
+                        "text": "book.worm.choice.2.action.2",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"changeMoney": -10
+                        }
+                    }
+                ]
+            },{
+                "text": "book.worm.choice.3",
+                "actions": [
+                    {
+                        "text": "book.worm.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "waiting.for.adept.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "waiting.for.adept.choice.1",
+                "actions": [
+                    {
+                        "text": "waiting.for.adept.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 13
+                        }
+                    },{
+                        "text": "waiting.for.adept.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "waiting.for.adept.choice.2",
+                "actions": [
+                    {
+                        "text": "waiting.for.adept.choice.2.action.1",
+                        "need": {
+                        	"needMoney": 15
+                        },
+                        "action": {
+                        	"changeMoney": -15
+                        }
+                    },{
+                        "text": "waiting.for.adept.choice.2.action.2",
+                        "action": {
+                        	"addQuest": 15
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "blood.links.text",
+        "type": 2,
+        "place": "0",
+        "once": true,
+        "choices": [
+            {
+                "text": "blood.links.choice.1",
+                "actions": [
+                    {
+                        "text": "blood.links.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 14
+                        }
+                    },{
+                        "text": "blood.links.choice.1.action.2",
+                        "action": {
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "blood.links.choice.2",
+                "actions": [
+                    {
+                        "text": "blood.links.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "blood.links.choice.2.action.2",
+                        "action": {
+                        	"addQuest": 14
+                        }
+                    }
+                ]
+            },{
+                "text": "blood.links.choice.3",
+                "actions": [
+                    {
+                        "text": "blood.links.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "points.on.i.text",
+        "type": 1,
+        "place": "0",
+        "once": true,
+        "choices": [
+            {
+                "text": "points.on.i.choice.1",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.1.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20,
+                        	"changeLife": -2
+                        }
+                    },{
+                        "text": "points.on.i.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "points.on.i.choice.2",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 16
+                        }
+                    },{
+                        "text": "points.on.i.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "points.on.i.choice.3",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 16
+                        }
+                    },{
+                        "text": "points.on.i.choice.3.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "points.on.i.2.text",
+        "type": 1,
+        "place": "0",
+        "once": true,
+        "choices": [
+            {
+                "text": "points.on.i.choice.1",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.1.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20,
+                        	"changeLife": -2
+                        }
+                    },{
+                        "text": "points.on.i.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "points.on.i.choice.2",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 16
+                        }
+                    },{
+                        "text": "points.on.i.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "points.on.i.choice.3",
+                "actions": [
+                    {
+                        "text": "points.on.i.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 16
+                        }
+                    },{
+                        "text": "points.on.i.choice.3.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "revelation.text",
+        "type": 1,
+        "place": "0",
+        "once": true,
+        "choices": [
+            {
+                "text": "revelation.choice.1",
+                "actions": [
+                    {
+                        "text": "revelation.choice.1.action.1",
+                        "action": {
+                        	"changeItem": "gems",
+                        	"changeMoney": 200
+                        }
+                    },{
+                        "text": "revelation.choice.1.action.2",
+                        "action": {
+                        	"changeItem": "gems",
+                        	"changeMoney": 200
+                        }
+                    }
+                ]
+            },{
+                "text": "revelation.choice.2",
+                "actions": [
+                    {
+                        "text": "revelation.choice.2.action.1",
+                        "action": {
+                        	"changeItem": "gems",
+                        	"changeMoney": 200
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "staighrem.robbery.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "staighrem.robbery.choice.1",
+                "actions": [
+                    {
+                        "text": "staighrem.robbery.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 18
+                        }
+                    },{
+                        "text": "staighrem.robbery.choice.1.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"addQuest": 18,
+                        	"changeMoney": -20,
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "staighrem.robbery.choice.2",
+                "actions": [
+                    {
+                        "text": "staighrem.robbery.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 18
+                        }
+                    },{
+                        "text": "staighrem.robbery.choice.2.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"addQuest": 18,
+                        	"changeMoney": -20,
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "staighrem.robbery.choice.3",
+                "actions": [
+                    {
+                        "text": "staighrem.robbery.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 18,
+                        	"changeLife": -1
+                        }
+                    },{
+                        "text": "staighrem.robbery.choice.3.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"addQuest": 18,
+                        	"changeMoney": -20
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "old.friend.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "old.friend.choice.1",
+                "actions": [
+                    {
+                        "text": "old.friend.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 19,
+                        	"changeMoney": 30
+                        }
+                    },{
+                        "text": "old.friend.choice.1.action.2",
+                        "action": {
+                        	"addQuest": 19
+                        }
+                    }
+                ]
+            },{
+                "text": "old.friend.choice.2",
+                "actions": [
+                    {
+                        "text": "old.friend.choice.2.action.1",
+                        "action": {
+                        	"addQuest": 19
+                        }
+                    }
+                ]
+            },{
+                "text": "old.friend.choice.3",
+                "actions": [
+                    {
+                        "text": "old.friend.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 19
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "neutrality.price.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "neutrality.price.choice.1",
+                "actions": [
+                    {
+                        "text": "neutrality.price.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 22,
+                        	"changeInformation": "logan"
+                        }
+                    }
+                ]
+            },{
+                "text": "neutrality.price.choice.2",
+                "actions": [
+                    {
+                        "text": "neutrality.price.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "neutrality.price.choice.2.action.2",
+                        "action": {
+                        	"addQuest": 22,
+                        	"changeInformation": "logan"
+                        }
+                    },{
+                        "text": "neutrality.price.choice.2.action.2",
+                        "action": {
+                            "addQuest": 22,
+                            "changeInformation": "logan"
+                        }
+                    }
+                ]
+            },{
+                "text": "neutrality.price.choice.3",
+                "actions": [
+                    {
+                        "text": "neutrality.price.choice.3.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "focus.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "focus.choice.1",
+                "actions": [
+                    {
+                        "text": "focus.choice.1.action.1",
+                        "need": {
+                        	"needMoney": 15
+                        },
+                        "action": {
+                        	"addQuest": 23,
+                        	"changeMoney": -15,
+                        	"changeLife": -1
+                        }
+                    },{
+                        "text": "focus.choice.1.action.2",
+                        "action": {
+                        	"addQuest": 23
+                        }
+                    }
+                ]
+            },{
+                "text": "focus.choice.2",
+                "actions": [
+                    {
+                        "text": "focus.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "focus.choice.3",
+                "actions": [
+                    {
+                        "text": "focus.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 27,
+                        	"changeMoney": 55
+                        }
+                    },{
+                        "text": "focus.choice.3.action.2",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"changeMoney": -10,
+                        	"changeLife": -1
+                        }
+                    }
+                ]
+            },{
+                "text": "focus.choice.4",
+                "actions": [
+                    {
+                        "text": "focus.choice.4.action.1",
+                        "action": {
+                        	"addQuest": 23,
+                        	"changeMoney": 20
+                        }
+                    },{
+                        "text": "focus.choice.4.action.2",
+                        "action": {
+                        	"addQuest": 23
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "gold.fish.text",
+        "type": 0,
+        "place": "-4",
+        "once": true,
+        "choices": [
+            {
+                "text": "gold.fish.choice.1",
+                "actions": [
+                    {
+                        "text": "gold.fish.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "gold.fish.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "gold.fish.choice.2",
+                "actions": [
+                    {
+                        "text": "gold.fish.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "gold.fish.choice.3",
+                "actions": [
+                    {
+                        "text": "gold.fish.choice.3.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "gold.fish.choice.3.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "gold.fish.choice.4",
+                "actions": [
+                    {
+                        "text": "gold.fish.choice.4.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "bawdy.house.text",
+        "type": 2,
+        "place": "-3",
+        "once": true,
+        "choices": [
+            {
+                "text": "bawdy.house.choice.1",
+                "actions": [
+                    {
+                        "text": "bawdy.house.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 24
+                        }
+                    }
+                ]
+            },{
+                "text": "bawdy.house.choice.2",
+                "actions": [
+                    {
+                        "text": "bawdy.house.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "bawdy.house.choice.2.action.2",
+                        "action": {
+                        	"addQuest": 24,
+                        	"changeMoney": 20
+                        }
+                    }
+                ]
+            },{
+                "text": "bawdy.house.choice.3",
+                "actions": [
+                    {
+                        "text": "bawdy.house.choice.3.action.1",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"changeMoney": -10,
+                        	"changeLife": -2
+                        }
+                    },{
+                        "text": "bawdy.house.choice.3.action.2",
+                        "action": {
+                        	"addQuest": 25
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "mime.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "mime.choice.1",
+                "actions": [
+                    {
+                        "text": "mime.choice.1.action.1",
+                        "action": {
+                        	"changeLife": -1,
+                        	"addQuest": 26,
+                        	"changeMoney": 20
+                        }
+                    },{
+                        "text": "mime.choice.1.action.2",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"addQuest": 26,
+                        	"changeMoney": -10
+                        }
+                    }
+                ]
+            },{
+                "text": "mime.choice.2",
+                "actions": [
+                    {
+                        "text": "mime.choice.2.action.1",
+                        "action": {
+                        	"changeItem": "clock"
+                        }
+                    },{
+                        "text": "mime.choice.2.action.2",
+                        "need": {
+                        	"needMoney": 15
+                        },
+                        "action": {
+                        	"changeMoney": -15
+                        }
+                    }
+                ]
+            },{
+                "text": "mime.choice.3",
+                "actions": [
+                    {
+                        "text": "mime.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 27
+                        }
+                    },{
+                        "text": "mime.choice.3.action.2",
+                        "action": {
+                        	"addQuest": 32
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "lawkeeper.text",
+        "type": 1,
+        "place": "9",
+        "once": true,
+        "choices": [
+            {
+                "text": "lawkeeper.choice.1",
+                "actions": [
+                    {
+                        "text": "lawkeeper.choice.1.action.1",
+                        "action": {
+                        	"changeMoney": 40,
+                        	"addQuest": 25
+                        }
+                    },{
+                        "text": "lawkeeper.choice.1.action.2",
+                        "action": {
+                        	"changeLife": -2,
+                        	"addQuest": 25
+                        }
+                    }
+                ]
+            },{
+                "text": "lawkeeper.choice.2",
+                "actions": [
+                    {
+                        "text": "lawkeeper.choice.2.action.1",
+                        "need": {
+                        	"needItems": "-eyeglasses"
+                        },
+                        "action": {
+                        	"changeItem": "eyeglasses",
+                        	"changeMoney": 20,
+                        	"addQuest": 25
+                        }
+                    },{
+                        "text": "lawkeeper.choice.2.action.2",
+                        "action": {
+                        	"changeLife": -3,
+                        	"addQuest": 25
+                        }
+                    }
+                ]
+            },{
+                "text": "lawkeeper.choice.3",
+                "actions": [
+                    {
+                        "text": "lawkeeper.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 25
+                        }
+                    },{
+                        "text": "lawkeeper.choice.3.action.2",
+                        "action": {
+                        	"addQuest": 25
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "need.help.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "need.help.choice.1",
+                "actions": [
+                    {
+                        "text": "need.help.choice.1.action.1",
+                        "need": {
+                        	"needItems": "-eyeglasses"
+                        },
+                        "action": {
+                        	"changeItem": "eyeglasses",
+                        	"changeLife": -1
+                        }
+                    },{
+                        "text": "need.help.choice.1.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "need.help.choice.2",
+                "actions": [
+                    {
+                        "text": "need.help.choice.2.action.1",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"changeMoney": -10
+                        }
+                    },{
+                        "text": "need.help.choice.2.action.2",
+                        "action": {
+                        	"changeMoney": 45
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "not.armed.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "not.armed.choice.1",
+                "actions": [
+                    {
+                        "text": "not.armed.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "not.armed.choice.1.action.2",
+                        "need": {
+                        	"needInformation": "logan",
+                        	"needItems": "-charter"
+                        },
+                        "action": {
+                        	"changeMoney": 50,
+                        	"changeItem": "charter"
+                        }
+                    },{
+                        "text": "not.armed.choice.1.action.3",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "not.armed.choice.2",
+                "actions": [
+                    {
+                        "text": "not.armed.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "not.armed.choice.2.action.2",
+                        "need": {
+                        	"needMoney": 30
+                        },
+                        "action": {
+                        	"changeMoney": -30
+                        }
+                    }
+                ]
+            },{
+                "text": "not.armed.choice.3",
+                "actions": [
+                    {
+                        "text": "not.armed.choice.3.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "not.armed.choice.3.action.2",
+                        "action": {
+                        	"changeLife": -1
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "thief.to.thief.text",
+        "type": 1,
+        "place": "8",
+        "once": true,
+        "choices": [
+            {
+                "text": "thief.to.thief.choice.1",
+                "actions": [
+                    {
+                        "text": "thief.to.thief.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 29
+                        }
+                    }
+                ]
+            },{
+                "text": "thief.to.thief.choice.2",
+                "actions": [
+                    {
+                        "text": "thief.to.thief.choice.2.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    },{
+                        "text": "thief.to.thief.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "thief.to.thief.choice.3",
+                "actions": [
+                    {
+                        "text": "thief.to.thief.choice.3.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "thief.to.thief.choice.3.action.2",
+                        "action": {
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "duelists.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "duelists.choice.1",
+                "actions": [
+                    {
+                        "text": "duelists.choice.1.action.1",
+                        "action": {
+                        	"addQuest": 33,
+                        	"changeItem": "gems"
+                        }
+                    },{
+                        "text": "duelists.choice.1.action.2",
+                        "action": {
+                        	"addQuest": 34,
+                        	"changeMoney": 55
+                        }
+                    },{
+                        "text": "duelists.choice.1.action.3",
+                        "action": {
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "duelists.choice.2",
+                "actions": [
+                    {
+                        "text": "duelists.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "duelists.choice.3",
+                "actions": [
+                    {
+                        "text": "duelists.choice.3.action.1",
+                        "action": {
+                        	"addQuest": 31
+                        }
+                    },{
+                        "text": "duelists.choice.3.action.2",
+                        "action": {
+                        	"changeLife": -2
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "i.need.this.more.text",
+        "type": 1,
+        "place": "6",
+        "once": true,
+        "choices": [
+            {
+                "text": "i.need.this.more.choice.1",
+                "actions": [
+                    {
+                        "text": "i.need.this.more.choice.1.action.1",
+                        "action": {
+                        	"changeMoney": 150
+                        }
+                    },{
+                        "text": "i.need.this.more.choice.1.action.2",
+                        "action": {
+                        	"changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "i.need.this.more.choice.2",
+                "actions": [
+                    {
+                        "text": "i.need.this.more.choice.2.action.1",
+                        "action": {
+                        	"changeLife": -1,
+                        	"changeMoney": 90
+                        }
+                    },{
+                        "text": "i.need.this.more.choice.2.action.2",
+                        "action": {
+                        	"changeItem": "mahogany_cane",
+                        	"addQuest": 35
+                        }
+                    }
+                ]
+            },{
+                "text": "i.need.this.more.choice.3",
+                "actions": [
+                    {
+                        "text": "i.need.this.more.choice.3.action.1",
+                        "action": {
+                        	"changeItem": "lamps"
+                        }
+                    },{
+                        "text": "i.need.this.more.choice.3.action.2",
+                        "action": {
+                            "changeMoney": 100
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "double.zero.text",
+        "type": 0,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "double.zero.choice.1",
+                "actions": [
+                    {
+                        "text": "double.zero.choice.1.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    },{
+                        "text": "double.zero.choice.1.action.2",
+                        "action": {
+                        	"changeMoney": 45,
+                        	"addQuest": 37
+                        }
+                    }
+                ]
+            },{
+                "text": "double.zero.choice.2",
+                "actions": [
+                    {
+                        "text": "double.zero.choice.2.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    },{
+                        "text": "double.zero.choice.2.action.2",
+                        "action": {
+                        	"changeMoney": 35,
+                        	"changeLife": -1,
+                        	"addQuest": 37
+                        }
+                    }
+                ]
+            },{
+                "text": "double.zero.choice.3",
+                "actions": [
+                    {
+                        "text": "double.zero.choice.3.action.1",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    },{
+                        "text": "double.zero.choice.3.action.2",
+                        "action": {
+                        	"changeMoney": 25,
+                        	"changeItem": "silver_ball",
+                        	"addQuest": 36
+                        }
+                    }
+                ]
+            },{
+                "text": "double.zero.choice.4",
+                "actions": [
+                    {
+                        "text": "double.zero.choice.4.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "justice.for.all.text",
+        "type": 1,
+        "place": "-3",
+        "once": true,
+        "choices": [
+            {
+                "text": "justice.for.all.choice.1",
+                "actions": [
+                    {
+                        "text": "justice.for.all.choice.1.action.1",
+                        "action": {
+                        	"changeMoney": 30,
+                        	"changeItem": "medal"
+                        }
+                    },{
+                        "text": "justice.for.all.choice.1.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "justice.for.all.choice.2",
+                "actions": [
+                    {
+                        "text": "justice.for.all.choice.2.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "justice.for.all.choice.2.action.2",
+                        "need": {
+                        	"needMoney": 20
+                        },
+                        "action": {
+                        	"changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "justice.for.all.choice.3",
+                "actions": [
+                    {
+                        "text": "justice.for.all.choice.3.action.1",
+                        "need": {
+                        	"needMoney": 5
+                        },
+                        "action": {
+                        	"changeMoney": -5
+                        }
+                    },{
+                        "text": "justice.for.all.choice.3.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "justice.for.all.choice.4",
+                "need": {
+                	"needItems": "charter"
+                },
+                "actions": [
+                    {
+                        "text": "justice.for.all.choice.4.action.1",
+                        "action": {
+                        	"changeItem": "-charter"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "thieves.are.everywhere.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "choices": [
+            {
+                "text": "thieves.are.everywhere.choice.1",
+                "actions": [
+                    {
+                        "text": "thieves.are.everywhere.choice.1.action.1",
+                        "action": {
+                        	"changeMoney": 5
+                        }
+                    },{
+                        "text": "thieves.are.everywhere.choice.1.action.2",
+                        "need": {
+                        	"needMoney": 10
+                        },
+                        "action": {
+                        	"changeMoney": -10
+                        }
+                    }
+                ]
+            },{
+                "text": "thieves.are.everywhere.choice.2",
+                "actions": [
+                    {
+                        "text": "thieves.are.everywhere.choice.2.action.1",
+                        "action": {
+                        	"changeLife": -3
+                        }
+                    },{
+                        "text": "thieves.are.everywhere.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "thieves.are.everywhere.choice.3",
+                "actions": [
+                    {
+                        "text": "thieves.are.everywhere.choice.3.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "thieves.are.everywhere.choice.3.action.2",
+                        "action": {
+                        	"changeMoney": 20
+                        }
+                    }
+                ]
+            },{
+                "text": "thieves.are.everywhere.choice.4",
+                "actions": [
+                    {
+                        "text": "thieves.are.everywhere.choice.4.action.1",
+                        "action": {
+                        	"changeItem": "pendant"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "heart.things.text",
+        "type": 2,
+        "place": "-2",
+        "once": true,
+        "choices": [
+            {
+                "text": "heart.things.choice.1",
+                "actions": [
+                    {
+                        "text": "heart.things.choice.1.action.1",
+                        "action": {
+                        	"changeMoney": 55
+                        }
+                    },{
+                        "text": "heart.things.choice.1.action.2",
+                        "action": {
+                        	"changeLife": -1
+                        }
+                    }
+                ]
+            },{
+                "text": "heart.things.choice.2",
+                "actions": [
+                    {
+                        "text": "heart.things.choice.2.action.1",
+                        "action": {
+                        	"changeItem": "bartimer_ring"
+                        }
+                    },{
+                        "text": "heart.things.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "heart.things.choice.3",
+                "actions": [
+                    {
+                        "text": "heart.things.choice.3.action.1",
+                        "action": {
+                        	"changeItem": "bowler_hat"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "love.hero.text",
+        "type": 2,
+        "place": "-2",
+        "once": true,
+        "choices": [
+            {
+                "text": "love.hero.choice.1",
+                "actions": [
+                    {
+                        "text": "love.hero.choice.1.action.1",
+                        "action": {
+                            "changeMoney": 55,
+                            "changeLife": -1
+                        }
+                    },{
+                        "text": "love.hero.choice.1.action.2",
+                        "action": {
+                            "changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "love.hero.choice.2",
+                "actions": [
+                    {
+                        "text": "love.hero.choice.2.action.1",
+                        "action": {
+                            "changeItem": "bartimer_ring"
+                        }
+                    }
+                ]
+            },{
+                "text": "love.hero.choice.3",
+                "actions": [
+                    {
+                        "text": "love.hero.choice.3.action.1",
+                        "action": {
+                            "changeMoney": 55
+                        }
+                    },{
+                        "text": "love.hero.choice.3.action.2",
+                        "need": {
+                            "needMoney": 20
+                        },
+                        "action": {
+                            "changeMoney": -20
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "valuable.present.text",
+        "type": 2,
+        "place": "-1",
+        "once": true,
+        "need": {
+            "needItems": "mahogany_cane"
+        },
+        "choices": [
+            {
+                "text": "valuable.present.choice.1",
+                "actions": [
+                    {
+                        "text": "valuable.present.choice.1.action.1",
+                        "action": {
+                            "changeMoney": 30,
+                            "changeItem": "-mahogany_cane"
+                        }
+                    },{
+                        "text": "valuable.present.choice.1.action.2",
+                        "action": {
+                            "changeLife": -2,
+                            "changeItem": "-mahogany_cane"
+                        }
+                    }
+                ]
+            },{
+                "text": "valuable.present.choice.2",
+                "actions": [
+                    {
+                        "text": "valuable.present.choice.2.action.1",
+                        "action": {
+                            "changeItem": "-mahogany_cane"
+                        }
+                    },{
+                        "text": "valuable.present.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "valuable.present.choice.3",
+                "actions": [
+                    {
+                        "text": "valuable.present.choice.3.action.1",
+                        "action": {
+                            "changeItem": "-mahogany_cane"
+                        }
+                    },{
+                        "text": "valuable.present.choice.3.action.2",
+                        "action": {
+                            "changeLife": -2
+                        }
+                    }
+                ]
+            },{
+                "text": "valuable.present.choice.4",
+                "actions": [
+                    {
+                        "text": "valuable.present.choice.4.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "valuable.present.choice.4.action.2",
+                        "need": {
+                            "needMoney": 15
+                        },
+                        "action": {
+                            "changeMoney": -15,
+                            "changeItem": "-mahogany_cane"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "little.but.expensive.text",
+        "type": 2,
+        "place": "-4",
+        "once": true,
+        "need": {
+            "needItems": "silver_ball"
+        },
+        "choices": [
+            {
+                "text": "little.but.expensive.choice.1",
+                "actions": [
+                    {
+                        "text": "little.but.expensive.choice.1.action.1",
+                        "action": {
+                            "changeMoney": 60,
+                            "changeItem": "-silver_ball"
+                        }
+                    },{
+                        "text": "little.but.expensive.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 40,
+                            "changeItem": "-silver_ball"
+                        }
+                    }
+                ]
+            },{
+                "text": "little.but.expensive.choice.2",
+                "actions": [
+                    {
+                        "text": "little.but.expensive.choice.2.action.1",
+                        "action": {
+                            "addQuest": 37
+                        }
+                    },{
+                        "text": "little.but.expensive.choice.2.action.2",
+                        "need": {
+                            "needMoney": 10
+                        },
+                        "action": {
+                            "changeMoney": -10,
+                            "addQuest": 37
+                        }
+                    },{
+                        "text": "little.but.expensive.choice.2.action.3",
+                        "action": {
+                            "addQuest": 37
+                        }
+                    }
+                ]
+            },{
+                "text": "little.but.expensive.choice.3",
+                "actions": [
+                    {
+                        "text": "little.but.expensive.choice.3.action.1",
+                        "action": {
+                            "changeMoney": 20,
+                            "changeItem": "-silver_ball"
+                        }
+                    }
+                ]
+            },{
+                "text": "little.but.expensive.choice.4",
+                "actions": [
+                    {
+                        "text": "little.but.expensive.choice.4.action.1",
+                        "action": {
+                            "addQuest": 37
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "gypsy.secrets.text",
+        "type": 2,
+        "place": "-3",
+        "once": true,
+        "choices": [
+            {
+                "text": "gypsy.secrets.choice.1",
+                "actions": [
+                    {
+                        "text": "gypsy.secrets.choice.1.action.1",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "gypsy.secrets.choice.1.action.2",
+                        "need": {
+                            "needMoney": 20
+                        },
+                        "action": {
+                            "changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "gypsy.secrets.choice.2",
+                "actions": [
+                    {
+                        "text": "gypsy.secrets.choice.2.action.1",
+                        "action": {
+                            "changeMoney": 35,
+                            "changeItem": "playing_card"
+                        }
+                    },{
+                        "text": "gypsy.secrets.choice.2.action.2",
+                        "need": {
+                            "needMoney": 20
+                        },
+                        "action": {
+                            "changeMoney": -20
+                        }
+                    }
+                ]
+            },{
+                "text": "gypsy.secrets.choice.3",
+                "actions": [
+                    {
+                        "text": "gypsy.secrets.choice.3.action.1",
+                        "action": {
+                            "changeItem": "playing_card"
+                        }
+                    }
+                ]
+            },{
+                "text": "gypsy.secrets.choice.4",
+                "actions": [
+                    {
+                        "text": "gypsy.secrets.choice.4.action.1",
+                        "need": {
+                            "needItems": "silver_ball"
+                        },
+                        "action": {
+                            "changeMoney": 30
+                        }
+                    },{
+                        "text": "gypsy.secrets.choice.4.action.2",
+                        "need": {
+                            "needItems": "-silver_ball"
+                        },
+                        "action": {
+                            "changeLife": -1
+                        }
+                    },{
+                        "text": "gypsy.secrets.choice.4.action.3",
+                        "need": {
+                            "needItems": "-silver_ball",
+                            "needMoney": 15
+                        },
+                        "action": {
+                            "changeMoney": -15
+                        }
+                    },{
+                        "text": "gypsy.secrets.choice.4.action.4",
+                        "need": {
+                            "needItems": "-silver_ball"
+                        },
+                        "action": {
+                            "changeItem": "playing_club_ring",
+                            "changeMoney": 25
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "unknown.bag.text",
+        "type": 0,
+        "place": "-1",
+        "once": false,
+        "choices": [
+            {
+                "text": "unknown.bag.choice.1",
+                "actions": [
+                    {
+                        "text": "unknown.bag.choice.1.action.1",
+                        "action": {
+                            "changeMoney": 10
+                        }
+                    },{
+                        "text": "unknown.bag.choice.1.action.2",
+                        "action": {
+                            "changeLife": -1
+                        }
+                    }
+                ]
+            },{
+                "text": "unknown.bag.choice.2",
+                "actions": [
+                    {
+                        "text": "unknown.bag.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "money.lost.text",
+        "type": 0,
+        "place": "-1",
+        "once": false,
+        "need": {
+            "needMoney": 10
+        },
+        "choices": [
+            {
+                "text": "money.lost.choice.1",
+                "actions": [
+                    {
+                        "text": "money.lost.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "money.lost.choice.1.action.2",
+                        "action": {
+                            "changeMoney": -10
+                        }
+                    },{
+                        "text": "money.lost.choice.1.action.3",
+                        "action": {
+                            "changeMoney": -10,
+                            "changeLife": -1
+                        }
+                    }
+                ]
+            },{
+                "text": "money.lost.choice.2",
+                "actions": [
+                    {
+                        "text": "money.lost.choice.2.action.1",
+                        "action": {
+                            "changeMoney": -10
+                        }
+                    },{
+                        "text": "money.lost.choice.2.action.2",
+                        "action": {
+                        }
+                    }
+                ]
+            },{
+                "text": "money.lost.choice.3",
+                "actions": [
+                    {
+                        "text": "money.lost.choice.3.action.1",
+                        "action": {
+                            "changeMoney": -10
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "fly.machine.text",
+        "type": 0,
+        "place": "-2",
+        "once": false,
+        "choices": [
+            {
+                "text": "fly.machine.choice.1",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 1
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 2
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 4
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 5
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 7
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 8
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 10
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 11
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "fly.machine.choice.2",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "fly.machine.text",
+        "type": 0,
+        "place": "-3",
+        "once": false,
+        "choices": [
+            {
+                "text": "fly.machine.choice.1",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 0
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 2
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 4
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 6
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 7
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 8
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 9
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 11
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 12
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "fly.machine.choice.2",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "fly.machine.text",
+        "type": 0,
+        "place": "-4",
+        "once": false,
+        "choices": [
+            {
+                "text": "fly.machine.choice.1",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 0
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 2
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 1
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 6
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 5
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 8
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 9
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 10
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 12
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "fly.machine.choice.2",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "text": "fly.machine.text",
+        "type": 0,
+        "place": "-5",
+        "once": false,
+        "choices": [
+            {
+                "text": "fly.machine.choice.1",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 0
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 1
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 4
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 5
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 6
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 7
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 9
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 10
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 11
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.1",
+                        "action": {
+                            "moveTo": 12
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    }
+                ]
+            },{
+                "text": "fly.machine.choice.2",
+                "actions": [
+                    {
+                        "text": "fly.machine.choice.2.action.1",
+                        "action": {
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

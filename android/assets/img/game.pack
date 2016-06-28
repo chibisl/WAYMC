@@ -1,0 +1,1047 @@
+
+game.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+city-fg
+  rotate: false
+  xy: 1, 669
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 1
+city-bg
+  rotate: false
+  xy: 643, 669
+  size: 375, 350
+  orig: 375, 350
+  offset: 0, 0
+  index: 1
+city-fg
+  rotate: false
+  xy: 1, 317
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 2
+city-bg
+  rotate: false
+  xy: 643, 317
+  size: 375, 350
+  orig: 375, 350
+  offset: 0, 0
+  index: 2
+place
+  rotate: false
+  xy: 1, 115
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 0
+place
+  rotate: false
+  xy: 1, 115
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 12
+place
+  rotate: false
+  xy: 1, 115
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 3
+place
+  rotate: false
+  xy: 1, 115
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 6
+place
+  rotate: false
+  xy: 1, 115
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 9
+life-bg
+  rotate: false
+  xy: 783, 265
+  size: 210, 50
+  orig: 210, 50
+  offset: 0, 0
+  index: -1
+text-fade-bottom
+  rotate: false
+  xy: 995, 215
+  size: 10, 100
+  orig: 10, 100
+  offset: 0, 0
+  index: -1
+text-fade-top
+  rotate: false
+  xy: 1007, 215
+  size: 10, 100
+  orig: 10, 100
+  offset: 0, 0
+  index: -1
+life-fg
+  rotate: false
+  xy: 783, 163
+  size: 210, 50
+  orig: 210, 50
+  offset: 0, 0
+  index: -1
+slider-bg
+  rotate: false
+  xy: 783, 218
+  size: 112, 45
+  orig: 112, 45
+  offset: 0, 0
+  index: -1
+atention
+  rotate: false
+  xy: 897, 217
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+high-atention
+  rotate: false
+  xy: 945, 217
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+marker-left
+  rotate: false
+  xy: 995, 183
+  size: 17, 30
+  orig: 17, 30
+  offset: 0, 0
+  index: -1
+marker-right
+  rotate: false
+  xy: 995, 151
+  size: 17, 30
+  orig: 17, 30
+  offset: 0, 0
+  index: -1
+money-bg
+  rotate: false
+  xy: 783, 111
+  size: 210, 50
+  orig: 210, 50
+  offset: 0, 0
+  index: -1
+zeppelin
+  rotate: false
+  xy: 1, 50
+  size: 263, 63
+  orig: 263, 63
+  offset: 0, 0
+  index: -1
+bartimer_ring-touched
+  rotate: false
+  xy: 266, 13
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+btn-bg-touched
+  rotate: false
+  xy: 1, 27
+  size: 119, 21
+  orig: 119, 21
+  offset: 0, 0
+  index: -1
+btn-bg
+  rotate: false
+  xy: 122, 27
+  size: 119, 21
+  orig: 119, 21
+  offset: 0, 0
+  index: -1
+shadow-left
+  rotate: false
+  xy: 1, 15
+  size: 220, 10
+  orig: 220, 10
+  offset: 0, 0
+  index: -1
+shadow-right
+  rotate: false
+  xy: 1, 3
+  size: 220, 10
+  orig: 220, 10
+  offset: 0, 0
+  index: -1
+metro-line
+  rotate: false
+  xy: 223, 1
+  size: 140, 10
+  orig: 140, 10
+  offset: 0, 0
+  index: -1
+bartimer_ring
+  rotate: false
+  xy: 368, 13
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+battery-touched
+  rotate: false
+  xy: 470, 13
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+battery
+  rotate: false
+  xy: 572, 13
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+battery_ii-touched
+  rotate: false
+  xy: 674, 13
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+battery_ii
+  rotate: false
+  xy: 776, 9
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+bowler_hat-touched
+  rotate: false
+  xy: 878, 9
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+life-mg
+  rotate: false
+  xy: 980, 59
+  size: 34, 50
+  orig: 34, 50
+  offset: 0, 0
+  index: -1
+
+game2.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+city-fg
+  rotate: false
+  xy: 1, 659
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 3
+city-fg
+  rotate: false
+  xy: 1, 307
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 4
+place
+  rotate: false
+  xy: 1, 105
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 1
+place
+  rotate: false
+  xy: 1, 105
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 10
+place
+  rotate: false
+  xy: 1, 105
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 5
+city-bg
+  rotate: false
+  xy: 643, 659
+  size: 375, 350
+  orig: 375, 350
+  offset: 0, 0
+  index: 3
+city-bg
+  rotate: false
+  xy: 643, 307
+  size: 375, 350
+  orig: 375, 350
+  offset: 0, 0
+  index: 4
+bowler_hat
+  rotate: false
+  xy: 1, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cables-touched
+  rotate: false
+  xy: 783, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cables
+  rotate: false
+  xy: 103, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+charter-touched
+  rotate: false
+  xy: 885, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+charter
+  rotate: false
+  xy: 205, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+chemicals-touched
+  rotate: false
+  xy: 307, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+chemicals
+  rotate: false
+  xy: 409, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloak-touched
+  rotate: false
+  xy: 511, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloak
+  rotate: false
+  xy: 613, 3
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloak_ii-touched
+  rotate: false
+  xy: 783, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloak_ii
+  rotate: false
+  xy: 885, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+clock-touched
+  rotate: false
+  xy: 715, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+clock
+  rotate: false
+  xy: 817, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloth-touched
+  rotate: false
+  xy: 919, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+
+game3.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+city-mg
+  rotate: false
+  xy: 1, 673
+  size: 525, 350
+  orig: 525, 350
+  offset: 0, 0
+  index: 1
+smoke-bg
+  rotate: false
+  xy: 528, 821
+  size: 354, 202
+  orig: 354, 202
+  offset: 0, 0
+  index: 1
+cloth
+  rotate: false
+  xy: 884, 923
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses-touched
+  rotate: false
+  xy: 884, 821
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+smoke
+  rotate: false
+  xy: 528, 617
+  size: 354, 202
+  orig: 354, 202
+  offset: 0, 0
+  index: 1
+eyeglasses
+  rotate: false
+  xy: 884, 719
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses_ii-touched
+  rotate: false
+  xy: 884, 617
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+city-mg
+  rotate: false
+  xy: 1, 321
+  size: 525, 350
+  orig: 525, 350
+  offset: 0, 0
+  index: 2
+place
+  rotate: false
+  xy: 1, 119
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 11
+place
+  rotate: false
+  xy: 1, 119
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 4
+place
+  rotate: false
+  xy: 1, 119
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 7
+smoke-bg
+  rotate: false
+  xy: 528, 426
+  size: 358, 189
+  orig: 358, 189
+  offset: 0, 0
+  index: 4
+eyeglasses_ii
+  rotate: false
+  xy: 528, 324
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+gears-touched
+  rotate: false
+  xy: 630, 324
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+gears
+  rotate: false
+  xy: 732, 324
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+gems-touched
+  rotate: false
+  xy: 783, 222
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+gems
+  rotate: false
+  xy: 834, 324
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+glass-touched
+  rotate: false
+  xy: 888, 515
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+text-bg
+  rotate: false
+  xy: 888, 432
+  size: 109, 81
+  orig: 109, 81
+  offset: 0, 0
+  index: -1
+back-touched
+  rotate: false
+  xy: 936, 366
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+back
+  rotate: false
+  xy: 936, 300
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+glass
+  rotate: false
+  xy: 885, 198
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+inventory-touched
+  rotate: false
+  xy: 783, 120
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+inventory
+  rotate: false
+  xy: 885, 96
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+item-none
+  rotate: false
+  xy: 783, 18
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cancel-touched
+  rotate: false
+  xy: 885, 30
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+cancel
+  rotate: false
+  xy: 951, 30
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+lamps-touched
+  rotate: false
+  xy: 1, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+lamps
+  rotate: false
+  xy: 103, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+life-decrease
+  rotate: false
+  xy: 205, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+life-increase
+  rotate: false
+  xy: 307, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+mahogany_cane-touched
+  rotate: false
+  xy: 409, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+mahogany_cane
+  rotate: false
+  xy: 511, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+medal-touched
+  rotate: false
+  xy: 613, 17
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+forward-touched
+  rotate: false
+  xy: 715, 53
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+metro-station-industrial-touched
+  rotate: false
+  xy: 715, 1
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+
+game4.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+city-mg
+  rotate: false
+  xy: 1, 669
+  size: 525, 350
+  orig: 525, 350
+  offset: 0, 0
+  index: 3
+smoke
+  rotate: false
+  xy: 528, 830
+  size: 358, 189
+  orig: 358, 189
+  offset: 0, 0
+  index: 4
+medal
+  rotate: false
+  xy: 888, 919
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+metal-touched
+  rotate: false
+  xy: 888, 817
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+smoke-bg
+  rotate: false
+  xy: 528, 640
+  size: 305, 188
+  orig: 305, 188
+  offset: 0, 0
+  index: 2
+metro-station-industrial
+  rotate: false
+  xy: 835, 778
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+metal
+  rotate: false
+  xy: 887, 715
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+metro-station-merchant-touched
+  rotate: false
+  xy: 835, 726
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+metro-station-merchant
+  rotate: false
+  xy: 835, 674
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+money-decrease
+  rotate: false
+  xy: 887, 613
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+metro-station-recreational-touched
+  rotate: false
+  xy: 835, 622
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+city-mg
+  rotate: false
+  xy: 1, 317
+  size: 525, 350
+  orig: 525, 350
+  offset: 0, 0
+  index: 4
+smoke
+  rotate: false
+  xy: 528, 450
+  size: 305, 188
+  orig: 305, 188
+  offset: 0, 0
+  index: 2
+metro-station-recreational
+  rotate: false
+  xy: 835, 570
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+money-increase
+  rotate: false
+  xy: 887, 511
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+metro-station-residential-touched
+  rotate: false
+  xy: 835, 518
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+metro-station-residential
+  rotate: false
+  xy: 835, 466
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+money
+  rotate: false
+  xy: 887, 409
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+smoke-bg
+  rotate: false
+  xy: 528, 270
+  size: 303, 178
+  orig: 303, 178
+  offset: 0, 0
+  index: 3
+oil-touched
+  rotate: false
+  xy: 833, 307
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+forward
+  rotate: false
+  xy: 935, 343
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+ok-touched
+  rotate: false
+  xy: 935, 277
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+oil
+  rotate: false
+  xy: 833, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+ok
+  rotate: false
+  xy: 935, 211
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+pin
+  rotate: false
+  xy: 935, 145
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+place
+  rotate: false
+  xy: 1, 3
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 2
+place
+  rotate: false
+  xy: 1, 3
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 8
+paper-touched
+  rotate: false
+  xy: 783, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+paper
+  rotate: false
+  xy: 885, 43
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+pause-touched
+  rotate: false
+  xy: 783, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+pause
+  rotate: false
+  xy: 1, 215
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+pendant-touched
+  rotate: false
+  xy: 103, 215
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+pendant
+  rotate: false
+  xy: 205, 215
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+playing_card-touched
+  rotate: false
+  xy: 307, 215
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+playing_card
+  rotate: false
+  xy: 409, 215
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+slider-knob
+  rotate: false
+  xy: 511, 214
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+place-label-bg
+  rotate: false
+  xy: 567, 215
+  size: 53, 53
+  orig: 53, 53
+  offset: 0, 0
+  index: -1
+
+game5.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smoke
+  rotate: false
+  xy: 1, 331
+  size: 303, 178
+  orig: 303, 178
+  offset: 0, 0
+  index: 3
+playing_club_ring-touched
+  rotate: false
+  xy: 1, 229
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+playing_club_ring
+  rotate: false
+  xy: 306, 409
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+screws-touched
+  rotate: false
+  xy: 1, 127
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+screws
+  rotate: false
+  xy: 103, 229
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield-touched
+  rotate: false
+  xy: 408, 409
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield
+  rotate: false
+  xy: 1, 25
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield_ii-touched
+  rotate: false
+  xy: 103, 127
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield_ii
+  rotate: false
+  xy: 103, 25
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+silver_ball-touched
+  rotate: false
+  xy: 205, 229
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+silver_ball
+  rotate: false
+  xy: 205, 127
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+sprayer-touched
+  rotate: false
+  xy: 205, 25
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+return-touched
+  rotate: false
+  xy: 306, 343
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+sprayer
+  rotate: false
+  xy: 372, 307
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+tubes-touched
+  rotate: false
+  xy: 307, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+tubes
+  rotate: false
+  xy: 307, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+wood-touched
+  rotate: false
+  xy: 307, 1
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+wood
+  rotate: false
+  xy: 409, 205
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+return
+  rotate: false
+  xy: 409, 139
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

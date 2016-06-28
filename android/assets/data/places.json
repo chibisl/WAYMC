@@ -1,0 +1,67 @@
+[
+    {
+        "name": "place.0",
+        "info": "place.info.0",
+        "type": -2
+    },
+	{
+		"name": "place.1",
+		"info": "place.info.1",
+		"type": -3
+	},
+	{
+		"name": "place.2",
+		"info": "place.info.2",
+		"type": -5
+	},
+	{
+		"name": "place.3",
+		"info": "place.info.3",
+		"type": -2
+	},
+	{
+		"name": "place.4",
+		"info": "place.info.4",
+		"type": -4
+	},
+	{
+		"name": "place.5",
+		"info": "place.info.5",
+		"type": -3
+	},
+	{
+		"name": "place.6",
+		"info": "place.info.6",
+		"type": -2
+	},
+	{
+		"name": "place.7",
+		"info": "place.info.7",
+		"type": -4
+	},
+	{
+		"name": "place.8",
+		"info": "place.info.8",
+		"type": -5
+	},
+	{
+		"name": "place.9",
+		"info": "place.info.9",
+		"type": -2
+	},
+	{
+		"name": "place.10",
+		"info": "place.info.10",
+		"type": -3
+	},
+	{
+		"name": "place.11",
+		"info": "place.info.11",
+		"type": -4
+	},
+	{
+		"name": "place.12",
+		"info": "place.info.12",
+		"type": -2
+	}
+]

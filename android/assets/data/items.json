@@ -1,0 +1,194 @@
+{
+	"gears": {
+		"cost": 40,
+		"resources": ["gears"],
+		"image": "gears",
+		"level": 0
+	},
+	"lamps": {
+		"cost": 50,
+		"resources": ["lamps"],
+		"image": "lamps",
+		"level": 0
+	},
+	"screws": {
+		"cost": 35,
+		"resources": ["screws"],
+		"image": "screws",
+		"level": 0
+	},
+	"cables": {
+		"cost": 40,
+		"resources": ["cables"],
+		"image": "cables",
+		"level": 0
+	},
+	"gems": {
+		"cost": 60,
+		"resources": ["gems"],
+		"image": "gems",
+		"level": 0
+	},
+	"oil": {
+		"cost": 35,
+		"resources": ["oil"],
+		"image": "oil",
+		"level": 0
+	},
+	"tubes": {
+		"cost": 40,
+		"resources": ["tubes"],
+		"image": "tubes",
+		"level": 0
+	},
+	"paper": {
+		"cost": 10,
+		"resources": ["paper"],
+		"image": "paper",
+		"level": 0
+	},
+	"glass": {
+		"cost": 15,
+		"resources": ["glass"],
+		"image": "glass",
+		"level": 0
+	},
+	"cloth": {
+		"cost": 20,
+		"resources": ["cloth"],
+		"image": "cloth",
+		"level": 0
+	},
+	"wood": {
+		"cost": 10,
+		"resources": ["wood"],
+		"image": "wood",
+		"level": 0
+	},
+	"metal": {
+		"cost": 15,
+		"resources": ["metal"],
+		"image": "metal",
+		"level": 0
+	},
+	"chemicals": {
+        "cost": 35,
+        "resources": ["chemicals"],
+        "image": "chemicals",
+        "level": 0
+    },
+	"battery": {
+        "cost": 170,
+        "resources": ["metal", "chemicals"],
+        "image": "battery",
+        "level": 1
+    },
+    "battery_ii": {
+        "cost": 300,
+        "resources": ["battery", "tubes"],
+        "image": "battery_ii",
+        "level": 2
+    },
+	"eyeglasses": {
+		"cost": 215,
+		"resources": ["gems", "glass"],
+		"image": "eyeglasses",
+		"level": 1
+	},
+	"eyeglasses_ii": {
+		"cost": 315,
+		"resources": ["eyeglasses", "screws"],
+		"image": "eyeglasses_ii",
+		"level": 2
+	},
+	"shield": {
+		"cost": 250,
+		"resources": ["metal", "cables"],
+		"image": "shield",
+		"level": 1
+	},
+	"shield_ii": {
+		"cost": 350,
+		"resources": ["shield", "gems"],
+		"image": "shield_ii",
+		"level": 2
+	},
+	"cloak": {
+		"cost": 185,
+		"resources": ["gems", "cloth"],
+		"image": "cloak",
+		"level": 1
+	},
+	"cloak_ii": {
+		"cost": 285,
+		"resources": ["cloak", "glass"],
+		"image": "cloak_ii",
+		"level": 2
+	},
+	"clock": {
+		"cost": 250,
+		"resources": ["screws", "gears", "glass"],
+		"image": "clock",
+		"level": 3
+	},
+	"charter": {
+		"cost": 50,
+		"resources": ["paper"],
+		"image": "charter",
+		"level": 3
+	},
+	"mahogany_cane": {
+		"cost": 120,
+		"resources": ["metal", "wood"],
+		"image": "mahogany_cane",
+		"level": 3
+	},
+	"silver_ball": {
+		"cost": 20,
+		"resources": ["metal"],
+		"image": "silver_ball",
+		"level": 3
+	},
+	"medal": {
+		"cost": 140,
+		"resources": ["metal"],
+		"image": "medal",
+		"level": 3
+	},
+	"pendant": {
+		"cost": 120,
+		"resources": ["metal", "paper"],
+		"image": "pendant",
+		"level": 3
+	},
+	"bowler_hat": {
+		"cost": 85,
+		"resources": ["cloth"],
+		"image": "bowler_hat",
+		"level": 3
+	},
+    "bartimer_ring": {
+        "cost": 195,
+        "resources": ["gems", "metal"],
+        "image": "bartimer_ring",
+        "level": 3
+    },
+    "playing_card": {
+        "cost": 15,
+        "resources": ["paper"],
+        "image": "playing_card",
+        "level": 3
+    },
+    "playing_club_ring": {
+        "cost": 195,
+        "resources": ["metal", "gems"],
+        "image": "playing_club_ring",
+        "level": 3
+    },
+	"sprayer": {
+		"cost": 2000,
+		"resources": [],
+		"image": "sprayer",
+		"level": 4
+	}
+}
