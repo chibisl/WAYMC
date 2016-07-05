@@ -60,7 +60,7 @@ public class NotificationPopup extends Group implements Listener {
             this.setY(Config.getInstance().gameHeight + this.getHeight());
             this.setVisible(true);
             this.getColor().a = 1;
-            this.addAction(sequence(moveTo(this.getX(), currentY, 0.5f, exp10), delay(0.5f), fadeOut(2f, pow2),
+            this.addAction(sequence(moveTo(this.getX(), currentY, 0.5f, exp10), delay(1f), fadeOut(2f, pow2),
                     run(new Runnable() {
                         @Override
                         public void run() {

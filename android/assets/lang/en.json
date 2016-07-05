@@ -138,6 +138,7 @@
   "notification.item.not.found": "Нет необходимого предмета",
   "notification.resources.not.enough": "Недостаточно материалов для сборки",
   "notification.no.item.created": "Новый предмет не удалось собрать",
+  "notification.run.success": "Вам удалось скрыться",
 
   "quest.after.workshop": "После посещения мастерской с вами кое-что случилось. ",
   "quest.after.work.fail": "На неудачном поиске работы ваши приключения не закончились. ",
@@ -152,7 +153,7 @@
 
   "game.over": "Вы падаете на землю без чувств, истратив последние силы.\nВаше приключение в Стэйреме завершилось трагически...",
   "game.win": "На этом ваше приключение в Стэйреме окончено.\nА может, это лишь его начало...",
-  "credits.text": "[#ffffff]Game designer[]\n[#ffffff]Artist[]\n[#ffffff]Programmer[]\n[#ffffff]Additional Writer[]\nSerhii Litvinov\n\n[#ffffff]Writer[]\nRoman Zelenin (Side Quests)\n\n[#ffffff]Icons[]\nmade by SimpleIcon, Freepik, TutsPlus, Icomoon,\nGoogle, Daniel Bruce, Anas Ramadan\nfrom www.flaticon.com\nLicensed under Creative Commons BY 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Music[]\n\"Willow and the Light\", \"Past the Edge\",\n\"Despair and Triumph\", \"Wounded\", \"On the Shore\", \"Reawakening\"\nKevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0\nhttp://creativecommons.org/licenses/by/3.0/",
+  "credits.text": "[#ffffff]Game designer[]\n[#ffffff]Artist[]\n[#ffffff]Programmer[]\n[#ffffff]Additional Writer[]\nSerhii Litvinov\n\n[#ffffff]Writer[]\nRoman Zelenin (Side Quests)\n\n[#ffffff]Icons[]\nmade by SimpleIcon, Freepik, TutsPlus, Icomoon,\nGoogle, Daniel Bruce, Anas Ramadan\nfrom www.flaticon.com\nLicensed under Creative Commons BY 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Music[]\n\"Willow and the Light\", \"Past the Edge\",\n\"Despair and Triumph\", \"Wounded\", \"On the Shore\", \"Reawakening\"\nKevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Special Thanks To[]\nMy Lovely Wife Maria\n(Your support helped to finish this game)",
 
   "btn.work": "Start looking for a job",
   "btn.search.items": "Look for something interesting in the shops",

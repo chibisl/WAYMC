@@ -263,6 +263,9 @@ public class PlaceWindowManager extends ActionWindowManager {
         if (getResult() == RESULT_LOST_MONEY) {
             GameCore.getInstance().addMoney(-1 * (Config.getInstance().runLostMoney + (int) (Math.random() * 6)));
         }
+        if (getResult() == RESULT_GOOD) {
+            GameCore.getInstance().getNotificationManager().addNotification(new Notification("success", "notification.run.success"));
+        }
 
         this.finishAction();
         this.startSearch();

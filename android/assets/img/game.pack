@@ -1010,37 +1010,44 @@ sprayer
   orig: 100, 100
   offset: 0, 0
   index: -1
-tubes-touched
+success
   rotate: false
   xy: 307, 205
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-tubes
+tubes-touched
   rotate: false
   xy: 307, 103
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-wood-touched
+tubes
   rotate: false
   xy: 307, 1
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-wood
+wood-touched
   rotate: false
   xy: 409, 205
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
+wood
+  rotate: false
+  xy: 409, 103
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
 return
   rotate: false
-  xy: 409, 139
+  xy: 409, 37
   size: 64, 64
   orig: 64, 64
   offset: 0, 0

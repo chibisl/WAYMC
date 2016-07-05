@@ -760,6 +760,7 @@
   "notification.item.not.found": "Немає необхідного предмета",
   "notification.resources.not.enough": "Недостатньо матеріалів для складання",
   "notification.no.item.created": "Новий предмет не вдалося створити",
+  "notification.run.success": "Вам вдалося втекти",
 
   "quest.after.workshop": "Після відвідин майстерні з вами дещо трапилося. ",
   "quest.after.work.fail": "На невдалому пошуку роботи ваші пригоди не закінчилися. ",
@@ -775,5 +776,5 @@
   "game.over": "Ви падаєте на землю непритомний, витративши останні сили.\nВаша пригода в Стейремі завершилася трагічно...",
   "game.win": "На цьому ваша пригода в Стейремі закінчилася.\nА може, це лише її початок...",
 
-  "credits.text": "[#ffffff]Game designer[]\n[#ffffff]Artist[]\n[#ffffff]Programmer[]\n[#ffffff]Additional Writer[]\nSerhii Litvinov\n\n[#ffffff]Writer[]\nRoman Zelenin (Side Quests)\n\n[#ffffff]Icons[]\nmade by SimpleIcon, Freepik, TutsPlus, Icomoon,\nGoogle, Daniel Bruce, Anas Ramadan\nfrom www.flaticon.com\nLicensed under Creative Commons BY 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Music[]\n\"Willow and the Light\", \"Past the Edge\",\n\"Despair and Triumph\", \"Wounded\", \"On the Shore\", \"Reawakening\"\nKevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0\nhttp://creativecommons.org/licenses/by/3.0/"
+  "credits.text": "[#ffffff]Game designer[]\n[#ffffff]Artist[]\n[#ffffff]Programmer[]\n[#ffffff]Additional Writer[]\nSerhii Litvinov\n\n[#ffffff]Writer[]\nRoman Zelenin (Side Quests)\n\n[#ffffff]Icons[]\nmade by SimpleIcon, Freepik, TutsPlus, Icomoon,\nGoogle, Daniel Bruce, Anas Ramadan\nfrom www.flaticon.com\nLicensed under Creative Commons BY 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Music[]\n\"Willow and the Light\", \"Past the Edge\",\n\"Despair and Triumph\", \"Wounded\", \"On the Shore\", \"Reawakening\"\nKevin MacLeod (incompetech.com)\nLicensed under Creative Commons: By Attribution 3.0\nhttp://creativecommons.org/licenses/by/3.0/\n\n[#ffffff]Special Thanks To[]\nMy Lovely Wife Maria\n(Your support helped to finish this game)"
 }
