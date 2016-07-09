@@ -129,13 +129,13 @@ public class ResidentialWindowManager extends TypeWindowManager {
             if (this.getVariant() != VARIANT_LEAVE && getResult() == RESULT_GOOD) {
                 if (getVariant() == VARIANT_TRAINING) {
                     StageScreen.getInstance().getTracker().trackEvent("Residential", "choice", "playTraining", 1);
-                    GameCore.getInstance().addMoney(-1 * Config.getInstance().playClubCost);
                     this.updatePlayLevel(1);
                 } else {
                     StageScreen.getInstance().getTracker().trackEvent("Residential", "choice", "playTournament", 1);
                     GameCore.getInstance().addMoney(Config.getInstance().playClubWin);
                 }
             }
+            if (getVariant() == VARIANT_TRAINING) GameCore.getInstance().addMoney(-1 * Config.getInstance().playClubCost);
             if (getVariant() == VARIANT_PLAY) this.updatePlayLevel(-1);
             this.setQuestStartText("quest.after." + (this.getResult() == RESULT_BAD ? "fail" : "success"));
         }

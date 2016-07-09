@@ -83,7 +83,7 @@ public class ReceiptGroup extends Table {
         int resultWidth = 230;
         if (canConstruct) {
             TextButton createBtn;
-            if (result.contentEquals("ok")) {
+            if (result.contentEquals("ok") && receipt.isCreatable()) {
                 createBtn = this.helper.createTextButton("item.create");
                 createBtn.addListener(new ClickListener() {
                     @Override
