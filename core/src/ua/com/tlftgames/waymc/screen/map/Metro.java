@@ -58,6 +58,8 @@ public class Metro extends Group {
                 float lineX = stationX + 55;
                 line.setPosition(lineX, lineY);
                 this.addActor(line);
+            } else {
+                stationX = stationX;
             }
             float labelY = (i % 2 == 1) ? labelUnderY : labelAboveY;
             Station station = this.createStation(places[i], stationX, labelY, i);

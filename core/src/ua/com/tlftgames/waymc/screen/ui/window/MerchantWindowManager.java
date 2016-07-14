@@ -178,11 +178,18 @@ public class MerchantWindowManager extends TypeWindowManager {
 
     @Override
     public boolean canDoVariant(int variant) {
-        if (variant >= VARIANT_BUY_FIRST && variant <= VARIANT_BUY_THIRD
-                && GameCore.getInstance().getMoney() < this.getItemCost(this.searchItems.get(variant))) {
-            GameCore.getInstance().getNotificationManager()
-                    .addNotification(new Notification("money", "notification.money.not.match"));
-            return false;
+        if (variant >= VARIANT_BUY_FIRST && variant <= VARIANT_BUY_THIRD) {
+            if (GameCore.getInstance().getMoney() < this.getItemCost(this.searchItems.get(variant))) {
+                GameCore.getInstance().getNotificationManager()
+                        .addNotification(new Notification("money", "notification.money.not.match"));
+                return false;
+            }
+            if (variant >= VARIANT_BUY_FIRST && variant <= VARIANT_BUY_THIRD
+                    && GameCore.getInstance().getItemManager().getOwnItems().size() == Config.getInstance().itemsMaxCount) {
+                GameCore.getInstance().getNotificationManager()
+                        .addNotification(new Notification("inventory", "notification.items.max.count.reached"));
+                return false;
+            }
         }
         if (variant == VARIANT_SALE && !GameCore.getInstance().getItemManager().hasItem(this.saleItem)) {
             GameCore.getInstance().getNotificationManager().addNotification(

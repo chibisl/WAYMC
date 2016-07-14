@@ -53,6 +53,13 @@ public class Translator {
         return result.toString();
     }
 
+    public String translateWithoutArticulos(String text) {
+        String result = this.translate(text);
+        if (result == null) return null;
+        result = result.replace("a ", "").replace("an ", "").replace("the ", "");
+        return result;
+    }
+
     public String getMoneyText(int sum) {
         sum = Math.abs(sum);
         int postfix = 0;

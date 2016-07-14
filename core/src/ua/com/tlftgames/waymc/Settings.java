@@ -55,8 +55,10 @@ public class Settings {
         if (systemLocale.equals(new Locale("uk").getLanguage())) {
             return "uk";
         }
-        // return "en";
-        return "ru";
+        if (systemLocale.equals(new Locale("ru").getLanguage())) {
+            return "ru";
+        }
+        return "en";
     }
 
     public void setLang(String lang) {

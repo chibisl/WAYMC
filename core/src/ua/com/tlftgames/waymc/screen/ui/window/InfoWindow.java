@@ -81,7 +81,7 @@ public class InfoWindow extends Window {
     }
 
     public void setTitle(String title) {
-        String transTitle = Translator.getInstance().translate(title);
+        String transTitle = Translator.getInstance().translateWithoutArticulos(title);
         transTitle = Character.toUpperCase(transTitle.charAt(0)) + transTitle.substring(1);
         titleLabel.setText(transTitle);
     }

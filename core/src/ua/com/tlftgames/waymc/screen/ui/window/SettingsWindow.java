@@ -101,7 +101,7 @@ public class SettingsWindow extends Window {
         langLabel.setAlignment(Align.center);
         this.windowGroup.addActor(langLabel);
 
-        /*enBtn = this.getHelper().createCheckButton("lang.en");
+        enBtn = this.getHelper().createCheckButton("lang.en");
         enBtn.setPosition(this.windowGroup.getWidth() / 2 - enBtn.getWidth() - 200, 125);
         if (Settings.getInstance().getLang().contentEquals("en")) {
             enBtn.setTouchable(Touchable.disabled);
@@ -114,11 +114,10 @@ public class SettingsWindow extends Window {
                 SettingsWindow.this.changeLang((String) event.getListenerActor().getUserObject());
             }
         });
-        this.windowGroup.addActor(enBtn);*/
+        this.windowGroup.addActor(enBtn);
 
         ruBtn = this.getHelper().createCheckButton("lang.ru");
-        //ruBtn.setPosition((this.windowGroup.getWidth() - ruBtn.getWidth()) / 2, 125);
-        ruBtn.setPosition(this.windowGroup.getWidth() / 2 - ruBtn.getWidth() - 100, 125);
+        ruBtn.setPosition((this.windowGroup.getWidth() - ruBtn.getWidth()) / 2, 125);
         if (Settings.getInstance().getLang().contentEquals("ru")) {
             ruBtn.setTouchable(Touchable.disabled);
             ruBtn.setTouched(true);
@@ -133,7 +132,7 @@ public class SettingsWindow extends Window {
         this.windowGroup.addActor(ruBtn);
 
         ukBtn = this.getHelper().createCheckButton("lang.uk");
-        ukBtn.setPosition(this.windowGroup.getWidth() / 2 + 100, 125);
+        ukBtn.setPosition(this.windowGroup.getWidth() / 2 + 200, 125);
         if (Settings.getInstance().getLang().contentEquals("uk")) {
             ukBtn.setTouchable(Touchable.disabled);
             ukBtn.setTouched(true);
@@ -200,25 +199,25 @@ public class SettingsWindow extends Window {
         langLabel.setText(Translator.getInstance().translate("lang.choice"));
         introBtn.setText(Translator.getInstance().translate("intro.enable"));
         tutorialBtn.setText(Translator.getInstance().translate("tutorial.enable"));
-        /*if (lang.contentEquals("en")) {
+        if (lang.contentEquals("en")) {
             enBtn.setTouchable(Touchable.disabled);
             enBtn.setTouched(true);
             ruBtn.setTouchable(Touchable.enabled);
             ruBtn.setTouched(false);
             ukBtn.setTouchable(Touchable.enabled);
             ukBtn.setTouched(false);
-        } else */if (lang.contentEquals("ru")) {
+        } else if (lang.contentEquals("ru")) {
             ruBtn.setTouchable(Touchable.disabled);
             ruBtn.setTouched(true);
-            //enBtn.setTouchable(Touchable.enabled);
-            //enBtn.setTouched(false);
+            enBtn.setTouchable(Touchable.enabled);
+            enBtn.setTouched(false);
             ukBtn.setTouchable(Touchable.enabled);
             ukBtn.setTouched(false);
         } else {
             ukBtn.setTouchable(Touchable.disabled);
             ukBtn.setTouched(true);
-            //enBtn.setTouchable(Touchable.enabled);
-            //enBtn.setTouched(false);
+            enBtn.setTouchable(Touchable.enabled);
+            enBtn.setTouched(false);
             ruBtn.setTouchable(Touchable.enabled);
             ruBtn.setTouched(false);
         }

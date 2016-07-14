@@ -46,7 +46,8 @@ public class Station extends Group {
         this.addActor(stationCircle);
 
         stationLabel = new Label(Translator.getInstance().translate(this.getName()), Config.getInstance().stationStyle);
-        stationLabel.setBounds(-75, labelY - y, 200, 30);
+        int labelX = (index == 12) ? -81 : -75;
+        stationLabel.setBounds(labelX, labelY - y, 200, 30);
         stationLabel.setAlignment(Align.center);
         this.addActor(stationLabel);
 

@@ -53,18 +53,23 @@ public class ReceiptGroup extends Table {
     private Table createReceipt(final Item receipt) {
         Table receiptLine = new Table();
         receiptLine.setWidth(width);
-        ClickListener listener = new ClickListener() {
+        Button receiptBtn = this.helper.createItemBtn(receipt, new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Item item = (Item) event.getListenerActor().getUserObject();
-                ReceiptGroup.this.showInfo(item);
+                ReceiptGroup.this.showInfo(receipt, true);
             }
-        };
-        Button receiptBtn = this.helper.createItemBtn(receipt, listener);
+        });
         receiptLine.add(receiptBtn).width(receiptBtn.getWidth());
         String sigh = "=";
         String result = "ok";
         int height = 100;
+        ClickListener listener = new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                Item item = (Item) event.getListenerActor().getUserObject();
+                ReceiptGroup.this.showInfo(item, false);
+            }
+        };
         for (String itemName : receipt.getResources()) {
             Label sighLabel = new Label(sigh, Config.getInstance().headerStyle);
             int sighWidth = 50;
@@ -107,8 +112,10 @@ public class ReceiptGroup extends Table {
         return receiptLine;
     }
 
-    protected void showInfo(Item item) {
-        info.setTitle(item.getName());
+    protected void showInfo(Item item, boolean isChart) {
+        String title = item.getName();
+        if (isChart) title = "receipt.title+"+title;
+        info.setTitle(title);
         info.setText(item.getInfo());
         info.setImage(item.getImage());
         info.setActions(null);

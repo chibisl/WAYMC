@@ -502,7 +502,6 @@
 
   "invenory.inventory": "Предмети",
   "invenory.receipts": "Схеми складання",
-  "item.resources": "Матеріали для складання:",
   "receipt.title": "Схема: ",
 
   "item.remove": "Викинути",
@@ -759,7 +758,6 @@
   "notification.money.not.match": "Недостатньо коштів",
   "notification.item.not.found": "Немає необхідного предмета",
   "notification.resources.not.enough": "Недостатньо матеріалів для складання",
-  "notification.no.item.created": "Новий предмет не вдалося створити",
   "notification.run.success": "Вам вдалося втекти",
 
   "quest.after.workshop": "Після відвідин майстерні з вами дещо трапилося. ",
