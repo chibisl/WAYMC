@@ -28,7 +28,8 @@ public class Window extends ShadowGroup {
     private WindowBottomButtons bottomButtons;
 
     public Window(UIHelper helper) {
-        this(helper, 840, 680);
+        this(helper, helper.isSquareScreen() ? Config.getInstance().gameWidth : 840,
+                helper.isSquareScreen() ? Config.getInstance().gameHeight : 680);
     }
 
     public Window(UIHelper helper, int windowWidth, int windowHeight) {

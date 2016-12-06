@@ -1,5 +1,11 @@
 package ua.com.tlftgames.waymc.screen.stage;
 
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.delay;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
+
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -16,12 +22,6 @@ import ua.com.tlftgames.waymc.Manager;
 import ua.com.tlftgames.waymc.Settings;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.screen.StageScreen;
-
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.delay;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 public class SlideStage extends ReturnHandlingStage {
     public static final int TYPE_INTRO = 0;
@@ -57,11 +57,9 @@ public class SlideStage extends ReturnHandlingStage {
     @Override
     public boolean allLoaded() {
         if (type == SlideStage.TYPE_INTRO) {
-            return (Manager.getInstance().isLoaded("img/intro.pack") &&
-                Manager.getInstance().isLoaded(musicFile));
+            return (Manager.getInstance().isLoaded("img/intro.pack") && Manager.getInstance().isLoaded(musicFile));
         } else {
-            return (Manager.getInstance().isLoaded("img/outro.pack") &&
-                Manager.getInstance().isLoaded(musicFile));
+            return (Manager.getInstance().isLoaded("img/outro.pack") && Manager.getInstance().isLoaded(musicFile));
         }
     }
 
@@ -141,23 +139,27 @@ public class SlideStage extends ReturnHandlingStage {
 
     private class Slide extends Group {
         public Slide() {
-            this.setBounds(0, 0, Config.getInstance().gameWidth, Config.getInstance().gameHeight);
+            this.setBounds(0, 0, SlideStage.this.getWidth(), SlideStage.this.getHeight());
         }
 
         public Slide(String text, String texture) {
             this();
+            float scale = this.getWidth() / Config.getInstance().gameNeedWidth;
             if (SlideStage.this.atlas != null) {
                 Array<TextureAtlas.AtlasRegion> regions = SlideStage.this.atlas.findRegions(texture);
-                int imageX = 20;
+                int imageX = (int) (20 * scale);
+                int imageY = (int) (this.getHeight() - (this.getHeight() / 2) * scale);
                 for (TextureAtlas.AtlasRegion region : regions) {
                     Image slideImage = new Image(region);
-                    slideImage.setPosition(imageX, this.getHeight() / 2);
+                    int width = (int) (slideImage.getWidth() * scale);
+                    slideImage.setBounds(imageX, imageY, width, (int) (slideImage.getHeight() * scale));
                     this.addActor(slideImage);
-                    imageX += region.getRegionWidth();
+                    imageX += width;
                 }
             }
             Label label = new Label(text, Config.getInstance().normalStyle);
-            label.setBounds(20, 20, this.getWidth() - 40, this.getHeight() / 2 - 30);
+            label.setBounds(20 * scale, 20 * scale, this.getWidth() - 40 * scale,
+                    (int) (this.getHeight() - (this.getHeight() / 2) * scale) - 30 * scale);
             label.setAlignment(Align.topLeft);
             label.setWrap(true);
             this.addActor(label);

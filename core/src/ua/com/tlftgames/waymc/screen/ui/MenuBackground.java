@@ -9,8 +9,9 @@ import com.badlogic.gdx.utils.Array;
 public class MenuBackground extends Actor {
     private Array<AtlasRegion> textures;
 
-    public MenuBackground(Array<AtlasRegion> textures) {
+    public MenuBackground(Array<AtlasRegion> textures, float x) {
         this.textures = textures;
+        this.setPosition(x, 420);
     }
 
     @Override
@@ -18,7 +19,7 @@ public class MenuBackground extends Actor {
         batch.setColor(Color.WHITE);
         int i = 0;
         for (AtlasRegion texture : textures) {
-            batch.draw(texture, i++ * 320, 420);
+            batch.draw(texture, this.getX() + i++ * 320, this.getY());
         }
     }
 }

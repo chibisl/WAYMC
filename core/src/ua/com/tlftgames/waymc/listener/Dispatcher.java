@@ -23,7 +23,7 @@ public class Dispatcher {
         return instance;
     }
 
-    public Dispatcher() {
+    private Dispatcher() {
         this.listeners = new HashMap<Integer, ArrayList<Listener>>();
     }
 

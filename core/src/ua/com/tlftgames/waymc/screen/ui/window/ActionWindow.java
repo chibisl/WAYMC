@@ -22,7 +22,7 @@ public class ActionWindow extends Window {
         super(helper);
 
         image = new Image();
-        image.setBounds(30, 450, 780, 200);
+        image.setBounds((this.windowGroup.getWidth() - 780) / 2, this.windowGroup.getHeight() - 230, 780, 200);
         this.windowGroup.addActor(image);
 
         this.info = new InfoWindow(this.getHelper());
@@ -74,6 +74,7 @@ public class ActionWindow extends Window {
     public void setBody(WindowBody body) {
         this.clearBody();
         this.body = body;
+        this.body.setX((this.windowGroup.getWidth() - this.body.getWidth()) / 2);
         this.windowGroup.addActor(this.body);
         if (this.isVisible()) {
             this.body.getColor().a = 0f;

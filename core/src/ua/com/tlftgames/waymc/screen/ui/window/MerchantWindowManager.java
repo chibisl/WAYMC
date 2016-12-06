@@ -83,6 +83,7 @@ public class MerchantWindowManager extends TypeWindowManager {
 
     private void searchItems() {
         StageScreen.getInstance().getTracker().trackEvent("Merchant", "action", "searchItems", 1);
+        if (this.searchItems == null) searchItems = new ArrayList<String>();
         this.searchItems.clear();
         int itemsCount = this.getSearchItemsCount();
         for (int i = 0; i < itemsCount; i++) {

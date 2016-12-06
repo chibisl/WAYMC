@@ -1,5 +1,10 @@
 package ua.com.tlftgames.waymc.screen;
 
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.parallel;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
@@ -14,11 +19,6 @@ import ua.com.tlftgames.waymc.Manager;
 import ua.com.tlftgames.waymc.Tracker;
 import ua.com.tlftgames.waymc.screen.stage.LoadStage;
 import ua.com.tlftgames.waymc.screen.stage.StartStage;
-
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.parallel;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 public class StageScreen implements Screen {
     private boolean needLoad = false;

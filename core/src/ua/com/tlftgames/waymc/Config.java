@@ -9,8 +9,10 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 
 public class Config {
-    public int gameWidth = 1280;
+    public int gameWidth;
     public int gameHeight = 720;
+    public int gameNeedWidth = 1280;
+    public float screenRatio;
 
     public final int ticketPrice = 5;
     public final int startMoney = 100;
@@ -71,7 +73,11 @@ public class Config {
         return instance;
     }
 
-    public Config() {
+    private Config() {
+
+        screenRatio = (float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight();
+        gameWidth = (int) (gameHeight * screenRatio);
+
         Texture textureNormal = this.getFontTexture("normal");
         normalFont = this.getFont("normal", textureNormal);
         colorFont = this.getFont("normal", textureNormal);

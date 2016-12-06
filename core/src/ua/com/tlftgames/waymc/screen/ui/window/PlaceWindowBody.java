@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -14,8 +16,6 @@ import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.place.Place;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
-
-import java.util.ArrayList;
 
 public class PlaceWindowBody extends WindowBody {
     private PlaceWindowManager manager;
@@ -75,7 +75,7 @@ public class PlaceWindowBody extends WindowBody {
                 }
             });
             go.setHeight(60);
-            go.setX((this.getWidth() - go.getWidth()) / 2);
+            go.setPosition((this.getWidth() - go.getWidth()) / 2, 30);
             this.addActor(go);
         }
         String paramsText = this.replaceVarsAndTranslate(placeParamsText.toString(), vars, true);

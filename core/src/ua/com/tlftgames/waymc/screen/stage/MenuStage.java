@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
+import ua.com.tlftgames.waymc.Config;
 import ua.com.tlftgames.waymc.CoolRandomizer;
 import ua.com.tlftgames.waymc.GameCore;
 import ua.com.tlftgames.waymc.Manager;
@@ -59,10 +60,12 @@ public class MenuStage extends ReturnHandlingStage {
         this.getRoot().setBounds(0, 0, this.getWidth(), this.getHeight());
         this.atlas = Manager.getInstance().get("img/menu.pack", TextureAtlas.class);
         this.helper = new UIHelper(this.atlas);
-        MenuBackground bg = new MenuBackground(this.atlas.findRegions("bg"));
+        float screenX = this.getWidth() - Config.getInstance().gameNeedWidth;
+        screenX = screenX < 0 ? screenX * 0.85f : screenX / 2;
+        MenuBackground bg = new MenuBackground(this.atlas.findRegions("bg"), screenX);
         this.addActor(bg);
-        addSmoke();
-        addCooper();
+        addSmoke(screenX);
+        addCooper(screenX);
         addNewGameBtn();
         addExitBtn();
         addOptionBtn();
@@ -94,20 +97,20 @@ public class MenuStage extends ReturnHandlingStage {
         return this.credits;
     }
 
-    private void addSmoke() {
+    private void addSmoke(float screenX) {
         Group smokeGroup = new Group();
         smokeGroup.setBounds(0, 0, this.getWidth(), this.getHeight());
         this.addActor(smokeGroup);
-        Animator.addSmoke(SMOKE_START_X, SMOKE_START_Y, SMOKE_START_SCALE, SMOKE_START_DELAY, SMOKE_DURATION,
+        Animator.addSmoke(screenX + SMOKE_START_X, SMOKE_START_Y, SMOKE_START_SCALE, SMOKE_START_DELAY, SMOKE_DURATION,
                 new CoolRandomizer<AtlasRegion>(atlas.findRegions("smoke"), 1), smokeGroup);
         for (int i = 0; i < 2000; i++) {
             this.act(SMOKE_START_DELAY / 50);
         }
     }
 
-    private void addCooper() {
+    private void addCooper(float screenX) {
         Image cooper = new Image(this.atlas.findRegion("cooper"));
-        cooper.setPosition(0, 0);
+        cooper.setPosition(screenX < 0 ? screenX * 0.6f : screenX, 0);
         this.addActor(cooper);
 
     }
@@ -121,11 +124,12 @@ public class MenuStage extends ReturnHandlingStage {
                 StageScreen.getInstance().setStage(new GameStage());
             }
         });
+        continueBtn.setX(this.getWidth() / 2 - 150);
         if (needAnimation) {
-            continueBtn.setPosition(490, -100);
-            continueBtn.addAction(moveTo(490, 250, 0.5f, exp10));
+            continueBtn.setY(-100);
+            continueBtn.addAction(moveTo(continueBtn.getX(), 250, 0.5f, exp10));
         } else {
-            continueBtn.setPosition(490, 250);
+            continueBtn.setY(250);
         }
         this.addActor(continueBtn);
     }
@@ -158,11 +162,12 @@ public class MenuStage extends ReturnHandlingStage {
                 }
             }
         });
+        startBtn.setX(this.getWidth() / 2 - 150);
         if (needAnimation) {
-            startBtn.setPosition(490, -300);
-            startBtn.addAction(moveTo(490, 50, 0.5f, exp10));
+            startBtn.setY(-300);
+            startBtn.addAction(moveTo(startBtn.getX(), 50, 0.5f, exp10));
         } else {
-            startBtn.setPosition(490, 50);
+            startBtn.setY(50);
         }
         this.addActor(startBtn);
     }
@@ -179,10 +184,10 @@ public class MenuStage extends ReturnHandlingStage {
             }
         });
         if (needAnimation) {
-            exitBtn.setPosition(1380, 30);
-            exitBtn.addAction(sequence(delay(0.1f), moveTo(1186, 30, 0.5f, exp10)));
+            exitBtn.setPosition(this.getWidth() + 100, 30);
+            exitBtn.addAction(sequence(delay(0.1f), moveTo(this.getWidth() - 94, 30, 0.5f, exp10)));
         } else {
-            exitBtn.setPosition(1186, 30);
+            exitBtn.setPosition(this.getWidth() - 94, 30);
         }
         this.addActor(exitBtn);
     }
@@ -196,10 +201,10 @@ public class MenuStage extends ReturnHandlingStage {
         });
         int y = 30 + startY;
         if (needAnimation) {
-            optionBtn.setPosition(1380, y);
-            optionBtn.addAction(sequence(delay(0.2f), moveTo(1186, y, 0.5f, exp10)));
+            optionBtn.setPosition(this.getWidth() + 100, y);
+            optionBtn.addAction(sequence(delay(0.2f), moveTo(this.getWidth() - 94, y, 0.5f, exp10)));
         } else {
-            optionBtn.setPosition(1186, y);
+            optionBtn.setPosition(this.getWidth() - 94, y);
         }
         this.addActor(optionBtn);
     }
@@ -218,10 +223,10 @@ public class MenuStage extends ReturnHandlingStage {
         });
         int y = 164 + startY;
         if (needAnimation) {
-            infoBtn.setPosition(1380, y);
-            infoBtn.addAction(sequence(delay(0.3f), moveTo(1186, y, 0.5f, exp10)));
+            infoBtn.setPosition(this.getWidth() + 100, y);
+            infoBtn.addAction(sequence(delay(0.3f), moveTo(this.getWidth() - 94, y, 0.5f, exp10)));
         } else {
-            infoBtn.setPosition(1186, y);
+            infoBtn.setPosition(this.getWidth() - 94, y);
         }
         this.addActor(infoBtn);
     }

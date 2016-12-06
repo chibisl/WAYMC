@@ -28,11 +28,13 @@ public class UIHelper {
     private int cellInRow = 7;
     private int itemWidth = 100;
     private int itemSpace = 13;
+    private boolean squareScreen = false;
 
     public UIHelper(TextureAtlas atlas) {
         this.atlas = atlas;
         btnBg = atlas.findRegion("btn-bg");
         btnBgTouched = atlas.findRegion("btn-bg-touched");
+        squareScreen = Config.getInstance().screenRatio < 1.4f;
     }
 
     public TextureAtlas getAtlas() {
@@ -85,19 +87,29 @@ public class UIHelper {
     }
 
     public Button[] createNextButton(ClickListener listener) {
-        return new Button[] { null, null, this.createButton("forward", listener) };
+        return createBottomButton(squareScreen ? 1 : 2, this.createButton("forward", listener));
     }
 
     public Button[] createBackButton(ClickListener listener) {
-        return new Button[] { this.createButton("back", listener), null, null };
+        return createBottomButton(squareScreen ? 1 : 0, this.createButton("back", listener));
     }
 
     public Button[] createReturnButton(ClickListener listener) {
-        return new Button[] { null, null, this.createButton("return", listener) };
+        return createBottomButton(squareScreen ? 1 : 2, this.createButton("return", listener));
     }
 
     public Button[] createOkButtons(ClickListener listener) {
-        return new Button[] { null, this.createButton("ok", listener), null };
+        return createBottomButton(1, this.createButton("ok", listener));
+    }
+
+    public Button[] createBottomButton(int index, Button button) {
+        Button[] buttons = new Button[] { null, null, null };
+        if (index < 0)
+            index = 0;
+        if (index > 2)
+            index = 2;
+        buttons[index] = button;
+        return buttons;
     }
 
     public Group createItemCells() {
@@ -156,5 +168,9 @@ public class UIHelper {
         parent.addActor(dialog);
         dialog.show();
         return dialog;
+    }
+
+    public boolean isSquareScreen() {
+        return squareScreen;
     }
 }
