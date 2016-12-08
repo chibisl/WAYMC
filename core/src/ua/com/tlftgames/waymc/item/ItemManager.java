@@ -264,8 +264,10 @@ public class ItemManager {
 
     public void lostRandomResource() {
         ArrayList<String> resources = this.getOwnResources();
-        int lostItem = (int) (Math.random() * resources.size());
-        this.removeOwnItem(resources.get(lostItem));
+        String lostItem = resources.get((int) (Math.random() * resources.size()));
+        GameCore.getInstance().getNotificationManager()
+        	.addNotification(new Notification(this.getItem(lostItem).getImage(), "notification.item.losted"));
+        this.removeOwnItem(lostItem);
     }
 
     public boolean canCreateItem(String receipt) {

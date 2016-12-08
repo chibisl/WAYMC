@@ -207,7 +207,7 @@ public class ResidentialWindowManager extends TypeWindowManager {
         switch(this.getVariant()) {
             case VARIANT_CHEAP:
             case VARIANT_EXPENSIVE:
-                if (Math.random() < 0.8f) result = (Math.random() < 0.5f) ? RESULT_GOOD : RESULT_BAD;
+                if (Math.random() > 0.8f) result = (Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
                 if (getVariant() == VARIANT_CHEAP && result == RESULT_BAD) {
                     if (GameCore.getInstance().getItemManager().getOwnResources().size() == 0) {
                         result = RESULT_NORMAL;
@@ -220,7 +220,7 @@ public class ResidentialWindowManager extends TypeWindowManager {
                 result = (Math.random() < this.playChances[playLevel]) ? RESULT_GOOD : RESULT_BAD;
                 break;
             case VARIANT_TRAINING:
-                result = (playLevel < 1 || Math.random() < 0.75f) ? RESULT_GOOD : RESULT_BAD;
+                result = (playLevel < 1 || Math.random() < 0.8f) ? RESULT_GOOD : RESULT_BAD;
                 break;
         }
         this.setResult(result);

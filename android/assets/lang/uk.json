@@ -751,6 +751,7 @@
   "notification.money.increase": "Гаманець став важчим",
   "notification.money.decrease" : "Гаманець полегшав",
   "notification.item.added": "Отримано новий предмет",
+  "notification.item.losted": "Предмет будо втрачено",
   "notification.receipt.added": "Отримано нову схема складання",
   "notification.items.max.count.reached": "Не вистачає місця для нового предмета в інвентарі",
   "notification.items.not.found": "У вас немає жодного предмета",

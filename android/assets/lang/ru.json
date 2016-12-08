@@ -745,6 +745,7 @@
     "notification.money.increase": "Кошелёк стал тяжелее",
     "notification.money.decrease" : "Кошелёк стал легче",
     "notification.item.added": "Получен новый предмет",
+    "notification.item.losted": "Предмет был утрачен",
     "notification.receipt.added": "Получена новая схема сборки",
     "notification.items.max.count.reached": "Не хватает места для нового предмета в инвентаре",
     "notification.items.not.found": "У вас нет ни одного предмета",

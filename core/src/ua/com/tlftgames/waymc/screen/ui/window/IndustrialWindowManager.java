@@ -106,7 +106,7 @@ public class IndustrialWindowManager extends TypeWindowManager {
     }
 
     protected void updateResult() {
-        setResult((Math.random() < 0.8f) ? RESULT_NORMAL : ((Math.random() < 0.5f) ? RESULT_GOOD : RESULT_BAD));
+        setResult((Math.random() < 0.8f) ? RESULT_NORMAL : ((Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD));
     }
 
     public void action() {

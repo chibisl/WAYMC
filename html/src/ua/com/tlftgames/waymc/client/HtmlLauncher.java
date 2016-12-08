@@ -38,19 +38,16 @@ public class HtmlLauncher extends GwtApplication implements Tracker {
 
     @Override
     public void trackScreen(String screenName) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void trackEvent(String category, String action, String label, int value) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
     public void trackNonInteractionEvent(String category, String action, String label, int value) {
-        // TODO Auto-generated method stub
 
     }
 }
