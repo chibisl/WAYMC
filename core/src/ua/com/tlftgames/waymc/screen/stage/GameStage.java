@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.stage;
 
+import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
@@ -9,8 +11,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -80,6 +84,10 @@ public class GameStage extends ReturnHandlingStage {
         }
 
         Animator.addZeppelin(atlas.findRegion("zeppelin"), cityMg);
+        
+        if (Gdx.app.getType() == ApplicationType.Desktop || Gdx.app.getType() == ApplicationType.WebGL) {
+        	this.addScrollRegions();
+        }
 
         this.addAttentionMarkers(atlas);
 
@@ -92,9 +100,21 @@ public class GameStage extends ReturnHandlingStage {
             this.music.setLooping(true);
             this.music.play();
         }
+        
+        this.setDebugAll(true);
     }
 
-    private void addAttentionMarkers(TextureAtlas atlas) {
+    private void addScrollRegions() {
+    	ScrollRegion leftScrollRegion = new ScrollRegion(-1);
+		leftScrollRegion.setBounds(0, 0, 80, this.getHeight());
+		this.addActor(leftScrollRegion);
+		
+		ScrollRegion rightScrollRegion = new ScrollRegion(1);
+		rightScrollRegion.setBounds(this.getWidth() - 80, 0, 80, this.getHeight());
+		this.addActor(rightScrollRegion);
+	}
+
+	private void addAttentionMarkers(TextureAtlas atlas) {
         TextureRegion leftMarker = atlas.findRegion("marker-left");
         TextureRegion rightMarker = atlas.findRegion("marker-right");
         TextureRegion highAttention = atlas.findRegion("high-atention");
@@ -248,5 +268,36 @@ public class GameStage extends ReturnHandlingStage {
             marker.getColor().a = distance / 100;
         }
 
+    }
+    
+    private class ScrollRegion extends Actor {
+    	private boolean hover = false;
+    	private float speed = 500;
+    	private int direction = 1;
+    	
+    	public ScrollRegion(int direction) {
+    		this.direction = direction;
+    		this.addListener(new InputListener() {
+                public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                	ScrollRegion.this.setHover(true);
+                }
+                
+                public void exit(InputEvent event, float x, float y, int pointer, Actor fromActor) {
+                	ScrollRegion.this.setHover(false);
+                }
+    		});
+    	}
+    	
+    	public void setHover(boolean hover) {
+    		this.hover = hover;
+    	}
+    	
+    	public void act (float delta) {
+    		if (hover) {
+    			WorldScrollPane pane = GameStage.this.worldScrollPane;
+    			float x = pane.getScrollX() + direction * speed * delta;
+    			pane.setScrollX(x);
+    		}
+    	}
     }
 }
