@@ -1,6 +1,5 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -13,11 +12,10 @@ public class MenuWindow extends Window {
     private SettingsWindow optionWindow;
 
     public MenuWindow(UIHelper helper, SettingsWindow settings) {
-        super(helper, 450, 600);
+        super(helper, 450, 540);
         this.optionWindow = settings;
         addResumeBtn();
         addOptionBtn();
-        addFeedbackBtn();
         addExitBtn();
 
         this.bg.addListener(new ClickListener() {
@@ -32,21 +30,9 @@ public class MenuWindow extends Window {
         return this.optionWindow;
     }
 
-    private void addFeedbackBtn() {
-        TextButton feedbackBtn = this.getHelper().createMenuButton("game.menu.feedback");
-        feedbackBtn.setBounds(75, 200, 300, 75);
-        feedbackBtn.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                Gdx.net.openURI("http://waymc.tlftgames.com.ua/feedback");
-            }
-        });
-        this.windowGroup.addActor(feedbackBtn);
-    }
-
     private void addOptionBtn() {
         TextButton optionBtn = this.getHelper().createMenuButton("game.menu.option");
-        optionBtn.setBounds(75, 340, 300, 75);
+        optionBtn.setBounds(75, 250, 300, 75);
         optionBtn.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -59,7 +45,7 @@ public class MenuWindow extends Window {
 
     private void addExitBtn() {
         TextButton exitBtn = this.getHelper().createMenuButton("game.menu.exit");
-        exitBtn.setBounds(75, 60, 300, 75);
+        exitBtn.setBounds(75, 80, 300, 75);
         exitBtn.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -71,7 +57,7 @@ public class MenuWindow extends Window {
 
     private void addResumeBtn() {
         TextButton resumeBtn = this.getHelper().createMenuButton("game.menu.resume");
-        resumeBtn.setBounds(75, 480, 300, 75);
+        resumeBtn.setBounds(75, 400, 300, 75);
         resumeBtn.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

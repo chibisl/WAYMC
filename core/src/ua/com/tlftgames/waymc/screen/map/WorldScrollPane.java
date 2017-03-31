@@ -50,11 +50,9 @@ public class WorldScrollPane extends ScrollPane {
     }
 
     public void scrollToPin(float nextX) {
-        if (nextX < this.getScrollX() + this.getWidth() / 4) {
-            this.scrollX(Math.max(nextX - this.getWidth() / 2, 0));
-        }
-        if (nextX > this.getScrollX() + 3 * this.getWidth() / 4) {
-            this.scrollX(Math.min(nextX - this.getWidth() / 2, world.getWidth() - this.getWidth()));
+        if (nextX < this.getScrollX() + this.getWidth() / 4 || nextX > this.getScrollX() + 3 * this.getWidth() / 4) {
+            this.setScrollX(nextX - this.getWidth() / 2);
+            this.updateVisualScroll();
         }
     }
 
@@ -66,10 +64,20 @@ public class WorldScrollPane extends ScrollPane {
     public void act(float delta) {
         super.act(delta);
         if (this.getVisualScrollX() != this.getScrollX() || this.isPanning() || this.isFlinging()) {
-            this.fadeLeft.getPatch().setColor(new Color(1, 1, 1, this.getScrollPercentX()));
-            this.fadeRight.getPatch().setColor(new Color(1, 1, 1, 1 - this.getScrollPercentX()));
-            updateAttentionMarkers();
+        	updateDecoration();
         }
+    }
+    
+    @Override
+    public void updateVisualScroll() {
+    	super.updateVisualScroll();
+    	this.updateDecoration();
+    }
+    
+    public void updateDecoration() {
+    	this.fadeLeft.getPatch().setColor(new Color(1, 1, 1, this.getScrollPercentX()));
+        this.fadeRight.getPatch().setColor(new Color(1, 1, 1, 1 - this.getScrollPercentX()));
+        updateAttentionMarkers();
     }
 
     public void updateAttentionMarkers() {

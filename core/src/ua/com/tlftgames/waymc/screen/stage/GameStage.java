@@ -87,6 +87,7 @@ public class GameStage extends ReturnHandlingStage {
         
         if (Gdx.app.getType() == ApplicationType.Desktop || Gdx.app.getType() == ApplicationType.WebGL) {
         	this.addScrollRegions();
+        	this.worldScrollPane.clearListeners();
         }
 
         this.addAttentionMarkers(atlas);
@@ -100,17 +101,15 @@ public class GameStage extends ReturnHandlingStage {
             this.music.setLooping(true);
             this.music.play();
         }
-        
-        this.setDebugAll(true);
     }
 
     private void addScrollRegions() {
     	ScrollRegion leftScrollRegion = new ScrollRegion(-1);
-		leftScrollRegion.setBounds(0, 0, 80, this.getHeight());
+		leftScrollRegion.setBounds(0, 0, 50, this.getHeight());
 		this.addActor(leftScrollRegion);
 		
 		ScrollRegion rightScrollRegion = new ScrollRegion(1);
-		rightScrollRegion.setBounds(this.getWidth() - 80, 0, 80, this.getHeight());
+		rightScrollRegion.setBounds(this.getWidth() - 50, 0, 50, this.getHeight());
 		this.addActor(rightScrollRegion);
 	}
 
@@ -121,21 +120,21 @@ public class GameStage extends ReturnHandlingStage {
         TextureRegion attention = atlas.findRegion("atention");
 
         this.leftAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(attention), Metro.ATTENTION_LEFT);
-        leftAttentionMarker.setPosition(20, 460);
+        leftAttentionMarker.setPosition(40, 460);
         this.addActor(leftAttentionMarker);
 
         this.rightAttentionMarker = this.createAttentionMarker(rightMarker, Station.createAttention(attention), Metro.ATTENTION_RIGHT);
-        rightAttentionMarker.setPosition(this.getWidth() - rightAttentionMarker.getWidth() - 20, 460);
+        rightAttentionMarker.setPosition(this.getWidth() - rightAttentionMarker.getWidth() - 40, 460);
         this.addActor(rightAttentionMarker);
 
         this.leftHighAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(highAttention),
                 Metro.ATTENTION_HIGH_LEFT);
-        leftHighAttentionMarker.setPosition(20, 360);
+        leftHighAttentionMarker.setPosition(40, 360);
         this.addActor(leftHighAttentionMarker);
 
         this.rightHighAttentionMarker = this.createAttentionMarker(rightMarker, Station.createAttention(highAttention),
                 Metro.ATTENTION_HIGH_RIGHT);
-        rightHighAttentionMarker.setPosition(this.getWidth() - rightHighAttentionMarker.getWidth() - 20, 360);
+        rightHighAttentionMarker.setPosition(this.getWidth() - rightHighAttentionMarker.getWidth() - 40, 360);
         this.addActor(rightHighAttentionMarker);
 
         worldScrollPane.updateAttentionMarkers();
@@ -293,10 +292,11 @@ public class GameStage extends ReturnHandlingStage {
     	}
     	
     	public void act (float delta) {
+    		WorldScrollPane pane = GameStage.this.worldScrollPane;
     		if (hover) {
-    			WorldScrollPane pane = GameStage.this.worldScrollPane;
-    			float x = pane.getScrollX() + direction * speed * delta;
-    			pane.setScrollX(x);
+				float x = pane.getScrollX() + direction * speed * delta;
+				pane.setScrollX(x);
+				pane.updateVisualScroll();
     		}
     	}
     }
