@@ -86,6 +86,8 @@ public class WorldScrollPane extends ScrollPane {
                 metro.getAttentionX(Metro.ATTENTION_HIGH_RIGHT));
         stage.updateAttentionMarkers(this.getScrollX(), metro.getAttentionX(Metro.ATTENTION_LEFT),
                 metro.getAttentionX(Metro.ATTENTION_RIGHT));
+        stage.updatePinAttentionMarkers(this.getScrollX(), getWorld().getPin().getX(),
+        		getWorld().getPin().getX());
     }
 
     @Override

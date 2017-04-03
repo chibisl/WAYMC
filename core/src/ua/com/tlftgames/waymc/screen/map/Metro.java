@@ -13,6 +13,8 @@ public class Metro extends Group {
     public final static int ATTENTION_RIGHT = 1;
     public final static int ATTENTION_HIGH_LEFT = 2;
     public final static int ATTENTION_HIGH_RIGHT = 3;
+    public final static int ATTENTION_PIN_LEFT = 4;
+    public final static int ATTENTION_PIN_RIGHT = 5;
     private float stationY = 200;
     public float stationLineWidth;
     private TextureAtlas atlas;

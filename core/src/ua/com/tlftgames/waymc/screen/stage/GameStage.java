@@ -51,6 +51,8 @@ public class GameStage extends ReturnHandlingStage {
     private Group rightHighAttentionMarker;
     private Group leftAttentionMarker;
     private Group rightAttentionMarker;
+    private Group leftPinAttentionMarker;
+    private Group rightPinAttentionMarker;
 
     public GameStage() {
         Manager.getInstance().load("img/game.pack", TextureAtlas.class);
@@ -118,6 +120,7 @@ public class GameStage extends ReturnHandlingStage {
         TextureRegion rightMarker = atlas.findRegion("marker-right");
         TextureRegion highAttention = atlas.findRegion("high-atention");
         TextureRegion attention = atlas.findRegion("atention");
+        TextureRegion pin = atlas.findRegion("pin");
 
         this.leftAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(attention), Metro.ATTENTION_LEFT);
         leftAttentionMarker.setPosition(40, 460);
@@ -129,13 +132,21 @@ public class GameStage extends ReturnHandlingStage {
 
         this.leftHighAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(highAttention),
                 Metro.ATTENTION_HIGH_LEFT);
-        leftHighAttentionMarker.setPosition(40, 360);
+        leftHighAttentionMarker.setPosition(40, 380);
         this.addActor(leftHighAttentionMarker);
 
         this.rightHighAttentionMarker = this.createAttentionMarker(rightMarker, Station.createAttention(highAttention),
                 Metro.ATTENTION_HIGH_RIGHT);
-        rightHighAttentionMarker.setPosition(this.getWidth() - rightHighAttentionMarker.getWidth() - 40, 360);
+        rightHighAttentionMarker.setPosition(this.getWidth() - rightHighAttentionMarker.getWidth() - 40, 380);
         this.addActor(rightHighAttentionMarker);
+        
+        this.leftPinAttentionMarker = this.createAttentionMarker(leftMarker, new Image(pin), Metro.ATTENTION_PIN_LEFT);
+        leftPinAttentionMarker.setPosition(40, 300);
+        this.addActor(leftPinAttentionMarker);
+
+        this.rightPinAttentionMarker = this.createAttentionMarker(rightMarker, new Image(pin), Metro.ATTENTION_PIN_RIGHT);
+        rightPinAttentionMarker.setPosition(this.getWidth() - rightPinAttentionMarker.getWidth() - 40, 300);
+        this.addActor(rightPinAttentionMarker);
 
         worldScrollPane.updateAttentionMarkers();
     }
@@ -144,18 +155,22 @@ public class GameStage extends ReturnHandlingStage {
         Group attentionMarker = new Group();
         attentionMarker.setSize(65, 50);
         Image bgImage = new Image(bg);
-        bgImage.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT) ?
+        bgImage.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT || attentionType == Metro.ATTENTION_PIN_LEFT) ?
                 0 : attentionMarker.getWidth() - bgImage.getWidth(),
                 (attentionMarker.getHeight() - bgImage.getHeight()) / 2);
         attentionMarker.addActor(bgImage);
-        attention.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT) ?
+        attention.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT || attentionType == Metro.ATTENTION_PIN_LEFT) ?
                 17 : 2, 2);
         attentionMarker.addActor(attention);
         attentionMarker.setVisible(false);
         attentionMarker.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                GameStage.this.worldScrollPane.scrollToAttention(attentionType);
+            	if (attentionType == Metro.ATTENTION_PIN_LEFT || attentionType == Metro.ATTENTION_PIN_RIGHT) {
+            		GameStage.this.worldScrollPane.scrollToPin();
+            	} else {
+            		GameStage.this.worldScrollPane.scrollToAttention(attentionType);
+            	}
             }
         });
         return attentionMarker;
@@ -255,6 +270,11 @@ public class GameStage extends ReturnHandlingStage {
         updateAttentionMarker(this.leftAttentionMarker, getLeftDistance(scrollX, leftAttentionX));
         updateAttentionMarker(this.rightAttentionMarker, getRightDistance(scrollX, rightAttentionX));
     }
+    
+    public void updatePinAttentionMarkers(float scrollX, float leftAttentionX, float rightAttentionX) {
+    	updateAttentionMarker(this.leftPinAttentionMarker, getLeftDistance(scrollX, leftAttentionX));
+        updateAttentionMarker(this.rightPinAttentionMarker, getRightDistance(scrollX, rightAttentionX));
+	}
 
     private void updateAttentionMarker(Group marker, float distance) {
         if (marker == null)
@@ -300,4 +320,5 @@ public class GameStage extends ReturnHandlingStage {
     		}
     	}
     }
+
 }
