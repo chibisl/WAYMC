@@ -8,7 +8,6 @@ buildscript {
         classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
         classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'org.robovm:robovm-gradle-plugin:1.12.0'
-        classpath 'com.google.gms:google-services:3.0.0'
     }
 }
 
@@ -52,14 +51,12 @@ project(":android") {
     dependencies {
         compile project(":core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-		compile "com.google.android.gms:play-services-analytics:9.0.0"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
     }
-	apply plugin: 'com.google.gms.google-services'
 }
 
 project(":ios") {
