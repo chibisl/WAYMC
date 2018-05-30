@@ -239,8 +239,10 @@ public class MenuStage extends ReturnHandlingStage {
 
     @Override
     public void dispose() {
-        this.music.stop();
-        this.music.dispose();
+    	if (this.music != null) {
+	        this.music.stop();
+	        this.music.dispose();
+    	}
         Manager.getInstance().unload("img/menu.pack");
         Manager.getInstance().unload("sound/Willow and the Light.mp3");
         super.dispose();
