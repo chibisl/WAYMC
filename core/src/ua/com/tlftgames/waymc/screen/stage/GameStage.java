@@ -226,8 +226,10 @@ public class GameStage extends ReturnHandlingStage {
 
     @Override
     public void dispose() {
-        this.music.stop();
-        this.music.dispose();
+        if (this.music != null) {
+            this.music.stop();
+            this.music.dispose();
+        }
         Manager.getInstance().unload("sound/Despair and Triumph.mp3");
         Manager.getInstance().unload("img/game.pack");
         Manager.getInstance().unload("sound/move.mp3");
