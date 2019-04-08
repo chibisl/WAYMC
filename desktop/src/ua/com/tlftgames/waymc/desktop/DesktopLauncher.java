@@ -1,6 +1,5 @@
 package ua.com.tlftgames.waymc.desktop;
 
-import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
@@ -14,8 +13,7 @@ public class DesktopLauncher implements Tracker {
         config.width = 1280;
         config.height = 720;
         config.resizable = false;
-        config.fullscreen = false;
-        config.addIcon("img/icon.png", Files.FileType.Internal);
+        config.fullscreen = true;
         new LwjglApplication(new StaighremGame(new DesktopLauncher()), config);
     }
 

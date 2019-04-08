@@ -3,8 +3,10 @@ apply plugin: "java"
 sourceCompatibility = 1.6
 sourceSets.main.java.srcDirs = [ "src/" ]
 
-project.ext.mainClassName = "ua.com.lastfairytale.staighrem.desktop.DesktopLauncher"
+project.ext.mainClassName = "ua.com.tlftgames.waymc.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../android/assets");
+archivesBaseName = 'waymc'
+version = '1.8'
 
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName

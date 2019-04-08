@@ -152,11 +152,11 @@ public class MenuStage extends ReturnHandlingStage {
                 if (GameCore.getInstance().hasProgress()) {
                     MenuStage.this.helper.openDialog(MenuStage.this.getRoot(),
                             Translator.getInstance().translate("menu.newgame.confirm"), new Runnable() {
-                        @Override
-                        public void run() {
-                            MenuStage.this.startNewGame();
-                        }
-                    }, null);
+                                @Override
+                                public void run() {
+                                    MenuStage.this.startNewGame();
+                                }
+                            }, null);
                 } else {
                     MenuStage.this.startNewGame();
                 }
@@ -239,10 +239,10 @@ public class MenuStage extends ReturnHandlingStage {
 
     @Override
     public void dispose() {
-    	if (this.music != null) {
-	        this.music.stop();
-	        this.music.dispose();
-    	}
+        if (this.music != null) {
+            this.music.stop();
+            this.music.dispose();
+        }
         Manager.getInstance().unload("img/menu.pack");
         Manager.getInstance().unload("sound/Willow and the Light.mp3");
         super.dispose();
