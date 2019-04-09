@@ -1,11 +1,11 @@
 package ua.com.tlftgames.waymc;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Save {
     private Preferences save;
@@ -42,13 +42,12 @@ public class Save {
     public static final int PLAY_LEVEL_KEY = 31;
     public static final int TUTORIALS_SHOWED_KEY = 32;
 
-
     private Preferences getSave() {
         if (save == null) {
             if (Gdx.app.getType() == ApplicationType.Android) {
                 this.save = Gdx.app.getPreferences("WAYMC_save");
             } else {
-                this.save = Gdx.app.getPreferences("../.WAYMC/save");
+                this.save = Gdx.app.getPreferences("save");
             }
         }
         return this.save;
@@ -234,12 +233,12 @@ public class Save {
     public void saveProgress(int key, String data) {
         String savingKey = null;
         switch (key) {
-            case Save.CLUB_RECEIPT_KEY:
-                savingKey = "club_receipt";
-                break;
-            case Save.SALE_ITEM_KEY:
-                savingKey = "sale_item";
-                break;
+        case Save.CLUB_RECEIPT_KEY:
+            savingKey = "club_receipt";
+            break;
+        case Save.SALE_ITEM_KEY:
+            savingKey = "sale_item";
+            break;
         }
         if (savingKey != null)
             this.save(savingKey, data);
@@ -248,63 +247,63 @@ public class Save {
     public void saveProgress(int key, int data) {
         String savingKey = null;
         switch (key) {
-            case Save.LIFE_KEY:
-                savingKey = "life";
-                break;
-            case Save.MONEY_KEY:
-                savingKey = "money";
-                break;
-            case Save.CURRENT_STEP_KEY:
-                savingKey = "current_step";
-                break;
-            case Save.CURRENT_PLACE_KEY:
-                savingKey = "current_place";
-                break;
-            case Save.LAST_PLACE_KEY:
-                savingKey = "last_place";
-                break;
-            case Save.CURRENT_SEARCH_PLACE_KEY:
-                savingKey = "current_search_place";
-                break;
-            case Save.QUEST_KEY:
-                savingKey = "quest";
-                break;
-            case Save.SUBEDLIFE_KEY:
-                savingKey = "subed_life";
-                break;
-            case Save.QUEST_ACTION_KEY:
-                savingKey = "quest_action";
-                break;
-            case Save.RECREATIONAL_CURRENT_EVENT:
-                savingKey = "recreational_current_event";
-                break;
-            case Save.STEP_COUNT:
-                savingKey = "step_count";
-                break;
-            case Save.ACTION_RESULT_KEY:
-                savingKey = "action_result";
-                break;
-            case Save.RESIDENTIAL_REST_COST_KEY:
-                savingKey = "residental_rest_cost";
-                break;
-            case Save.INDUSTRIAL_WORK_PAY_KEY:
-                savingKey = "industrial_work_pay";
-                break;
-            case Save.ACTION_VARIANT_KEY:
-                savingKey = "action_variant";
-                break;
-            case Save.ACTION_KEY:
-                savingKey = "action";
-                break;
-            case Save.FIRST_HORSE_KEY:
-                savingKey = "first_horse";
-                break;
-            case Save.CASINO_WIN_KEY:
-                savingKey = "casino_win";
-                break;
-            case Save.PLAY_LEVEL_KEY:
-                savingKey = "play_level";
-                break;
+        case Save.LIFE_KEY:
+            savingKey = "life";
+            break;
+        case Save.MONEY_KEY:
+            savingKey = "money";
+            break;
+        case Save.CURRENT_STEP_KEY:
+            savingKey = "current_step";
+            break;
+        case Save.CURRENT_PLACE_KEY:
+            savingKey = "current_place";
+            break;
+        case Save.LAST_PLACE_KEY:
+            savingKey = "last_place";
+            break;
+        case Save.CURRENT_SEARCH_PLACE_KEY:
+            savingKey = "current_search_place";
+            break;
+        case Save.QUEST_KEY:
+            savingKey = "quest";
+            break;
+        case Save.SUBEDLIFE_KEY:
+            savingKey = "subed_life";
+            break;
+        case Save.QUEST_ACTION_KEY:
+            savingKey = "quest_action";
+            break;
+        case Save.RECREATIONAL_CURRENT_EVENT:
+            savingKey = "recreational_current_event";
+            break;
+        case Save.STEP_COUNT:
+            savingKey = "step_count";
+            break;
+        case Save.ACTION_RESULT_KEY:
+            savingKey = "action_result";
+            break;
+        case Save.RESIDENTIAL_REST_COST_KEY:
+            savingKey = "residental_rest_cost";
+            break;
+        case Save.INDUSTRIAL_WORK_PAY_KEY:
+            savingKey = "industrial_work_pay";
+            break;
+        case Save.ACTION_VARIANT_KEY:
+            savingKey = "action_variant";
+            break;
+        case Save.ACTION_KEY:
+            savingKey = "action";
+            break;
+        case Save.FIRST_HORSE_KEY:
+            savingKey = "first_horse";
+            break;
+        case Save.CASINO_WIN_KEY:
+            savingKey = "casino_win";
+            break;
+        case Save.PLAY_LEVEL_KEY:
+            savingKey = "play_level";
+            break;
         }
         if (savingKey != null)
             this.save(savingKey, Integer.toString(data));
@@ -313,12 +312,12 @@ public class Save {
     public void saveProgress(int key, HashMap<Integer, ArrayList<Integer>> data) {
         String savingKey = null;
         switch (key) {
-            case Save.MANDATORY_QUESTS_KEY:
-                savingKey = "mandatory_quest";
-                break;
-            case Save.PLACE_QUESTS_KEY:
-                savingKey = "place_quest";
-                break;
+        case Save.MANDATORY_QUESTS_KEY:
+            savingKey = "mandatory_quest";
+            break;
+        case Save.PLACE_QUESTS_KEY:
+            savingKey = "place_quest";
+            break;
         }
         if (savingKey != null)
             this.save(savingKey, this.getQuestsString(data));
@@ -327,33 +326,33 @@ public class Save {
     public void saveProgress(int key, ArrayList<?> data) {
         String savingKey = null;
         switch (key) {
-            case Save.PLACE_CRIME_KEY:
-                savingKey = "place_crime";
-                break;
-            case Save.ITEMS_KEY:
-                savingKey = "items";
-                break;
-            case Save.INFORMATION_KEY:
-                savingKey = "information";
-                break;
-            case Save.RECEIPTS_KEY:
-                savingKey = "receipts";
-                break;
-            case Save.SEARCH_PLACES_KEY:
-                savingKey = "search_places";
-                break;
-            case Save.SEARCHED_PLACES_KEY:
-                savingKey = "searched_places";
-                break;
-            case Save.RESOURCES_KEY:
-                savingKey = "resources";
-                break;
-            case Save.SEARCH_ITEMS_KEY:
-                savingKey = "search_items";
-                break;
-            case Save.TUTORIALS_SHOWED_KEY:
-                savingKey = "tutorials_showed";
-                break;
+        case Save.PLACE_CRIME_KEY:
+            savingKey = "place_crime";
+            break;
+        case Save.ITEMS_KEY:
+            savingKey = "items";
+            break;
+        case Save.INFORMATION_KEY:
+            savingKey = "information";
+            break;
+        case Save.RECEIPTS_KEY:
+            savingKey = "receipts";
+            break;
+        case Save.SEARCH_PLACES_KEY:
+            savingKey = "search_places";
+            break;
+        case Save.SEARCHED_PLACES_KEY:
+            savingKey = "searched_places";
+            break;
+        case Save.RESOURCES_KEY:
+            savingKey = "resources";
+            break;
+        case Save.SEARCH_ITEMS_KEY:
+            savingKey = "search_items";
+            break;
+        case Save.TUTORIALS_SHOWED_KEY:
+            savingKey = "tutorials_showed";
+            break;
         }
         if (savingKey != null)
             this.save(savingKey, data.toString());

@@ -2148,6 +2148,19 @@
                         "action": {
                         }
                     },{
+                        "text": "money.lost.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "money.lost.choice.1.action.1",
+                        "action": {
+                        }
+                    },{
+                        "text": "money.lost.choice.1.action.2",
+                        "action": {
+                            "changeMoney": -10
+                        }
+                    },{
                         "text": "money.lost.choice.1.action.2",
                         "action": {
                             "changeMoney": -10
@@ -2257,6 +2270,44 @@
                             "changeMoney": 50
                         }
                     },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
                         "text": "fly.machine.choice.1.action.3",
                         "action": {
                             "changeMoney": 100,
@@ -2356,6 +2407,44 @@
                             "changeMoney": 50
                         }
                     },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
                         "text": "fly.machine.choice.1.action.3",
                         "action": {
                             "changeMoney": 100,
@@ -2453,6 +2542,44 @@
                         "text": "fly.machine.choice.1.action.2",
                         "action": {
                             "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
                         }
                     },{
                         "text": "fly.machine.choice.1.action.3",
@@ -2557,6 +2684,44 @@
                         "text": "fly.machine.choice.1.action.2",
                         "action": {
                             "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.2",
+                        "action": {
+                            "changeMoney": 50
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
+                        }
+                    },{
+                        "text": "fly.machine.choice.1.action.3",
+                        "action": {
+                            "changeMoney": 100,
+                            "changeLife": -3
                         }
                     },{
                         "text": "fly.machine.choice.1.action.3",

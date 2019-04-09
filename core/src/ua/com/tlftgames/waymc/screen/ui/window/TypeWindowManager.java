@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -13,8 +15,6 @@ import ua.com.tlftgames.waymc.screen.StageScreen;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
-
-import java.util.ArrayList;
 
 public abstract class TypeWindowManager extends ActionWindowManager {
     private String questStartText = null;
@@ -71,7 +71,6 @@ public abstract class TypeWindowManager extends ActionWindowManager {
 
     public boolean getStartWindow() {
         if (needTutorial) {
-            //TODO: change to tutorial image
             this.getWindow().setPlaceImageTexture();
             this.showActionResult("tutorial." + tutorial, null, new ClickListener() {
                 @Override

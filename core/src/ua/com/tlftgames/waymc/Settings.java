@@ -22,7 +22,7 @@ public class Settings {
             if (Gdx.app.getType() == ApplicationType.Android) {
                 this.save = Gdx.app.getPreferences("WAYMC_settings");
             } else {
-                this.save = Gdx.app.getPreferences("../.WAYMC/settings");
+                this.save = Gdx.app.getPreferences("settings");
             }
         }
         return this.save;

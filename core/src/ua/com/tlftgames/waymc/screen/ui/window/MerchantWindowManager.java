@@ -83,12 +83,20 @@ public class MerchantWindowManager extends TypeWindowManager {
 
     private void searchItems() {
         StageScreen.getInstance().getTracker().trackEvent("Merchant", "action", "searchItems", 1);
-        if (this.searchItems == null) searchItems = new ArrayList<String>();
+        if (this.searchItems == null)
+            searchItems = new ArrayList<String>();
         this.searchItems.clear();
         int itemsCount = this.getSearchItemsCount();
         for (int i = 0; i < itemsCount; i++) {
             this.searchItems.add(GameCore.getInstance().getItemManager().getItemFromMarket());
         }
+
+        // Helping with details for sprayer ;)
+        String[] neededItems = GameCore.getInstance().getItemManager().getNeededItems();
+        if (neededItems != null && Math.random() > 0.25f) {
+            this.searchItems.set(0, neededItems[(int) (Math.random() * neededItems.length)]);
+        }
+
         GameCore.getInstance().getSave().saveProgress(Save.SEARCH_ITEMS_KEY, this.searchItems);
         this.setAction(ACTION_SEARCH);
         this.showActionStartText();
@@ -185,8 +193,8 @@ public class MerchantWindowManager extends TypeWindowManager {
                         .addNotification(new Notification("money", "notification.money.not.match"));
                 return false;
             }
-            if (variant >= VARIANT_BUY_FIRST && variant <= VARIANT_BUY_THIRD
-                    && GameCore.getInstance().getItemManager().getOwnItems().size() == Config.getInstance().itemsMaxCount) {
+            if (variant >= VARIANT_BUY_FIRST && variant <= VARIANT_BUY_THIRD && GameCore.getInstance().getItemManager()
+                    .getOwnItems().size() == Config.getInstance().itemsMaxCount) {
                 GameCore.getInstance().getNotificationManager()
                         .addNotification(new Notification("inventory", "notification.items.max.count.reached"));
                 return false;

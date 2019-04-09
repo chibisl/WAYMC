@@ -52,7 +52,7 @@ public class WorldScrollPane extends ScrollPane {
     public void scrollToPin(float nextX) {
         if (nextX < this.getScrollX() + this.getWidth() / 4 || nextX > this.getScrollX() + 3 * this.getWidth() / 4) {
             this.setScrollX(nextX - this.getWidth() / 2);
-            this.updateVisualScroll();
+            this.updateVisualScroll(nextX);
         }
     }
 
@@ -64,30 +64,43 @@ public class WorldScrollPane extends ScrollPane {
     public void act(float delta) {
         super.act(delta);
         if (this.getVisualScrollX() != this.getScrollX() || this.isPanning() || this.isFlinging()) {
-        	updateDecoration();
+            updateDecoration();
         }
     }
-    
+
     @Override
     public void updateVisualScroll() {
-    	super.updateVisualScroll();
-    	this.updateDecoration();
+        updateVisualScroll(this.world.getPin().getX());
     }
-    
+
+    public void updateVisualScroll(float nextX) {
+        super.updateVisualScroll();
+        this.updateDecoration(nextX);
+    }
+
     public void updateDecoration() {
-    	this.fadeLeft.getPatch().setColor(new Color(1, 1, 1, this.getScrollPercentX()));
+        this.updateDecoration(this.world.getPin().getX());
+    }
+
+    public void updateDecoration(float nextX) {
+        this.fadeLeft.getPatch().setColor(new Color(1, 1, 1, this.getScrollPercentX()));
         this.fadeRight.getPatch().setColor(new Color(1, 1, 1, 1 - this.getScrollPercentX()));
-        updateAttentionMarkers();
+        updateAttentionMarkers(nextX);
     }
 
     public void updateAttentionMarkers() {
+        this.updateAttentionMarkers(-1);
+    }
+
+    public void updateAttentionMarkers(float nextX) {
         Metro metro = this.world.getMetro();
         stage.updateHighAttentionMarkers(this.getScrollX(), metro.getAttentionX(Metro.ATTENTION_HIGH_LEFT),
                 metro.getAttentionX(Metro.ATTENTION_HIGH_RIGHT));
         stage.updateAttentionMarkers(this.getScrollX(), metro.getAttentionX(Metro.ATTENTION_LEFT),
                 metro.getAttentionX(Metro.ATTENTION_RIGHT));
-        stage.updatePinAttentionMarkers(this.getScrollX(), getWorld().getPin().getX(),
-        		getWorld().getPin().getX());
+        if (nextX > 0) {
+            stage.updatePinAttentionMarkers(this.getScrollX(), nextX, nextX);
+        }
     }
 
     @Override

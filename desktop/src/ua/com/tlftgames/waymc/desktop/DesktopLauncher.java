@@ -9,11 +9,13 @@ import ua.com.tlftgames.waymc.Tracker;
 public class DesktopLauncher implements Tracker {
     public static void main(String[] arg) {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.width = (int) (LwjglApplicationConfiguration.getDesktopDisplayMode().width);
+        config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height;
         config.title = "Who Are You, Mr. Cooper?";
-        config.width = 1280;
-        config.height = 720;
         config.resizable = false;
         config.fullscreen = true;
+        config.allowSoftwareMode = true;
+        config.preferencesDirectory = ".WAYMC";
         new LwjglApplication(new StaighremGame(new DesktopLauncher()), config);
     }
 

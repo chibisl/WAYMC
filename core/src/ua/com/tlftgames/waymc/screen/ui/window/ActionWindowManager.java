@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -9,8 +11,6 @@ import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
 import ua.com.tlftgames.waymc.screen.ui.UIHelper;
-
-import java.util.ArrayList;
 
 public abstract class ActionWindowManager {
     private int result = -1;
@@ -116,7 +116,6 @@ public abstract class ActionWindowManager {
                 : getStartText();
         InfoWindowBody questInfo = new InfoWindowBody(startText, this.getVars(), this.getHelper());
         this.getWindow().updateBody(questInfo);
-        //TODO: change to action image
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createNextButton(new ClickListener() {
             @Override
@@ -149,7 +148,6 @@ public abstract class ActionWindowManager {
         }
         ChoicesWindowBody choicesWindow = new ChoicesWindowBody(buttons);
         this.getWindow().updateBody(choicesWindow);
-        //TODO: change to action image
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createBackButton(new ClickListener() {
             @Override
@@ -176,7 +174,6 @@ public abstract class ActionWindowManager {
         if (this.hasTextForResult()) {
             String resultText = (getResultText() == null)
                     ? pref + ".result." + variant + "." + result + this.getResultAddText() : getResultText();
-            //TODO: change to action image
             this.getWindow().setPlaceImageTexture();
             this.showActionResult(resultText, this.getResultVars(), new ClickListener() {
                 @Override

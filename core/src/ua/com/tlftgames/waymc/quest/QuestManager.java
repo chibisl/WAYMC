@@ -1,5 +1,8 @@
 package ua.com.tlftgames.waymc.quest;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
@@ -7,9 +10,6 @@ import com.badlogic.gdx.utils.JsonValue;
 import ua.com.tlftgames.waymc.GameCore;
 import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.place.Place;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class QuestManager {
     private HashMap<Integer, ArrayList<Integer>> placeQuests;

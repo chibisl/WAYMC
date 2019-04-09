@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.stage;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
@@ -31,8 +33,6 @@ import ua.com.tlftgames.waymc.screen.map.Station;
 import ua.com.tlftgames.waymc.screen.map.World;
 import ua.com.tlftgames.waymc.screen.map.WorldScrollPane;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
-
-import java.util.ArrayList;
 
 public class GameStage extends ReturnHandlingStage {
     public static final int MOVE_SOUND = 0;
@@ -86,10 +86,10 @@ public class GameStage extends ReturnHandlingStage {
         }
 
         Animator.addZeppelin(atlas.findRegion("zeppelin"), cityMg);
-        
+
         if (Gdx.app.getType() == ApplicationType.Desktop || Gdx.app.getType() == ApplicationType.WebGL) {
-        	this.addScrollRegions();
-        	this.worldScrollPane.clearListeners();
+            this.addScrollRegions();
+            this.worldScrollPane.clearListeners();
         }
 
         this.addAttentionMarkers(atlas);
@@ -106,27 +106,29 @@ public class GameStage extends ReturnHandlingStage {
     }
 
     private void addScrollRegions() {
-    	ScrollRegion leftScrollRegion = new ScrollRegion(-1);
-		leftScrollRegion.setBounds(0, 0, 50, this.getHeight());
-		this.addActor(leftScrollRegion);
-		
-		ScrollRegion rightScrollRegion = new ScrollRegion(1);
-		rightScrollRegion.setBounds(this.getWidth() - 50, 0, 50, this.getHeight());
-		this.addActor(rightScrollRegion);
-	}
+        ScrollRegion leftScrollRegion = new ScrollRegion(-1);
+        leftScrollRegion.setBounds(0, 0, 50, this.getHeight());
+        this.addActor(leftScrollRegion);
 
-	private void addAttentionMarkers(TextureAtlas atlas) {
+        ScrollRegion rightScrollRegion = new ScrollRegion(1);
+        rightScrollRegion.setBounds(this.getWidth() - 50, 0, 50, this.getHeight());
+        this.addActor(rightScrollRegion);
+    }
+
+    private void addAttentionMarkers(TextureAtlas atlas) {
         TextureRegion leftMarker = atlas.findRegion("marker-left");
         TextureRegion rightMarker = atlas.findRegion("marker-right");
         TextureRegion highAttention = atlas.findRegion("high-atention");
         TextureRegion attention = atlas.findRegion("atention");
         TextureRegion pin = atlas.findRegion("pin");
 
-        this.leftAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(attention), Metro.ATTENTION_LEFT);
+        this.leftAttentionMarker = this.createAttentionMarker(leftMarker, Station.createAttention(attention),
+                Metro.ATTENTION_LEFT);
         leftAttentionMarker.setPosition(40, 460);
         this.addActor(leftAttentionMarker);
 
-        this.rightAttentionMarker = this.createAttentionMarker(rightMarker, Station.createAttention(attention), Metro.ATTENTION_RIGHT);
+        this.rightAttentionMarker = this.createAttentionMarker(rightMarker, Station.createAttention(attention),
+                Metro.ATTENTION_RIGHT);
         rightAttentionMarker.setPosition(this.getWidth() - rightAttentionMarker.getWidth() - 40, 460);
         this.addActor(rightAttentionMarker);
 
@@ -139,12 +141,13 @@ public class GameStage extends ReturnHandlingStage {
                 Metro.ATTENTION_HIGH_RIGHT);
         rightHighAttentionMarker.setPosition(this.getWidth() - rightHighAttentionMarker.getWidth() - 40, 380);
         this.addActor(rightHighAttentionMarker);
-        
+
         this.leftPinAttentionMarker = this.createAttentionMarker(leftMarker, new Image(pin), Metro.ATTENTION_PIN_LEFT);
         leftPinAttentionMarker.setPosition(40, 300);
         this.addActor(leftPinAttentionMarker);
 
-        this.rightPinAttentionMarker = this.createAttentionMarker(rightMarker, new Image(pin), Metro.ATTENTION_PIN_RIGHT);
+        this.rightPinAttentionMarker = this.createAttentionMarker(rightMarker, new Image(pin),
+                Metro.ATTENTION_PIN_RIGHT);
         rightPinAttentionMarker.setPosition(this.getWidth() - rightPinAttentionMarker.getWidth() - 40, 300);
         this.addActor(rightPinAttentionMarker);
 
@@ -155,22 +158,24 @@ public class GameStage extends ReturnHandlingStage {
         Group attentionMarker = new Group();
         attentionMarker.setSize(65, 50);
         Image bgImage = new Image(bg);
-        bgImage.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT || attentionType == Metro.ATTENTION_PIN_LEFT) ?
-                0 : attentionMarker.getWidth() - bgImage.getWidth(),
+        bgImage.setPosition(
+                (attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT
+                        || attentionType == Metro.ATTENTION_PIN_LEFT) ? 0
+                                : attentionMarker.getWidth() - bgImage.getWidth(),
                 (attentionMarker.getHeight() - bgImage.getHeight()) / 2);
         attentionMarker.addActor(bgImage);
-        attention.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT || attentionType == Metro.ATTENTION_PIN_LEFT) ?
-                17 : 2, 2);
+        attention.setPosition((attentionType == Metro.ATTENTION_HIGH_LEFT || attentionType == Metro.ATTENTION_LEFT
+                || attentionType == Metro.ATTENTION_PIN_LEFT) ? 17 : 2, 2);
         attentionMarker.addActor(attention);
         attentionMarker.setVisible(false);
         attentionMarker.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-            	if (attentionType == Metro.ATTENTION_PIN_LEFT || attentionType == Metro.ATTENTION_PIN_RIGHT) {
-            		GameStage.this.worldScrollPane.scrollToPin();
-            	} else {
-            		GameStage.this.worldScrollPane.scrollToAttention(attentionType);
-            	}
+                if (attentionType == Metro.ATTENTION_PIN_LEFT || attentionType == Metro.ATTENTION_PIN_RIGHT) {
+                    GameStage.this.worldScrollPane.scrollToPin();
+                } else {
+                    GameStage.this.worldScrollPane.scrollToAttention(attentionType);
+                }
             }
         });
         return attentionMarker;
@@ -272,11 +277,11 @@ public class GameStage extends ReturnHandlingStage {
         updateAttentionMarker(this.leftAttentionMarker, getLeftDistance(scrollX, leftAttentionX));
         updateAttentionMarker(this.rightAttentionMarker, getRightDistance(scrollX, rightAttentionX));
     }
-    
+
     public void updatePinAttentionMarkers(float scrollX, float leftAttentionX, float rightAttentionX) {
-    	updateAttentionMarker(this.leftPinAttentionMarker, getLeftDistance(scrollX, leftAttentionX));
+        updateAttentionMarker(this.leftPinAttentionMarker, getLeftDistance(scrollX, leftAttentionX));
         updateAttentionMarker(this.rightPinAttentionMarker, getRightDistance(scrollX, rightAttentionX));
-	}
+    }
 
     private void updateAttentionMarker(Group marker, float distance) {
         if (marker == null)
@@ -290,37 +295,37 @@ public class GameStage extends ReturnHandlingStage {
         }
 
     }
-    
+
     private class ScrollRegion extends Actor {
-    	private boolean hover = false;
-    	private float speed = 500;
-    	private int direction = 1;
-    	
-    	public ScrollRegion(int direction) {
-    		this.direction = direction;
-    		this.addListener(new InputListener() {
+        private boolean hover = false;
+        private float speed = 500;
+        private int direction = 1;
+
+        public ScrollRegion(int direction) {
+            this.direction = direction;
+            this.addListener(new InputListener() {
                 public void enter(InputEvent event, float x, float y, int pointer, Actor fromActor) {
-                	ScrollRegion.this.setHover(true);
+                    ScrollRegion.this.setHover(true);
                 }
-                
+
                 public void exit(InputEvent event, float x, float y, int pointer, Actor fromActor) {
-                	ScrollRegion.this.setHover(false);
+                    ScrollRegion.this.setHover(false);
                 }
-    		});
-    	}
-    	
-    	public void setHover(boolean hover) {
-    		this.hover = hover;
-    	}
-    	
-    	public void act (float delta) {
-    		WorldScrollPane pane = GameStage.this.worldScrollPane;
-    		if (hover) {
-				float x = pane.getScrollX() + direction * speed * delta;
-				pane.setScrollX(x);
-				pane.updateVisualScroll();
-    		}
-    	}
+            });
+        }
+
+        public void setHover(boolean hover) {
+            this.hover = hover;
+        }
+
+        public void act(float delta) {
+            WorldScrollPane pane = GameStage.this.worldScrollPane;
+            if (hover) {
+                float x = pane.getScrollX() + direction * speed * delta;
+                pane.setScrollX(x);
+                pane.updateVisualScroll();
+            }
+        }
     }
 
 }

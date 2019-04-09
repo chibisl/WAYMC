@@ -1,5 +1,11 @@
 package ua.com.tlftgames.waymc.screen.map;
 
+import static com.badlogic.gdx.math.Interpolation.exp10;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.delay;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.moveTo;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
+
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
@@ -9,12 +15,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import ua.com.tlftgames.waymc.Config;
 import ua.com.tlftgames.waymc.CoolRandomizer;
 import ua.com.tlftgames.waymc.GameCore;
-
-import static com.badlogic.gdx.math.Interpolation.exp10;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.delay;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.moveTo;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.run;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
 
 public class World extends Group {
     private SkylineLayer skyline;

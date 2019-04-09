@@ -33,8 +33,6 @@ public class ItemManager {
             Item item = this.createItem(itemData);
             items.put(itemData.name(), item);
             if (item.getLevel() == 0) {
-                // chance to find item one more time
-                marketList.add(itemData.name());
                 marketList.add(itemData.name());
             }
             if (item.isCreatable()) {
@@ -147,11 +145,7 @@ public class ItemManager {
     }
 
     public String getItemFromMarket() {
-        String[] neededItems = getNeededItems();
-        if (neededItems != null && Math.random() > 0.25f) {
-            return neededItems[(int) (Math.random() * neededItems.length)];
-        }
-        return this.market.getRandomElement();
+        return market.getRandomElement();
     }
 
     public String getRandomItemReceipt() {
@@ -266,7 +260,7 @@ public class ItemManager {
         ArrayList<String> resources = this.getOwnResources();
         String lostItem = resources.get((int) (Math.random() * resources.size()));
         GameCore.getInstance().getNotificationManager()
-        	.addNotification(new Notification(this.getItem(lostItem).getImage(), "notification.item.losted"));
+                .addNotification(new Notification(this.getItem(lostItem).getImage(), "notification.item.losted"));
         this.removeOwnItem(lostItem);
     }
 
