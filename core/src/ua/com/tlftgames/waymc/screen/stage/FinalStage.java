@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.stage;
 
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
+
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -18,8 +20,6 @@ import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.screen.StageScreen;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeIn;
-
 public class FinalStage extends ReturnHandlingStage {
     public final static int TYPE_GAME_OVER = 0;
     public final static int TYPE_GAME_WIN = 1;
@@ -29,8 +29,10 @@ public class FinalStage extends ReturnHandlingStage {
 
     public FinalStage(int type) {
         GameCore.getInstance().clearProgress();
-        if (type < FinalStage.TYPE_GAME_OVER) type = FinalStage.TYPE_GAME_OVER;
-        if (type > FinalStage.TYPE_GAME_WIN) type = FinalStage.TYPE_GAME_WIN;
+        if (type < FinalStage.TYPE_GAME_OVER)
+            type = FinalStage.TYPE_GAME_OVER;
+        if (type > FinalStage.TYPE_GAME_WIN)
+            type = FinalStage.TYPE_GAME_WIN;
         this.type = type;
         Manager.getInstance().load("img/menu.pack", TextureAtlas.class);
         if (this.type == FinalStage.TYPE_GAME_OVER)
@@ -42,8 +44,7 @@ public class FinalStage extends ReturnHandlingStage {
 
     @Override
     public boolean allLoaded() {
-        return (Manager.getInstance().isLoaded("img/menu.pack")
-                && Manager.getInstance().isLoaded(musicFile));
+        return (Manager.getInstance().isLoaded("img/menu.pack") && Manager.getInstance().isLoaded(musicFile));
     }
 
     @Override
@@ -84,7 +85,11 @@ public class FinalStage extends ReturnHandlingStage {
         newGame.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                StageScreen.getInstance().setStage(new SlideStage(SlideStage.TYPE_INTRO));
+                if (Settings.getInstance().getIntroEnable()) {
+                    StageScreen.getInstance().setStage(new SlideStage(SlideStage.TYPE_INTRO));
+                } else {
+                    StageScreen.getInstance().setStage(new GameStage());
+                }
             }
         });
         this.addActor(newGame);

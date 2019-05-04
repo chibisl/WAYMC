@@ -15,9 +15,14 @@ import ua.com.tlftgames.waymc.item.Item;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.place.Place;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.ui.Button;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
+import ua.com.tlftgames.waymc.screen.ui.window.qte.LuckWindowBody;
+import ua.com.tlftgames.waymc.screen.ui.window.qte.MemoryWindowBody;
+import ua.com.tlftgames.waymc.screen.ui.window.qte.ReactionWindowBody;
+import ua.com.tlftgames.waymc.screen.ui.window.qte.SpeedWindowBody;
 
 public class PlaceWindowManager extends ActionWindowManager {
     public final static int ACTION_WAIT = 0;
@@ -27,20 +32,37 @@ public class PlaceWindowManager extends ActionWindowManager {
     public final static int VARIANT_MOVE = 1;
     public final static int VARIANT_RUN = 2;
     public final static int VARIANT_HIDE = 3;
+    public final static int QTE_LUCK = 0;
+    public final static int QTE_REACTION = 1;
+    public final static int QTE_SPEED = 2;
+    public final static int QTE_MEMORY = 3;
     public final static int RESULT_BAD = 0;
     public final static int RESULT_GOOD = 1;
-    public final static int RESULT_LOST_MONEY = 2;
-    public final static int RESULT_LOST_ITEM = 3;
     public final static int SEARCH_QUEST_TYPE_MONEY = 0;
     public final static int SEARCH_QUEST_TYPE_ITEM = 1;
     private boolean moving = false;
     private int crimeSubLife = 0;
     private boolean needTutorial = true;
+    private boolean needQTELuckTutorial = true;
+    private boolean needQTEReactionTutorial = true;
+    private boolean needQTESpeedTutorial = true;
+    private boolean needQTEMemoryTutorial = true;
+    private int[] testQTE = { QTE_LUCK, QTE_MEMORY };
+    private int[] lifeQTE = { QTE_REACTION, QTE_SPEED, QTE_LUCK };
+    private int qte = -1;
 
     public PlaceWindowManager(UIGroup group) {
         super(group, "place");
         needTutorial = Settings.getInstance().getTutorialEnable()
                 && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_CRIME);
+        needQTELuckTutorial = Settings.getInstance().getTutorialEnable()
+                && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_QTE_LUCK);
+        needQTEReactionTutorial = Settings.getInstance().getTutorialEnable()
+                && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_QTE_REACTION);
+        needQTESpeedTutorial = Settings.getInstance().getTutorialEnable()
+                && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_QTE_SPEED);
+        needQTEMemoryTutorial = Settings.getInstance().getTutorialEnable()
+                && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_QTE_MEMORY);
     }
 
     public void showPlace(Place place) {
@@ -65,7 +87,9 @@ public class PlaceWindowManager extends ActionWindowManager {
         double test = (float) GameCore.getInstance().getPlaceManager().getCurrentPlace().getCrimeLevel()
                 / (Config.getInstance().allCrimeLevel);
         GameCore.getInstance().getPlaceManager().updatePlaceCrime();
-        return Math.random() < test;
+        float multiplier = GameCore.getInstance().getItemManager().hasItem("cloak_ii") ? 0.6f
+                : (GameCore.getInstance().getItemManager().hasItem("cloak") ? 0.8f : 1f);
+        return Math.random() < test * multiplier;
     }
 
     protected void startCrime() {
@@ -79,12 +103,106 @@ public class PlaceWindowManager extends ActionWindowManager {
     public void showCrimeWindow() {
         if (!GameCore.getInstance().setCurrentStep(GameCore.STEP_CRIME))
             return;
-        crimeSubLife = Config.getInstance().crimeSubLife + (int) (Math.random() * 2);
+        crimeSubLife = Config.getInstance().crimeSubLife + (int) (Math.random() * 3);
         GameCore.getInstance().getSave().saveProgress(Save.SUBEDLIFE_KEY, crimeSubLife);
 
         int action = needTutorial ? ACTION_TUTORIAL : ((moving && Math.random() < 0.5f) ? ACTION_WAIT : ACTION_SEARCH);
         this.setAction(action);
         this.showActionStartText();
+    }
+
+    @Override
+    protected ClickListener getVariantListener(final int variant) {
+        return new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                PlaceWindowManager.this.setVariant(variant);
+                PlaceWindowManager.this.setQTE(variant);
+                if (PlaceWindowManager.this.isNeedQTETutorial()) {
+                    PlaceWindowManager.this.showQTETutorial();
+                } else {
+                    PlaceWindowManager.this.showQTE();
+                }
+            }
+        };
+    }
+
+    private void setQTE(int variant) {
+        switch (variant) {
+        case VARIANT_RUN:
+        case VARIANT_MOVE:
+            this.qte = lifeQTE[(int) (Math.random() * lifeQTE.length)];
+            break;
+        default:
+            this.qte = testQTE[(int) (Math.random() * testQTE.length)];
+        }
+    }
+
+    private boolean isNeedQTETutorial() {
+        switch (this.qte) {
+        case QTE_REACTION:
+            return this.needQTEReactionTutorial;
+        case QTE_LUCK:
+            return this.needQTELuckTutorial;
+        case QTE_SPEED:
+            return this.needQTESpeedTutorial;
+        case QTE_MEMORY:
+            return this.needQTEMemoryTutorial;
+        default:
+            return false;
+        }
+    }
+
+    protected void showQTETutorial() {
+        switch (this.qte) {
+        case QTE_REACTION:
+            this.needQTEReactionTutorial = false;
+            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_QTE_REACTION);
+            break;
+        case QTE_LUCK:
+            this.needQTELuckTutorial = false;
+            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_QTE_LUCK);
+            break;
+        case QTE_SPEED:
+            this.needQTESpeedTutorial = false;
+            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_QTE_SPEED);
+            break;
+        case QTE_MEMORY:
+            this.needQTEMemoryTutorial = false;
+            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_QTE_MEMORY);
+            break;
+        }
+        this.getWindow().setPlaceImageTexture();
+        this.getWindow().updateBody(new InfoWindowBody("place.qte." + this.qte, null, this.getHelper()));
+        this.getWindow().setBottomButtons(this.getHelper().createNextButton(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                PlaceWindowManager.this.showQTE();
+            }
+        }));
+        this.getWindow().show();
+    }
+
+    protected void showQTE() {
+        int difficultLevel = Math.min(GameCore.getInstance().getPlaceManager().getStepCount() / 15, 3);
+        switch (this.qte) {
+        case QTE_REACTION:
+            this.getWindow().updateBody(new ReactionWindowBody(this, difficultLevel));
+            break;
+        case QTE_SPEED:
+            this.getWindow().updateBody(new SpeedWindowBody(this, difficultLevel));
+            break;
+        case QTE_MEMORY:
+            this.getWindow().updateBody(new MemoryWindowBody(this, difficultLevel));
+            break;
+        case QTE_LUCK:
+        default:
+            this.getWindow().updateBody(new LuckWindowBody(this, difficultLevel));
+            break;
+        }
+        this.getWindow().getImage().setVisible(false);
+        this.getWindow().setBottomButtons(new Button[] {});
+        this.getWindow().show();
     }
 
     public void startSearch() {
@@ -123,7 +241,6 @@ public class PlaceWindowManager extends ActionWindowManager {
         InfoWindowBody questInfo = new InfoWindowBody(
                 GameCore.getInstance().getPlaceManager().getCurrentSearchText() + ".start", vars, this.getHelper());
         this.getWindow().updateBody(questInfo);
-        // TODO change to search image
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createNextButton(new ClickListener() {
             @Override
@@ -187,7 +304,6 @@ public class PlaceWindowManager extends ActionWindowManager {
 
         ChoicesWindowBody choicesWindow = new ChoicesWindowBody(buttons);
         this.getWindow().updateBody(choicesWindow);
-        // TODO: change to search image
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createBackButton(new ClickListener() {
             @Override
@@ -249,24 +365,19 @@ public class PlaceWindowManager extends ActionWindowManager {
 
     @Override
     public void action() {
-        if (getResult() == RESULT_BAD) {
-            switch (getVariant()) {
-            case VARIANT_RETURN:
-                GameCore.getInstance().getPlaceManager().returnToLastPlace();
-                break;
-            case VARIANT_MOVE:
-            case VARIANT_HIDE:
-            case VARIANT_RUN:
-                GameCore.getInstance().addLife(-1 * crimeSubLife);
-                break;
-            }
-        }
-        if (getResult() == RESULT_LOST_MONEY) {
-            GameCore.getInstance().addMoney(-1 * (Config.getInstance().runLostMoney + (int) (Math.random() * 6)));
+        if (needTutorial) {
+            needTutorial = false;
+            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_CRIME);
         }
         if (getResult() == RESULT_GOOD) {
             GameCore.getInstance().getNotificationManager()
                     .addNotification(new Notification("success", "notification.run.success"));
+        } else {
+            if (getVariant() == VARIANT_RETURN) {
+                GameCore.getInstance().getPlaceManager().returnToLastPlace();
+            } else if (this.qte == QTE_LUCK) {
+                GameCore.getInstance().addLife(-1 * crimeSubLife);
+            }
         }
 
         this.finishAction();
@@ -296,29 +407,18 @@ public class PlaceWindowManager extends ActionWindowManager {
     }
 
     @Override
-    protected void updateResult() {
-        if (needTutorial) {
-            this.setResult(RESULT_GOOD);
-            needTutorial = false;
-            Tutorial.setTutorialShowed(Tutorial.TUTORIAL_CRIME);
-            return;
-        }
-        float test = GameCore.getInstance().getItemManager().hasItem("cloak_ii") ? 0.1f
-                : (GameCore.getInstance().getItemManager().hasItem("cloak") ? 0.25f : 0.5f);
-        int result = (Math.random() < test) ? RESULT_BAD : RESULT_GOOD;
-        if (getVariant() == VARIANT_RUN && result == RESULT_BAD) {
-            if (GameCore.getInstance().getMoney() >= Config.getInstance().runLostMoney && Math.random() < 0.75f) {
-                result = RESULT_LOST_MONEY;
-            } else if (GameCore.getInstance().getItemManager().getOwnResources().size() > 0) {
-                result = RESULT_LOST_ITEM;
-                GameCore.getInstance().getItemManager().lostRandomResource();
-            }
-        }
-        this.setResult(result);
+    public void showActions() {
+        this.getUIGroup().getCurrentTypeWindowManager().showActions();
     }
 
     @Override
-    public void showActions() {
-        this.getUIGroup().getCurrentTypeWindowManager().showActions();
+    protected void updateResult() {
+
+    }
+
+    @Override
+    public void finishAction() {
+        super.finishAction();
+        this.qte = -1;
     }
 }

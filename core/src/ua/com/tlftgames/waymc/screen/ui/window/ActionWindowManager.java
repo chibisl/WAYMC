@@ -133,17 +133,7 @@ public abstract class ActionWindowManager {
                     : getVariantText(variant);
             TextButton btn = this.getHelper().createTextButton(variantText, getVariantVars(variant));
             btn.setUserObject(variant);
-            btn.addListener(new ClickListener() {
-                @Override
-                public void clicked(InputEvent event, float x, float y) {
-                    int variant = (Integer) event.getListenerActor().getUserObject();
-                    if (ActionWindowManager.this.canDoVariant(variant)) {
-                        ActionWindowManager.this.setVariant(variant);
-                        ActionWindowManager.this.updateResult();
-                        ActionWindowManager.this.showResult();
-                    }
-                }
-            });
+            btn.addListener(this.getVariantListener(variant));
             buttons.add(btn);
         }
         ChoicesWindowBody choicesWindow = new ChoicesWindowBody(buttons);
@@ -156,6 +146,19 @@ public abstract class ActionWindowManager {
             }
         }));
         this.getWindow().show();
+    }
+
+    protected ClickListener getVariantListener(final int variant) {
+        return new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                if (ActionWindowManager.this.canDoVariant(variant)) {
+                    ActionWindowManager.this.setVariant(variant);
+                    ActionWindowManager.this.updateResult();
+                    ActionWindowManager.this.showResult();
+                }
+            }
+        };
     }
 
     protected ArrayList<String> getVariantVars(int variant) {

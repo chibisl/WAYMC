@@ -42,15 +42,18 @@ public class ActionWindow extends Window {
     }
 
     public void setImageTexture(final AtlasRegion texture) {
-        if (!this.imageTextureName.contentEquals(texture.name + "_" + texture.index)) {
-            this.image.addAction(sequence(fadeOut(0.2f), run(new Runnable() {
-                @Override
-                public void run() {
-                    ActionWindow.this.getImage().setDrawable(new TextureRegionDrawable(texture));
-                    ActionWindow.this.setImageTextureName(texture.name + "_" + texture.index);
-                }
-            }), fadeIn(0.2f)));
+        this.image.setVisible(true);
+        if (this.imageTextureName.contentEquals(texture.name + "_" + texture.index)) {
+            return;
         }
+
+        this.image.addAction(sequence(fadeOut(0.2f), run(new Runnable() {
+            @Override
+            public void run() {
+                ActionWindow.this.getImage().setDrawable(new TextureRegionDrawable(texture));
+                ActionWindow.this.setImageTextureName(texture.name + "_" + texture.index);
+            }
+        }), fadeIn(0.2f)));
     }
 
     public void setPlaceImageTexture() {

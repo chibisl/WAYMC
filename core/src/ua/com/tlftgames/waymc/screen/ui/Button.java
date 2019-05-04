@@ -56,6 +56,10 @@ public class Button extends Actor {
         this(bg, bg);
     }
 
+    public void setBg(TextureRegion bg) {
+        this.bg = bg;
+    }
+
     public void setTouched(boolean touched) {
         this.touched = touched;
     }
@@ -78,9 +82,13 @@ public class Button extends Actor {
         color.a *= parentAlpha;
         batch.setColor(color.r, color.g, color.b, color.a);
         if (isTouched() || isChecked()) {
-            batch.draw(bgTouched, getX() + (this.getWidth() - bgTouched.getRegionWidth()) / 2, getY());
+            batch.draw(bgTouched, getX() + (this.getWidth() - bgTouched.getRegionWidth()) / 2, getY(),
+                    this.getOriginX(), this.getOriginY(), bgTouched.getRegionWidth(), bgTouched.getRegionHeight(),
+                    this.getScaleX(), this.getScaleY(), this.getRotation());
         } else {
-            batch.draw(bg, getX() + (this.getWidth() - bg.getRegionWidth()) / 2, getY());
+            batch.draw(bg, getX() + (this.getWidth() - bg.getRegionWidth()) / 2, getY(), this.getOriginX(),
+                    this.getOriginY(), bg.getRegionWidth(), bg.getRegionHeight(), this.getScaleX(), this.getScaleY(),
+                    this.getRotation());
         }
         super.draw(batch, parentAlpha);
         batch.setColor(Color.WHITE);

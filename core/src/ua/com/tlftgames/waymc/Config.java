@@ -18,7 +18,7 @@ public class Config {
     public final int startMoney = 100;
     public final int maxLife = 20;
     public final int crimeLevel = 0;
-    public final int crimeSubLife = 4;
+    public final int crimeSubLife = 3;
     public final int allCrimeLevel = 10;
     public final int restAddLife = 12;
     public final int restCheapAddLife = 5;

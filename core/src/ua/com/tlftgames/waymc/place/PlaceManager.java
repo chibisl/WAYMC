@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.place;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
@@ -8,8 +10,6 @@ import ua.com.tlftgames.waymc.Config;
 import ua.com.tlftgames.waymc.GameCore;
 import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.listener.Dispatcher;
-
-import java.util.ArrayList;
 
 public class PlaceManager {
     private int lastPlace = 0;
@@ -211,7 +211,7 @@ public class PlaceManager {
     public void updatePlaceCrime() {
         stepCount++;
         GameCore.getInstance().getSave().saveProgress(Save.STEP_COUNT, stepCount);
-        int currentMinCrimeLevel = Math.min((int)(stepCount / 5), (int)(Config.getInstance().allCrimeLevel / 2));
+        int currentMinCrimeLevel = Math.min((int) (stepCount / 5), (int) (Config.getInstance().allCrimeLevel / 2));
         for (int i = 0; i < this.places.length; i++) {
             if ((i == this.currentPlace - 1 || i == this.currentPlace + 1)) {
                 this.places[i].addCrime(1);
@@ -248,5 +248,9 @@ public class PlaceManager {
 
     public void setStepCount(int stepCount) {
         this.stepCount = stepCount;
+    }
+
+    public int getStepCount() {
+        return this.stepCount;
     }
 }

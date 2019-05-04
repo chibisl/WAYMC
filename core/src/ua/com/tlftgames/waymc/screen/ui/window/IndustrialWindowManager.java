@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -12,8 +14,6 @@ import ua.com.tlftgames.waymc.screen.StageScreen;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
-
-import java.util.ArrayList;
 
 public class IndustrialWindowManager extends TypeWindowManager {
     public final static int VARIANT_HARD = 0;
@@ -37,7 +37,6 @@ public class IndustrialWindowManager extends TypeWindowManager {
 
         StageScreen.getInstance().getTracker().trackEvent("Industrial", "action", "workshop", 1);
         this.getWindow().updateBody(workshopBody);
-        //TODO: change to workshop image
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createReturnButton(new ClickListener() {
             @Override

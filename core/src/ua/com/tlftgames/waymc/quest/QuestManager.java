@@ -132,10 +132,7 @@ public class QuestManager {
     }
 
     public Quest getNextQuest() {
-        Quest nextQuest = null;
-        if (Math.random() < 0.4f) {
-            nextQuest = getQuestForPlace(GameCore.getInstance().getPlaceManager().getCurrentPlace());
-        }
+        Quest nextQuest = getQuestForPlace(GameCore.getInstance().getPlaceManager().getCurrentPlace());
         if (nextQuest != null)
             this.setOpenQuest(nextQuest.getIndex());
 
@@ -256,9 +253,11 @@ public class QuestManager {
         if (allQuests != null) {
             quests.addAll(allQuests);
         }
-        if (quests.isEmpty()) {
+
+        if (quests.isEmpty() || !isChanceForQuest(quests.size())) {
             return null;
         }
+
         while (!quests.isEmpty()) {
             if (lastQuest >= 0) {
                 quests.remove(Integer.valueOf(lastQuest));
@@ -274,6 +273,11 @@ public class QuestManager {
         }
 
         return null;
+    }
+
+    private boolean isChanceForQuest(int size) {
+        float chance = (float) size / 27;
+        return size > 0 && Math.random() < chance;
     }
 
     public Quest getQuest(int index) {

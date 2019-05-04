@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -13,8 +15,6 @@ import ua.com.tlftgames.waymc.screen.StageScreen;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
-
-import java.util.ArrayList;
 
 public class RecreationalWindowManager extends TypeWindowManager {
     private final int ACTION_INVENTION_CLUB = 0;
@@ -54,7 +54,7 @@ public class RecreationalWindowManager extends TypeWindowManager {
             eventsData.add(i);
         }
         events = new CoolRandomizer<Integer>(eventsData, eventsData.size() - 1);
-        currentEvents = new int[]{0, 1};
+        currentEvents = new int[] { 0, 1 };
     }
 
     public void setCurrentEvents(int[] events) {
@@ -297,7 +297,8 @@ public class RecreationalWindowManager extends TypeWindowManager {
         case VARIANT_BET_ON_LEADER:
         case VARIANT_BET_ON_DARK_HORSE:
         case VARIANT_BET_ON_OUTSIDER:
-            label = (variant == VARIANT_BET_ON_LEADER ? "Leader" : (variant == VARIANT_BET_ON_DARK_HORSE ? "DarkHorse" : "Outsider"));
+            label = (variant == VARIANT_BET_ON_LEADER ? "Leader"
+                    : (variant == VARIANT_BET_ON_DARK_HORSE ? "DarkHorse" : "Outsider"));
             StageScreen.getInstance().getTracker().trackEvent("Recreational", "choice", "raceBet" + label, 1);
             if (getResult() == RESULT_GOOD) {
                 GameCore.getInstance().addMoney((int) (Config.getInstance().racesBet * this.racesMultiply[firstHorse]));
@@ -325,7 +326,6 @@ public class RecreationalWindowManager extends TypeWindowManager {
     @Override
     public boolean getStartWindow() {
         if (needTutorial) {
-            //TODO: change to tutorial image
             this.getWindow().setPlaceImageTexture();
             this.showActionResult("tutorial." + tutorial, null, new ClickListener() {
                 @Override
@@ -352,15 +352,15 @@ public class RecreationalWindowManager extends TypeWindowManager {
                 text.append("+recreational.and+");
             }
             switch (currentEvents[i]) {
-                case ACTION_INVENTION_CLUB:
-                    text.append("recreational.invention.club");
-                    break;
-                case ACTION_CASINO:
-                    text.append("recreational.casino");
-                    break;
-                case ACTION_RACES:
-                    text.append("recreational.races");
-                    break;
+            case ACTION_INVENTION_CLUB:
+                text.append("recreational.invention.club");
+                break;
+            case ACTION_CASINO:
+                text.append("recreational.casino");
+                break;
+            case ACTION_RACES:
+                text.append("recreational.races");
+                break;
             }
         }
         this.getWindow().setPlaceImageTexture();

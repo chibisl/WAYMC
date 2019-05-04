@@ -11,7 +11,7 @@ public class DesktopLauncher implements Tracker {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.width = (int) (LwjglApplicationConfiguration.getDesktopDisplayMode().width);
         config.height = LwjglApplicationConfiguration.getDesktopDisplayMode().height;
-        config.title = "Who Are You, Mr. Cooper?";
+        config.title = "Who Are You, Mr Cooper?";
         config.resizable = false;
         config.fullscreen = true;
         config.allowSoftwareMode = true;

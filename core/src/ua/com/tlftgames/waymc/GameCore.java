@@ -72,6 +72,9 @@ public class GameCore {
     }
 
     public int addLife(int addLife) {
+        if (this.life == 0) {
+            return this.life;
+        }
         if (addLife < 0) {
             if (this.itemManager.hasItem("shield_ii")) {
                 addLife = addLife + 3;
