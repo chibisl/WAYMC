@@ -11,6 +11,7 @@ import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.stage.GameStage;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
@@ -271,6 +272,11 @@ public class MerchantWindowManager extends TypeWindowManager {
                 : "sale." + (this.getVariant() == VARIANT_SALE_CANCEL ? "fail" : "done")));
         this.finishAction();
         this.startQuest();
+    }
+
+    @Override
+    protected int getSound() {
+        return GameStage.MERCHANT_SOUND;
     }
 
 }

@@ -1,5 +1,7 @@
 package ua.com.tlftgames.waymc.screen.ui.window;
 
+import java.util.ArrayList;
+
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
@@ -9,11 +11,10 @@ import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.stage.GameStage;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
-
-import java.util.ArrayList;
 
 public class ResidentialWindowManager extends TypeWindowManager {
     public final static int VARIANT_EXPENSIVE = 0;
@@ -31,7 +32,7 @@ public class ResidentialWindowManager extends TypeWindowManager {
     public final static int ACTION_PLAY_CLUB = 3;
     private int restCost = 10;
     private int restCheapCost = 10;
-    private float[] playChances = {0, 0.1f, 0.25f, 0.5f, 0.85f};
+    private float[] playChances = { 0, 0.1f, 0.25f, 0.5f, 0.85f };
 
     public ResidentialWindowManager(UIGroup group) {
         super(group, "residential", Tutorial.TUTORIAL_RESIDENTIAL);
@@ -86,8 +87,8 @@ public class ResidentialWindowManager extends TypeWindowManager {
     @Override
     public boolean canDoVariant(int variant) {
         if (variant == VARIANT_CHEAP || variant == VARIANT_EXPENSIVE || variant == VARIANT_TRAINING) {
-            int cost = (variant == VARIANT_CHEAP) ? restCheapCost :
-                    ((variant == VARIANT_EXPENSIVE) ? this.restCost : Config.getInstance().playClubCost);
+            int cost = (variant == VARIANT_CHEAP) ? restCheapCost
+                    : ((variant == VARIANT_EXPENSIVE) ? this.restCost : Config.getInstance().playClubCost);
             if (GameCore.getInstance().getMoney() < cost) {
                 GameCore.getInstance().getNotificationManager()
                         .addNotification(new Notification("money", "notification.money.not.match"));
@@ -106,12 +107,12 @@ public class ResidentialWindowManager extends TypeWindowManager {
                 if (getVariant() == VARIANT_EXPENSIVE) {
                     StageScreen.getInstance().getTracker().trackEvent("Residential", "choice", "restExpensive", 1);
                     switch (getResult()) {
-                        case RESULT_BAD:
-                            addLife = addLife / 2;
-                            break;
-                        case RESULT_GOOD:
-                            subMoney = subMoney / 2;
-                            break;
+                    case RESULT_BAD:
+                        addLife = addLife / 2;
+                        break;
+                    case RESULT_GOOD:
+                        subMoney = subMoney / 2;
+                        break;
                     }
                 } else {
                     StageScreen.getInstance().getTracker().trackEvent("Residential", "choice", "restCheap", 1);
@@ -135,8 +136,10 @@ public class ResidentialWindowManager extends TypeWindowManager {
                     GameCore.getInstance().addMoney(Config.getInstance().playClubWin);
                 }
             }
-            if (getVariant() == VARIANT_TRAINING) GameCore.getInstance().addMoney(-1 * Config.getInstance().playClubCost);
-            if (getVariant() == VARIANT_PLAY) this.updatePlayLevel(-1);
+            if (getVariant() == VARIANT_TRAINING)
+                GameCore.getInstance().addMoney(-1 * Config.getInstance().playClubCost);
+            if (getVariant() == VARIANT_PLAY)
+                this.updatePlayLevel(-1);
             this.setQuestStartText("quest.after." + (this.getResult() == RESULT_BAD ? "fail" : "success"));
         }
         this.finishAction();
@@ -178,24 +181,24 @@ public class ResidentialWindowManager extends TypeWindowManager {
     public ArrayList<Integer> getVariants() {
         ArrayList<Integer> variants = new ArrayList<Integer>();
         switch (getAction()) {
-            case ACTION_REST_ALL:
-                variants.add(VARIANT_EXPENSIVE);
-                variants.add(VARIANT_CHEAP);
-                variants.add(VARIANT_NONE);
-                break;
-            case ACTION_REST_EXPENSIVE:
-                variants.add(VARIANT_EXPENSIVE);
-                variants.add(VARIANT_NONE);
-                break;
-            case ACTION_REST_CHEAP:
-                variants.add(VARIANT_CHEAP);
-                variants.add(VARIANT_NONE);
-                break;
-            case ACTION_PLAY_CLUB:
-                variants.add(VARIANT_TRAINING);
-                variants.add(VARIANT_PLAY);
-                variants.add(VARIANT_LEAVE);
-                break;
+        case ACTION_REST_ALL:
+            variants.add(VARIANT_EXPENSIVE);
+            variants.add(VARIANT_CHEAP);
+            variants.add(VARIANT_NONE);
+            break;
+        case ACTION_REST_EXPENSIVE:
+            variants.add(VARIANT_EXPENSIVE);
+            variants.add(VARIANT_NONE);
+            break;
+        case ACTION_REST_CHEAP:
+            variants.add(VARIANT_CHEAP);
+            variants.add(VARIANT_NONE);
+            break;
+        case ACTION_PLAY_CLUB:
+            variants.add(VARIANT_TRAINING);
+            variants.add(VARIANT_PLAY);
+            variants.add(VARIANT_LEAVE);
+            break;
         }
         return variants;
     }
@@ -204,34 +207,42 @@ public class ResidentialWindowManager extends TypeWindowManager {
     protected void updateResult() {
         int result = RESULT_NORMAL;
         int playLevel = GameCore.getInstance().getSave().loadPlayLevel();
-        switch(this.getVariant()) {
-            case VARIANT_CHEAP:
-            case VARIANT_EXPENSIVE:
-                if (Math.random() > 0.8f) result = (Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
-                if (getVariant() == VARIANT_CHEAP && result == RESULT_BAD) {
-                    if (GameCore.getInstance().getItemManager().getOwnResources().size() == 0) {
-                        result = RESULT_NORMAL;
-                    } else {
-                        GameCore.getInstance().getItemManager().lostRandomResource();
-                    }
+        switch (this.getVariant()) {
+        case VARIANT_CHEAP:
+        case VARIANT_EXPENSIVE:
+            if (Math.random() > 0.8f)
+                result = (Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
+            if (getVariant() == VARIANT_CHEAP && result == RESULT_BAD) {
+                if (GameCore.getInstance().getItemManager().getOwnResources().size() == 0) {
+                    result = RESULT_NORMAL;
+                } else {
+                    GameCore.getInstance().getItemManager().lostRandomResource();
                 }
-                break;
-            case VARIANT_PLAY:
-                result = (Math.random() < this.playChances[playLevel]) ? RESULT_GOOD : RESULT_BAD;
-                break;
-            case VARIANT_TRAINING:
-                result = (playLevel < 1 || Math.random() < 0.8f) ? RESULT_GOOD : RESULT_BAD;
-                break;
+            }
+            break;
+        case VARIANT_PLAY:
+            result = (Math.random() < this.playChances[playLevel]) ? RESULT_GOOD : RESULT_BAD;
+            break;
+        case VARIANT_TRAINING:
+            result = (playLevel < 1 || Math.random() < 0.8f) ? RESULT_GOOD : RESULT_BAD;
+            break;
         }
         this.setResult(result);
     }
 
     private void updatePlayLevel(int add) {
         int playLevel = GameCore.getInstance().getSave().loadPlayLevel();
-        playLevel +=add;
-        if (playLevel > 4) playLevel = 4;
-        else if (playLevel < 0) playLevel = 0;
+        playLevel += add;
+        if (playLevel > 4)
+            playLevel = 4;
+        else if (playLevel < 0)
+            playLevel = 0;
         GameCore.getInstance().getSave().saveProgress(Save.PLAY_LEVEL_KEY, playLevel);
+    }
+
+    @Override
+    protected int getSound() {
+        return GameStage.RESIDENTIAL_SOUND;
     }
 
 }

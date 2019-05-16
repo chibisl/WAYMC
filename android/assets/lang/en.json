@@ -594,7 +594,12 @@
   "place.qte.0": "For a successful result, you must guess the card with the [#ffffff]O[] symbol. An open card with [#ffffff]X[] means that luck is not on your side today.",
   "place.qte.1": "To successfully escape, your reaction time must be fast. Click on all opened cards with the [#ffffff]O[] symbol and do not touch those with [#ffffff]X[]. Each mistake will worsen the state of health.",
   "place.qte.2": "Hurry to click on all the cards with the [#ffffff]O[] symbol and do not touch those with [#ffffff]X[]. Each mistake will worsen the state of health.",
-  "place.qte.3": "Remember and hurry to open all the cards with the [#ffffff]O[] symbol. An open card with [#ffffff]X[] will lead to a failed result.",
+  "place.qte.3": "Remember and open all the cards with the [#ffffff]O[] symbol. An open card with [#ffffff]X[] will lead to a failed result.",
+  
+  "qte.luck": "Test Your Luck",
+  "qte.reaction": "Test Your Reaction Time",
+  "qte.speed": "Test Your Speed",
+  "qte.memory": "Test Your Memory",
 
   "gears": "gears",
   "lamps": "light bulbs",

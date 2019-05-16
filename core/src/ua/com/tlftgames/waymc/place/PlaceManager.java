@@ -34,7 +34,7 @@ public class PlaceManager {
             int i = 0;
             while (placeData != null) {
                 this.places[i] = new Place(i, placeData.getString("name"), placeData.getString("info"),
-                        placeData.getInt("type"), Config.getInstance().crimeLevel);
+                        placeData.getInt("type"));
                 placeData = placeData.next();
                 i++;
             }
@@ -202,35 +202,6 @@ public class PlaceManager {
         return null;
     }
 
-    public void setPlaceCrime(ArrayList<Integer> placeCrime) {
-        for (int i = 0; i < placeCrime.size(); i++) {
-            this.places[i].setCrime(placeCrime.get(i));
-        }
-    }
-
-    public void updatePlaceCrime() {
-        stepCount++;
-        GameCore.getInstance().getSave().saveProgress(Save.STEP_COUNT, stepCount);
-        int currentMinCrimeLevel = Math.min((int) (stepCount / 5), (int) (Config.getInstance().allCrimeLevel / 2));
-        for (int i = 0; i < this.places.length; i++) {
-            if ((i == this.currentPlace - 1 || i == this.currentPlace + 1)) {
-                this.places[i].addCrime(1);
-            } else if ((i == this.currentPlace)) {
-                this.places[i].addCrime(2);
-            } else if (this.places[i].getCrimeLevel() > currentMinCrimeLevel) {
-                this.places[i].subCrime(1);
-            } else if (this.places[i].getCrimeLevel() < currentMinCrimeLevel) {
-                this.places[i].addCrime(1);
-            }
-        }
-
-        ArrayList<Integer> placeCrime = new ArrayList<Integer>();
-        for (Place place : places) {
-            placeCrime.add(place.getCrimeLevel());
-        }
-        GameCore.getInstance().getSave().saveProgress(Save.PLACE_CRIME_KEY, placeCrime);
-    }
-
     public int getMoveCost() {
         int distance = Math.abs(currentPlace - openPlace);
         return Config.getInstance().ticketPrice * distance;
@@ -244,6 +215,11 @@ public class PlaceManager {
     public void moveToOpenPlace() {
         setLastPlace(this.currentPlace);
         this.setCurrentPlace(this.getOpenPlaceIndex());
+    }
+
+    public void incStepCount() {
+        stepCount++;
+        GameCore.getInstance().getSave().saveProgress(Save.STEP_COUNT, stepCount);
     }
 
     public void setStepCount(int stepCount) {

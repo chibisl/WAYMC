@@ -56,9 +56,12 @@ public abstract class TypeWindowManager extends ActionWindowManager {
     }
 
     protected void startPlaceWindow() {
+        this.getUIGroup().getStage().playSound(this.getSound());
         if (!this.getStartWindow())
             this.showActions();
     }
+
+    abstract protected int getSound();
 
     protected void startQuest() {
         Quest quest = GameCore.getInstance().getQuestManager().getNextQuest();

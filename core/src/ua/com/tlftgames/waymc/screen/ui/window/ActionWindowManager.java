@@ -174,6 +174,9 @@ public abstract class ActionWindowManager {
     }
 
     public void showResult() {
+        if (GameCore.getInstance().getLife() <= 0) {
+            return;
+        }
         if (this.hasTextForResult()) {
             String resultText = (getResultText() == null)
                     ? pref + ".result." + variant + "." + result + this.getResultAddText() : getResultText();

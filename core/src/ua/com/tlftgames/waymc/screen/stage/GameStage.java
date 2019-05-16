@@ -36,6 +36,11 @@ import ua.com.tlftgames.waymc.screen.ui.UIGroup;
 
 public class GameStage extends ReturnHandlingStage {
     public static final int MOVE_SOUND = 0;
+    public static final int RESIDENTIAL_SOUND = 1;
+    public static final int INDUSTRIAL_SOUND = 2;
+    public static final int MERCHANT_SOUND = 3;
+    public static final int RECREATIONAL_SOUND = 4;
+    public static final int CRIME_SOUND = 5;
     public static final int SMOKE_START_X = 784;
     public static final int SMOKE_START_Y = 585;
     public static final float SMOKE_START_SCALE = 0.05f;
@@ -58,6 +63,11 @@ public class GameStage extends ReturnHandlingStage {
         Manager.getInstance().load("img/game.pack", TextureAtlas.class);
         Manager.getInstance().load("sound/Despair and Triumph.mp3", Music.class);
         Manager.getInstance().load("sound/move.mp3", Sound.class);
+        Manager.getInstance().load("sound/residential.mp3", Sound.class);
+        Manager.getInstance().load("sound/industrial.mp3", Sound.class);
+        Manager.getInstance().load("sound/merchant.mp3", Sound.class);
+        Manager.getInstance().load("sound/recreational.mp3", Sound.class);
+        Manager.getInstance().load("sound/crime.mp3", Sound.class);
         sounds = new ArrayList<Sound>();
     }
 
@@ -71,6 +81,11 @@ public class GameStage extends ReturnHandlingStage {
             GameCore.getInstance().loadSavedParams();
         }
         sounds.add(Manager.getInstance().get("sound/move.mp3", Sound.class));
+        sounds.add(Manager.getInstance().get("sound/residential.mp3", Sound.class));
+        sounds.add(Manager.getInstance().get("sound/industrial.mp3", Sound.class));
+        sounds.add(Manager.getInstance().get("sound/merchant.mp3", Sound.class));
+        sounds.add(Manager.getInstance().get("sound/recreational.mp3", Sound.class));
+        sounds.add(Manager.getInstance().get("sound/crime.mp3", Sound.class));
 
         TextureAtlas atlas = Manager.getInstance().get("img/game.pack", TextureAtlas.class);
 
@@ -238,6 +253,11 @@ public class GameStage extends ReturnHandlingStage {
         Manager.getInstance().unload("sound/Despair and Triumph.mp3");
         Manager.getInstance().unload("img/game.pack");
         Manager.getInstance().unload("sound/move.mp3");
+        Manager.getInstance().unload("sound/residential.mp3");
+        Manager.getInstance().unload("sound/industrial.mp3");
+        Manager.getInstance().unload("sound/merchant.mp3");
+        Manager.getInstance().unload("sound/recreational.mp3");
+        Manager.getInstance().unload("sound/crime.mp3");
         super.dispose();
     }
 
@@ -257,7 +277,12 @@ public class GameStage extends ReturnHandlingStage {
     public boolean allLoaded() {
         return (Manager.getInstance().isLoaded("img/game.pack")
                 && Manager.getInstance().isLoaded("sound/Despair and Triumph.mp3")
-                && Manager.getInstance().isLoaded("sound/move.mp3"));
+                && Manager.getInstance().isLoaded("sound/move.mp3")
+                && Manager.getInstance().isLoaded("sound/residential.mp3")
+                && Manager.getInstance().isLoaded("sound/industrial.mp3")
+                && Manager.getInstance().isLoaded("sound/merchant.mp3")
+                && Manager.getInstance().isLoaded("sound/recreational.mp3")
+                && Manager.getInstance().isLoaded("sound/crime.mp3"));
     }
 
     private float getLeftDistance(float scrollX, float leftHighAttentionX) {

@@ -12,6 +12,7 @@ import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.stage.GameStage;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
@@ -373,6 +374,10 @@ public class RecreationalWindowManager extends TypeWindowManager {
     }
 
     public void updateEvents() {
+        if (GameCore.getInstance().getItemManager().hasAllReceipts()) {
+            this.setCurrentEvents(new int[] { 1, 2 });
+            return;
+        }
         int[] events = new int[2];
         events[0] = this.events.getRandomElement();
         events[1] = this.events.getRandomElement();
@@ -388,5 +393,10 @@ public class RecreationalWindowManager extends TypeWindowManager {
         this.firstHorse = GameCore.getInstance().getSave().loadFirstHorse();
         this.casinoWin = GameCore.getInstance().getSave().loadCasinoWin();
         super.loadParams();
+    }
+
+    @Override
+    protected int getSound() {
+        return GameStage.RECREATIONAL_SOUND;
     }
 }

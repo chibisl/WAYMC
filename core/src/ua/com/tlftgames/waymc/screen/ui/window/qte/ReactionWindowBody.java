@@ -13,6 +13,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 
@@ -25,37 +26,28 @@ public class ReactionWindowBody extends QTEWindowBody {
     private int cardHeight = 120;
     private ArrayList<Button> cards;
     private float time = 0;
-    private float timeOut = 0;
+    private float timeOut = 0.7f;
     private float fullTime = 0;
-    private float fullTimeOut = 20f;
+    private float fullTimeOut = 8f;
     private float waitTime = 1.5f;
     private int rowCount = 4;
     private int colCount = 4;
     private int cardCount = 0;
-    private boolean run = true;
+    private boolean run = false;
     private boolean win = true;
     private boolean lastSuccess = false;
     private int lifeDecrease = -3;
+    private int cardShowCount = 1;
+    private Image timer;
+    private float[] timeOuts = { 0.48f, 0.43f, 0.45f, 0.39f };
 
     public ReactionWindowBody(PlaceWindowManager manager, int difficultLevel) {
-        super(manager, difficultLevel);
+        super(manager, difficultLevel, "qte.reaction");
         cardCount = rowCount * colCount;
+        cardShowCount += (int) (difficultLevel / 2f);
         cards = new ArrayList<Button>(cardCount);
-        timeOut = 1f / (difficultLevel * 0.83f + 1.5f);
-        fullTimeOut -= difficultLevel * 5;
-
-        float step = (this.getWidth() - 50 - cardWidth) / colCount;
-        int startX = 25 + (int) step / 2;
-        int startY = (int) (step - cardHeight) / 2 - 50;
-
-        for (int row = 0; row < rowCount; row++)
-            for (int col = 0; col < colCount; col++) {
-                float x = col * step + startX;
-                float y = row * step + startY;
-                Button card = this.createCard(x, y);
-                this.addActor(card);
-                cards.add(card);
-            }
+        timeOut = timeOuts[difficultLevel];
+        fullTimeOut -= difficultLevel;
     }
 
     private Button createCard(float x, float y) {
@@ -75,10 +67,13 @@ public class ReactionWindowBody extends QTEWindowBody {
             return;
         }
         time += delta;
+        fullTime += delta;
+        this.updateTimer();
         if (time > timeOut) {
-            fullTime += time;
             time = 0;
-            this.showRandomCard();
+            for (int i = 0; i < cardShowCount; i++) {
+                this.showRandomCard();
+            }
         }
 
         if (fullTime > fullTimeOut) {
@@ -87,6 +82,9 @@ public class ReactionWindowBody extends QTEWindowBody {
     }
 
     private void showRandomCard() {
+        if (cards.isEmpty()) {
+            return;
+        }
         boolean isSuccess = isSuccess();
         Button card = getRandomCard();
         card.clearActions();
@@ -94,6 +92,10 @@ public class ReactionWindowBody extends QTEWindowBody {
         card.addAction(isSuccess ? this.getSuccessActions() : this.getFailActions());
 
         card.addListener(isSuccess ? this.getSuccessListener() : this.getFailListener());
+    }
+
+    private void updateTimer() {
+        timer.setScale(Math.max((fullTimeOut - fullTime), 0) / fullTimeOut, 1);
     }
 
     private boolean isSuccess() {
@@ -253,6 +255,33 @@ public class ReactionWindowBody extends QTEWindowBody {
                 } else {
                     ReactionWindowBody.this.fail();
                 }
+            }
+        }));
+    }
+
+    @Override
+    protected void show() {
+        float step = (this.getWidth() - 60 - cardWidth) / colCount;
+        int startX = 30 + (int) step / 2;
+        int startY = (int) (step - cardHeight) / 2 - 70;
+
+        for (int row = 0; row < rowCount; row++)
+            for (int col = 0; col < colCount; col++) {
+                float x = col * step + startX;
+                float y = row * step + startY;
+                Button card = this.createCard(x, y);
+                this.addActor(card);
+                cards.add(card);
+            }
+
+        timer = new Image(this.getAtlas().findRegion("metro-line"));
+        timer.setBounds(25, this.getHeight() + 200, this.getWidth() - 50, 10);
+        timer.setOrigin(Align.center);
+        this.addActor(timer);
+        this.addAction(sequence(delay(0.6f), new RunnableAction() {
+            @Override
+            public void run() {
+                ReactionWindowBody.this.run = true;
             }
         }));
     }

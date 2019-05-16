@@ -27,7 +27,7 @@ public class SpeedWindowBody extends QTEWindowBody {
     private int cardHeight = 120;
     private ArrayList<Button> cards;
     private float time = 0;
-    private float timeOut = 5f;
+    private float timeOut = 4.9f;
     private int rowCount = 4;
     private int colCount = 5;
     private int cardCount = 0;
@@ -39,42 +39,12 @@ public class SpeedWindowBody extends QTEWindowBody {
     private int lifeDecrease = -3;
 
     public SpeedWindowBody(PlaceWindowManager manager, int difficultLevel) {
-        super(manager, difficultLevel);
+        super(manager, difficultLevel, "qte.speed");
         cardCount = rowCount * colCount;
         cards = new ArrayList<Button>(cardCount);
         timeOut -= difficultLevel * 0.5f;
         successCardCount += difficultLevel;
         successCards = new ArrayList<Button>(successCardCount);
-
-        float step = (this.getWidth() - 50) / colCount;
-        int startX = 25 + (int) (step - cardWidth) / 2;
-        int startY = (int) (step - cardHeight) / 2 - 40;
-
-        for (int i = 0; i < cardCount; i++) {
-            cards.add(this.createCard(i));
-        }
-
-        Collections.shuffle(cards);
-
-        for (int row = 0; row < rowCount; row++)
-            for (int col = 0; col < colCount; col++) {
-                float x = col * step + startX;
-                float y = row * step + startY;
-                Button card = cards.get(row * colCount + col);
-                card.setPosition(x, y);
-                this.addActor(card);
-            }
-
-        timer = new Image(this.getAtlas().findRegion("metro-line"));
-        timer.setBounds(25, this.getHeight() + 200, this.getWidth() - 50, 10);
-        timer.setOrigin(Align.center);
-        this.addActor(timer);
-        this.addAction(sequence(delay(0.6f), new RunnableAction() {
-            @Override
-            public void run() {
-                SpeedWindowBody.this.run = true;
-            }
-        }));
     }
 
     private Button createCard(int index) {
@@ -199,6 +169,39 @@ public class SpeedWindowBody extends QTEWindowBody {
                     GameCore.getInstance().addLife(SpeedWindowBody.this.lifeDecrease * successCards.size());
                     SpeedWindowBody.this.fail();
                 }
+            }
+        }));
+    }
+
+    @Override
+    protected void show() {
+        float step = (this.getWidth() - 50) / colCount;
+        int startX = 25 + (int) (step - cardWidth) / 2;
+        int startY = (int) (step - cardHeight) / 2 - 60;
+
+        for (int i = 0; i < cardCount; i++) {
+            cards.add(this.createCard(i));
+        }
+
+        Collections.shuffle(cards);
+
+        for (int row = 0; row < rowCount; row++)
+            for (int col = 0; col < colCount; col++) {
+                float x = col * step + startX;
+                float y = row * step + startY;
+                Button card = cards.get(row * colCount + col);
+                card.setPosition(x, y);
+                this.addActor(card);
+            }
+
+        timer = new Image(this.getAtlas().findRegion("metro-line"));
+        timer.setBounds(25, this.getHeight() + 200, this.getWidth() - 50, 10);
+        timer.setOrigin(Align.center);
+        this.addActor(timer);
+        this.addAction(sequence(delay(0.6f), new RunnableAction() {
+            @Override
+            public void run() {
+                SpeedWindowBody.this.run = true;
             }
         }));
     }

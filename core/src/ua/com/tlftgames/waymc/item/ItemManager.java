@@ -20,13 +20,15 @@ public class ItemManager {
     private CoolRandomizer<String> market;
     private CoolRandomizer<String> receipts;
     private ArrayList<String> ownItems;
+    private ArrayList<String> receiptsList;
     private ArrayList<String> ownReceipts;
     private ArrayList<String> resources;
 
+    @SuppressWarnings("unchecked")
     public ItemManager() {
         this.items = new HashMap<String, Item>();
         ArrayList<String> marketList = new ArrayList<String>();
-        ArrayList<String> receiptsList = new ArrayList<String>();
+        receiptsList = new ArrayList<String>();
         JsonValue itemsData = new JsonReader().parse(Gdx.files.internal("data/items.json"));
         JsonValue itemData = itemsData.child();
         while (itemData != null) {
@@ -41,7 +43,7 @@ public class ItemManager {
             itemData = itemData.next();
         }
         market = new CoolRandomizer<String>(marketList, marketList.size() - 2);
-        receipts = new CoolRandomizer<String>(receiptsList, receiptsList.size() - 1);
+        receipts = new CoolRandomizer<String>((ArrayList<String>) receiptsList.clone(), receiptsList.size() - 1);
         this.ownItems = new ArrayList<String>();
         this.ownReceipts = new ArrayList<String>();
     }
@@ -294,5 +296,9 @@ public class ItemManager {
         int loseResources = (item.isCreatable()) ? 1 : 0;
         return (Config.getInstance().itemsMaxCount >= this.getOwnItems().size() + item.getResources().length - 1
                 - loseResources);
+    }
+
+    public boolean hasAllReceipts() {
+        return this.ownReceipts.size() >= this.receiptsList.size();
     }
 }

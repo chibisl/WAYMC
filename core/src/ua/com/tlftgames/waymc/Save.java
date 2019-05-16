@@ -15,7 +15,6 @@ public class Save {
     public static final int SEARCH_PLACES_KEY = 3;
     public static final int CURRENT_SEARCH_PLACE_KEY = 4;
     public static final int CURRENT_STEP_KEY = 5;
-    public static final int PLACE_CRIME_KEY = 6;
     public static final int MANDATORY_QUESTS_KEY = 7;
     public static final int PLACE_QUESTS_KEY = 8;
     public static final int ITEMS_KEY = 10;
@@ -167,10 +166,6 @@ public class Save {
 
     public ArrayList<Integer> loadSearchedPlaces() {
         return getIntegerArray(this.getSave().getString("searched_places", ""));
-    }
-
-    public ArrayList<Integer> loadPlaceCrime() {
-        return getIntegerArray(this.getSave().getString("place_crime", ""));
     }
 
     public ArrayList<Integer> loadTutorialsShowed() {
@@ -326,9 +321,6 @@ public class Save {
     public void saveProgress(int key, ArrayList<?> data) {
         String savingKey = null;
         switch (key) {
-        case Save.PLACE_CRIME_KEY:
-            savingKey = "place_crime";
-            break;
         case Save.ITEMS_KEY:
             savingKey = "items";
             break;

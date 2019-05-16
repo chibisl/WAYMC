@@ -2,6 +2,8 @@ package ua.com.tlftgames.waymc.screen.ui.window;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
@@ -15,6 +17,7 @@ import ua.com.tlftgames.waymc.item.Item;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.place.Place;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.stage.GameStage;
 import ua.com.tlftgames.waymc.screen.ui.Button;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
@@ -50,9 +53,14 @@ public class PlaceWindowManager extends ActionWindowManager {
     private int[] testQTE = { QTE_LUCK, QTE_MEMORY };
     private int[] lifeQTE = { QTE_REACTION, QTE_SPEED, QTE_LUCK };
     private int qte = -1;
+    private int crimeTestCount = 10;
+    private int crimeTestStep = 10;
+    private int crimeTestKey = 1;
+    private LinkedList<Boolean> crimeTests;
 
     public PlaceWindowManager(UIGroup group) {
         super(group, "place");
+        crimeTests = new LinkedList<Boolean>();
         needTutorial = Settings.getInstance().getTutorialEnable()
                 && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_CRIME);
         needQTELuckTutorial = Settings.getInstance().getTutorialEnable()
@@ -84,12 +92,31 @@ public class PlaceWindowManager extends ActionWindowManager {
     }
 
     public boolean testCrime() {
-        double test = (float) GameCore.getInstance().getPlaceManager().getCurrentPlace().getCrimeLevel()
-                / (Config.getInstance().allCrimeLevel);
-        GameCore.getInstance().getPlaceManager().updatePlaceCrime();
-        float multiplier = GameCore.getInstance().getItemManager().hasItem("cloak_ii") ? 0.6f
-                : (GameCore.getInstance().getItemManager().hasItem("cloak") ? 0.8f : 1f);
-        return Math.random() < test * multiplier;
+        boolean result = this.isCrimeAttack(
+                Math.min((int) (GameCore.getInstance().getPlaceManager().getStepCount() / this.crimeTestStep) + 1, 9));
+        GameCore.getInstance().getPlaceManager().incStepCount();
+        return result;
+    }
+
+    private boolean isCrimeAttack(int key) {
+        if (GameCore.getInstance().getItemManager().hasItem("cloak_ii")) {
+            key = Math.max(1, key - 4);
+        }
+        if (GameCore.getInstance().getItemManager().hasItem("cloak")) {
+            key = Math.max(1, key - 2);
+        }
+        if (key > this.crimeTestKey || crimeTests.isEmpty()) {
+            crimeTestKey = key;
+            crimeTests.clear();
+            for (int i = 0; i < key; i++) {
+                crimeTests.add(true);
+            }
+            for (int i = key; i < crimeTestCount; i++) {
+                crimeTests.add(false);
+            }
+            Collections.shuffle(crimeTests);
+        }
+        return crimeTests.removeFirst();
     }
 
     protected void startCrime() {
@@ -103,6 +130,7 @@ public class PlaceWindowManager extends ActionWindowManager {
     public void showCrimeWindow() {
         if (!GameCore.getInstance().setCurrentStep(GameCore.STEP_CRIME))
             return;
+        this.getUIGroup().getStage().playSound(GameStage.CRIME_SOUND);
         crimeSubLife = Config.getInstance().crimeSubLife + (int) (Math.random() * 3);
         GameCore.getInstance().getSave().saveProgress(Save.SUBEDLIFE_KEY, crimeSubLife);
 
@@ -184,7 +212,7 @@ public class PlaceWindowManager extends ActionWindowManager {
     }
 
     protected void showQTE() {
-        int difficultLevel = Math.min(GameCore.getInstance().getPlaceManager().getStepCount() / 15, 3);
+        int difficultLevel = Math.min(GameCore.getInstance().getPlaceManager().getStepCount() / 20, 3);
         switch (this.qte) {
         case QTE_REACTION:
             this.getWindow().updateBody(new ReactionWindowBody(this, difficultLevel));
@@ -276,14 +304,16 @@ public class PlaceWindowManager extends ActionWindowManager {
                 public void clicked(InputEvent event, float x, float y) {
                     if (!GameCore.getInstance().getItemManager()
                             .canCreateItem(Config.getInstance().searchNeedItemName)) {
-                        GameCore.getInstance().getNotificationManager()
-                                .addNotification(new Notification("money", "notification.resources.not.enough"));
+                        GameCore.getInstance().getNotificationManager().addNotification(new Notification(
+                                Config.getInstance().searchNeedItemName, "notification.resources.not.enough"));
                     } else {
                         Item needItem = GameCore.getInstance().getItemManager()
                                 .getItem(Config.getInstance().searchNeedItemName);
                         for (String resource : needItem.getResources()) {
                             GameCore.getInstance().getItemManager().removeOwnItem(resource);
                         }
+                        GameCore.getInstance().getItemManager()
+                                .removeOwnReceipt(Config.getInstance().searchNeedItemName);
                         PlaceWindowManager.this.makeSearch();
                     }
                 }
@@ -375,7 +405,9 @@ public class PlaceWindowManager extends ActionWindowManager {
         } else {
             if (getVariant() == VARIANT_RETURN) {
                 GameCore.getInstance().getPlaceManager().returnToLastPlace();
-            } else if (this.qte == QTE_LUCK) {
+                this.finishAction();
+                return;
+            } else if (this.qte == QTE_LUCK || this.qte == QTE_MEMORY) {
                 GameCore.getInstance().addLife(-1 * crimeSubLife);
             }
         }

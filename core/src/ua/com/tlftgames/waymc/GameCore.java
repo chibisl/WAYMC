@@ -196,10 +196,6 @@ public class GameCore {
         if (stepCount > 0) {
             this.placeManager.setStepCount(stepCount);
         }
-        ArrayList<Integer> savedPlaceCrime = this.save.loadPlaceCrime();
-        if (savedPlaceCrime != null) {
-            this.placeManager.setPlaceCrime(savedPlaceCrime);
-        }
         HashMap<Integer, ArrayList<Integer>> savedMandatoryQuest = this.save.loadMandatoryQuest();
         if (savedMandatoryQuest != null) {
             this.questManager.setMandatoryQuests(savedMandatoryQuest);

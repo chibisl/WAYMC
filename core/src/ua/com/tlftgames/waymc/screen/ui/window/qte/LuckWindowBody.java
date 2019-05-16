@@ -29,32 +29,10 @@ public class LuckWindowBody extends QTEWindowBody {
     private int cardCount = 0;
 
     public LuckWindowBody(PlaceWindowManager manager, int difficultLevel) {
-        super(manager, difficultLevel);
+        super(manager, difficultLevel, "qte.luck");
         cardCount = rowCount * colCount;
         cards = new ArrayList<Button>(cardCount);
         successCardNums = new ArrayList<Integer>(cardCount);
-
-        float step = this.getWidth() / colCount;
-
-        float startX = (step - cardWidth) / 2;
-        float startY = (this.getHeight() - cardHeight) / 2 - 50;
-
-        float centerX = (this.getWidth() - cardWidth) / 2;
-        float centerY = startY + step / 2;
-
-        for (int row = 0; row < rowCount; row++)
-            for (int col = 0; col < colCount; col++) {
-                int position = row * colCount + col;
-                float x = col * step + startX;
-                float y = startY + row * step;
-                Button card = this.createCard(position, x, y, centerX, centerY);
-                this.addActor(card);
-                cards.add(card);
-                successCardNums.add(position);
-            }
-
-        Collections.shuffle(successCardNums);
-        successCardNums.subList(0, difficultLevel + 1).clear();
     }
 
     private int getSuccessCardsCount() {
@@ -126,5 +104,30 @@ public class LuckWindowBody extends QTEWindowBody {
 
             }, scaleTo(1, 1, 0.3f, pow2)));
         }
+    }
+
+    @Override
+    protected void show() {
+        float step = this.getWidth() / colCount;
+
+        float startX = (step - cardWidth) / 2;
+        float startY = (this.getHeight() - cardHeight) / 2 - 50;
+
+        float centerX = (this.getWidth() - cardWidth) / 2;
+        float centerY = startY + step / 2;
+
+        for (int row = 0; row < rowCount; row++)
+            for (int col = 0; col < colCount; col++) {
+                int position = row * colCount + col;
+                float x = col * step + startX;
+                float y = startY + row * step;
+                Button card = this.createCard(position, x, y, centerX, centerY);
+                this.addActor(card);
+                cards.add(card);
+                successCardNums.add(position);
+            }
+
+        Collections.shuffle(successCardNums);
+        successCardNums.subList(0, this.getDifficultLevel() + 1).clear();
     }
 }

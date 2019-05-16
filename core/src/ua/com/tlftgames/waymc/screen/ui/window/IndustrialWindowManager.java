@@ -11,6 +11,7 @@ import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.natification.Notification;
 import ua.com.tlftgames.waymc.screen.StageScreen;
+import ua.com.tlftgames.waymc.screen.stage.GameStage;
 import ua.com.tlftgames.waymc.screen.ui.TextButton;
 import ua.com.tlftgames.waymc.screen.ui.Tutorial;
 import ua.com.tlftgames.waymc.screen.ui.UIGroup;
@@ -175,5 +176,10 @@ public class IndustrialWindowManager extends TypeWindowManager {
             break;
         }
         return variants;
+    }
+
+    @Override
+    protected int getSound() {
+        return GameStage.INDUSTRIAL_SOUND;
     }
 }
