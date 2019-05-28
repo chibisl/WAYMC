@@ -10,6 +10,8 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.touchable;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
@@ -27,7 +29,7 @@ public class SpeedWindowBody extends QTEWindowBody {
     private int cardHeight = 120;
     private ArrayList<Button> cards;
     private float time = 0;
-    private float timeOut = 4.9f;
+    private float timeOut;
     private int rowCount = 4;
     private int colCount = 5;
     private int cardCount = 0;
@@ -37,12 +39,18 @@ public class SpeedWindowBody extends QTEWindowBody {
     private ArrayList<Button> successCards;
     private Image timer;
     private int lifeDecrease = -3;
+    private float[] timeOuts = { 4.9f, 4.4f, 3.9f };
+    private float[] mobileTimeOuts = { 3.5f, 3f, 2.5f };
 
     public SpeedWindowBody(PlaceWindowManager manager, int difficultLevel) {
         super(manager, difficultLevel, "qte.speed");
+
+        boolean isMobile = Gdx.app.getType() == Application.ApplicationType.Android
+                || Gdx.app.getType() == Application.ApplicationType.iOS;
+
         cardCount = rowCount * colCount;
         cards = new ArrayList<Button>(cardCount);
-        timeOut -= difficultLevel * 0.5f;
+        timeOut = isMobile ? mobileTimeOuts[difficultLevel] : timeOuts[difficultLevel];
         successCardCount += difficultLevel;
         successCards = new ArrayList<Button>(successCardCount);
     }
@@ -166,7 +174,9 @@ public class SpeedWindowBody extends QTEWindowBody {
                 if (SpeedWindowBody.this.win) {
                     SpeedWindowBody.this.success();
                 } else {
-                    GameCore.getInstance().addLife(SpeedWindowBody.this.lifeDecrease * successCards.size());
+                    for (int i = 0; i < successCards.size(); i++) {
+                        GameCore.getInstance().addLife(SpeedWindowBody.this.lifeDecrease);
+                    }
                     SpeedWindowBody.this.fail();
                 }
             }

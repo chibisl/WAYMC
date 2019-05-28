@@ -28,6 +28,7 @@ public class IndustrialWindowManager extends TypeWindowManager {
     public final static int ACTION_WORK_SIMPLE = 2;
     private int workPay = 10;
     private int workSimplePay = 10;
+    private int lastResult = RESULT_BAD;
 
     public IndustrialWindowManager(UIGroup group) {
         super(group, "industrial", Tutorial.TUTORIAL_INDUSTRIAL);
@@ -106,7 +107,12 @@ public class IndustrialWindowManager extends TypeWindowManager {
     }
 
     protected void updateResult() {
-        setResult((Math.random() < 0.8f) ? RESULT_NORMAL : ((Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD));
+        int result = RESULT_NORMAL;
+        if (Math.random() > 0.8f) {
+            result = (lastResult == RESULT_BAD || Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
+            lastResult = result;
+        }
+        setResult(result);
     }
 
     public void action() {

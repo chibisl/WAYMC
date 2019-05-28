@@ -21,7 +21,6 @@ public class Save {
     public static final int QUEST_KEY = 11;
     public static final int INFORMATION_KEY = 12;
     public static final int RECEIPTS_KEY = 13;
-    public static final int SUBEDLIFE_KEY = 14;
     public static final int QUEST_ACTION_KEY = 15;
     public static final int RESOURCES_KEY = 16;
     public static final int SEARCHED_PLACES_KEY = 17;
@@ -86,10 +85,6 @@ public class Save {
 
     public int loadQuest() {
         return Integer.decode(this.getSave().getString("quest", "-1"));
-    }
-
-    public int loadSubedLife() {
-        return Integer.decode(this.getSave().getString("subed_life", "0"));
     }
 
     public int loadQuestAction() {
@@ -262,9 +257,6 @@ public class Save {
             break;
         case Save.QUEST_KEY:
             savingKey = "quest";
-            break;
-        case Save.SUBEDLIFE_KEY:
-            savingKey = "subed_life";
             break;
         case Save.QUEST_ACTION_KEY:
             savingKey = "quest_action";

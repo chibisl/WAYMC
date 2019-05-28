@@ -18,7 +18,7 @@ public class Config {
     public final int startMoney = 100;
     public final int maxLife = 20;
     public final int crimeLevel = 0;
-    public final int crimeSubLife = 3;
+    public final int crimeSubLife = 6;
     public final int allCrimeLevel = 10;
     public final int restAddLife = 12;
     public final int restCheapAddLife = 5;
@@ -75,7 +75,7 @@ public class Config {
 
     private Config() {
 
-        screenRatio = (float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight();
+        screenRatio = Math.min((float) Gdx.graphics.getWidth() / (float) Gdx.graphics.getHeight(), 1.8f);
         gameWidth = (int) (gameHeight * screenRatio);
 
         Texture textureNormal = this.getFontTexture("normal");

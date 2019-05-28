@@ -186,8 +186,9 @@ public class UIGroup extends Group implements Listener {
         this.inventoryWindow.hide();
         this.inventory.setTouchable(Touchable.enabled);
         this.inventory.setTouched(false);
-        if (windowBeenShowed)
+        if (windowBeenShowed) {
             this.getWindow().show();
+        }
     }
 
     public void moveToOpenPlace() {

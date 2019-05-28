@@ -33,14 +33,12 @@ public abstract class TypeWindowManager extends ActionWindowManager {
 
     public void showActions() {
         this.setQuestStartText(null);
-        if (!GameCore.getInstance().setCurrentStep(GameCore.STEP_ACTION))
-            return;
         this.getWindow().updateBody(new ChoicesWindowBody(this.getButtons()));
         this.getWindow().setPlaceImageTexture();
         this.getWindow().setBottomButtons(this.getHelper().createReturnButton(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                TypeWindowManager.this.getWindow().hide();
+                TypeWindowManager.this.getUIGroup().hideWindowAndWait();
             }
         }));
         this.getWindow().show();
@@ -56,9 +54,14 @@ public abstract class TypeWindowManager extends ActionWindowManager {
     }
 
     protected void startPlaceWindow() {
+        if (GameCore.getInstance().getCurrentStep() == GameCore.STEP_ACTION
+                || !GameCore.getInstance().setCurrentStep(GameCore.STEP_ACTION)) {
+            return;
+        }
         this.getUIGroup().getStage().playSound(this.getSound());
-        if (!this.getStartWindow())
+        if (!this.getStartWindow()) {
             this.showActions();
+        }
     }
 
     abstract protected int getSound();

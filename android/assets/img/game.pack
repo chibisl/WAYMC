@@ -3,333 +3,256 @@ game.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+city-fg
+  rotate: false
+  xy: 0, 670
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 1
+city-fg
+  rotate: false
+  xy: 0, 318
+  size: 640, 350
+  orig: 640, 350
+  offset: 0, 0
+  index: 2
 place
   rotate: false
-  xy: 0, 818
+  xy: 0, 116
   size: 780, 200
   orig: 780, 200
   offset: 0, 0
   index: 0
 place
   rotate: false
-  xy: 0, 818
+  xy: 0, 116
   size: 780, 200
   orig: 780, 200
   offset: 0, 0
   index: 12
 place
   rotate: false
-  xy: 0, 818
+  xy: 0, 116
   size: 780, 200
   orig: 780, 200
   offset: 0, 0
   index: 3
 place
   rotate: false
-  xy: 0, 818
+  xy: 0, 116
   size: 780, 200
   orig: 780, 200
   offset: 0, 0
   index: 6
 place
   rotate: false
-  xy: 0, 818
+  xy: 0, 116
   size: 780, 200
   orig: 780, 200
   offset: 0, 0
   index: 9
-shadow-left
+city-bg
   rotate: false
-  xy: 781, 1008
-  size: 220, 10
-  orig: 220, 10
+  xy: 642, 670
+  size: 375, 350
+  orig: 375, 350
   offset: 0, 0
-  index: -1
-marker-left
+  index: 1
+city-bg
   rotate: false
-  xy: 1002, 988
-  size: 17, 30
-  orig: 17, 30
+  xy: 642, 318
+  size: 375, 350
+  orig: 375, 350
   offset: 0, 0
-  index: -1
-shadow-right
+  index: 2
+zeppelin
   rotate: false
-  xy: 781, 997
-  size: 220, 10
-  orig: 220, 10
+  xy: 0, 51
+  size: 263, 63
+  orig: 263, 63
   offset: 0, 0
   index: -1
 life-bg
   rotate: false
-  xy: 781, 946
+  xy: 782, 266
   size: 210, 50
   orig: 210, 50
   offset: 0, 0
   index: -1
-marker-right
-  rotate: false
-  xy: 992, 957
-  size: 17, 30
-  orig: 17, 30
-  offset: 0, 0
-  index: -1
-text-fade-bottom
-  rotate: false
-  xy: 1010, 887
-  size: 10, 100
-  orig: 10, 100
-  offset: 0, 0
-  index: -1
-text-fade-top
-  rotate: false
-  xy: 992, 856
-  size: 10, 100
-  orig: 10, 100
-  offset: 0, 0
-  index: -1
 life-fg
   rotate: false
-  xy: 781, 895
+  xy: 265, 64
   size: 210, 50
   orig: 210, 50
   offset: 0, 0
   index: -1
 money-bg
   rotate: false
-  xy: 781, 844
+  xy: 782, 214
   size: 210, 50
   orig: 210, 50
   offset: 0, 0
   index: -1
-metro-line
+shadow-left
   rotate: false
-  xy: 781, 833
-  size: 140, 10
-  orig: 140, 10
+  xy: 0, 39
+  size: 220, 10
+  orig: 220, 10
   offset: 0, 0
   index: -1
-bartimer_ring-touched
+shadow-right
   rotate: false
-  xy: 922, 743
-  size: 100, 100
-  orig: 100, 100
+  xy: 477, 104
+  size: 220, 10
+  orig: 220, 10
   offset: 0, 0
   index: -1
 card-empty-touched
   rotate: false
-  xy: 781, 712
+  xy: 782, 92
   size: 120, 120
   orig: 120, 120
   offset: 0, 0
   index: -1
-place
+bartimer_ring-touched
   rotate: false
-  xy: 0, 617
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 1
-place
-  rotate: false
-  xy: 0, 617
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 10
-place
-  rotate: false
-  xy: 0, 617
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 5
-card-empty
-  rotate: false
-  xy: 902, 622
-  size: 120, 120
-  orig: 120, 120
+  xy: 904, 112
+  size: 100, 100
+  orig: 100, 100
   offset: 0, 0
   index: -1
-card-fail
+metro-line
   rotate: false
-  xy: 781, 591
-  size: 120, 120
-  orig: 120, 120
+  xy: 265, 52
+  size: 140, 10
+  orig: 140, 10
   offset: 0, 0
   index: -1
-place
+slider-bg
   rotate: false
-  xy: 0, 416
-  size: 780, 200
-  orig: 780, 200
+  xy: 477, 57
+  size: 112, 45
+  orig: 112, 45
   offset: 0, 0
-  index: 11
-place
+  index: -1
+text-bg
   rotate: false
-  xy: 0, 416
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 4
-place
-  rotate: false
-  xy: 0, 416
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 7
-card-success
-  rotate: false
-  xy: 902, 501
-  size: 120, 120
-  orig: 120, 120
+  xy: 591, 21
+  size: 109, 81
+  orig: 109, 81
   offset: 0, 0
   index: -1
 btn-bg-touched
   rotate: false
-  xy: 781, 569
+  xy: 0, 16
   size: 119, 21
   orig: 119, 21
   offset: 0, 0
   index: -1
 btn-bg
   rotate: false
-  xy: 781, 547
+  xy: 121, 16
   size: 119, 21
   orig: 119, 21
   offset: 0, 0
   index: -1
-slider-bg
+bartimer_ring
   rotate: false
-  xy: 781, 501
-  size: 112, 45
-  orig: 112, 45
+  xy: 904, 10
+  size: 100, 100
+  orig: 100, 100
   offset: 0, 0
   index: -1
-city-fg
-  rotate: false
-  xy: 0, 65
-  size: 640, 350
-  orig: 640, 350
-  offset: 0, 0
-  index: 1
 back-touched
   rotate: false
-  xy: 0, 0
+  xy: 702, 50
   size: 64, 64
   orig: 64, 64
   offset: 0, 0
   index: -1
-back
+text-fade-bottom
   rotate: false
-  xy: 65, 0
-  size: 64, 64
-  orig: 64, 64
+  xy: 994, 216
+  size: 10, 100
+  orig: 10, 100
   offset: 0, 0
   index: -1
-cancel-touched
+text-fade-top
   rotate: false
-  xy: 130, 0
-  size: 64, 64
-  orig: 64, 64
+  xy: 1006, 216
+  size: 10, 100
+  orig: 10, 100
   offset: 0, 0
   index: -1
-cancel
+metro-station-industrial-touched
   rotate: false
-  xy: 195, 0
-  size: 64, 64
-  orig: 64, 64
+  xy: 265, 0
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
-forward-touched
+metro-station-industrial
   rotate: false
-  xy: 260, 0
-  size: 64, 64
-  orig: 64, 64
+  xy: 317, 0
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
-forward
+metro-station-merchant-touched
   rotate: false
-  xy: 325, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-ok-touched
-  rotate: false
-  xy: 390, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-ok
-  rotate: false
-  xy: 455, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-pin
-  rotate: false
-  xy: 520, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-return-touched
-  rotate: false
-  xy: 585, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-city-bg
-  rotate: false
-  xy: 641, 65
-  size: 375, 350
-  orig: 375, 350
-  offset: 0, 0
-  index: 1
-text-bg
-  rotate: false
-  xy: 781, 419
-  size: 109, 81
-  orig: 109, 81
-  offset: 0, 0
-  index: -1
-return
-  rotate: false
-  xy: 650, 0
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-zeppelin
-  rotate: false
-  xy: 715, 1
-  size: 263, 63
-  orig: 263, 63
-  offset: 0, 0
-  index: -1
-life-mg
-  rotate: false
-  xy: 979, 14
-  size: 34, 50
-  orig: 34, 50
+  xy: 369, 0
+  size: 50, 50
+  orig: 50, 50
   offset: 0, 0
   index: -1
 slider-knob
   rotate: false
-  xy: 891, 446
+  xy: 421, 8
   size: 54, 54
   orig: 54, 54
   offset: 0, 0
   index: -1
 place-label-bg
   rotate: false
-  xy: 946, 447
+  xy: 477, 2
   size: 53, 53
   orig: 53, 53
+  offset: 0, 0
+  index: -1
+metro-station-merchant
+  rotate: false
+  xy: 532, 5
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+back
+  rotate: false
+  xy: 768, 26
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+cancel-touched
+  rotate: false
+  xy: 834, 26
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+atention
+  rotate: false
+  xy: 702, 2
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+marker-left
+  rotate: false
+  xy: 242, 19
+  size: 17, 30
+  orig: 17, 30
   offset: 0, 0
   index: -1
 
@@ -339,163 +262,163 @@ filter: Linear,Linear
 repeat: none
 city-fg
   rotate: false
-  xy: 0, 655
+  xy: 0, 668
   size: 640, 350
   orig: 640, 350
   offset: 0, 0
-  index: 2
-city-bg
-  rotate: false
-  xy: 641, 655
-  size: 375, 350
-  orig: 375, 350
-  offset: 0, 0
-  index: 2
+  index: 3
 city-fg
   rotate: false
-  xy: 0, 304
+  xy: 0, 316
   size: 640, 350
   orig: 640, 350
   offset: 0, 0
-  index: 3
+  index: 4
+place
+  rotate: false
+  xy: 0, 114
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 1
+place
+  rotate: false
+  xy: 0, 114
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 10
+place
+  rotate: false
+  xy: 0, 114
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 5
 city-bg
   rotate: false
-  xy: 641, 304
+  xy: 642, 668
   size: 375, 350
   orig: 375, 350
   offset: 0, 0
   index: 3
-place
+city-bg
   rotate: false
-  xy: 0, 103
-  size: 780, 200
-  orig: 780, 200
+  xy: 642, 316
+  size: 375, 350
+  orig: 375, 350
   offset: 0, 0
-  index: 2
-place
+  index: 4
+card-empty
   rotate: false
-  xy: 0, 103
-  size: 780, 200
-  orig: 780, 200
-  offset: 0, 0
-  index: 8
-bartimer_ring
-  rotate: false
-  xy: 781, 203
-  size: 100, 100
-  orig: 100, 100
+  xy: 782, 194
+  size: 120, 120
+  orig: 120, 120
   offset: 0, 0
   index: -1
 battery-touched
   rotate: false
-  xy: 882, 203
+  xy: 0, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 battery
   rotate: false
-  xy: 781, 102
+  xy: 904, 214
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 battery_ii-touched
   rotate: false
-  xy: 882, 102
+  xy: 102, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 battery_ii
   rotate: false
-  xy: 0, 2
+  xy: 204, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 bowler_hat-touched
   rotate: false
-  xy: 101, 2
+  xy: 306, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 bowler_hat
   rotate: false
-  xy: 202, 2
+  xy: 408, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 cables-touched
   rotate: false
-  xy: 303, 2
+  xy: 510, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 cables
   rotate: false
-  xy: 404, 2
+  xy: 612, 12
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
+card-fail
+  rotate: false
+  xy: 782, 72
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
 charter-touched
   rotate: false
-  xy: 505, 2
+  xy: 904, 112
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 charter
   rotate: false
-  xy: 606, 2
+  xy: 904, 10
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-metro-station-industrial-touched
+cancel
   rotate: false
-  xy: 707, 52
+  xy: 714, 48
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+forward-touched
+  rotate: false
+  xy: 780, 6
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+metro-station-recreational-touched
+  rotate: false
+  xy: 846, 20
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-metro-station-industrial
+high-atention
   rotate: false
-  xy: 707, 1
-  size: 50, 50
-  orig: 50, 50
-  offset: 0, 0
-  index: -1
-chemicals-touched
-  rotate: false
-  xy: 758, 1
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-chemicals
-  rotate: false
-  xy: 859, 1
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-metro-station-merchant-touched
-  rotate: false
-  xy: 960, 51
-  size: 50, 50
-  orig: 50, 50
-  offset: 0, 0
-  index: -1
-metro-station-merchant
-  rotate: false
-  xy: 960, 0
-  size: 50, 50
-  orig: 50, 50
+  xy: 714, 0
+  size: 46, 46
+  orig: 46, 46
   offset: 0, 0
   index: -1
 
@@ -503,193 +426,221 @@ game3.png
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-city-fg
+place
   rotate: false
-  xy: 0, 658
-  size: 640, 350
-  orig: 640, 350
+  xy: 0, 810
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 11
+place
+  rotate: false
+  xy: 0, 810
+  size: 780, 200
+  orig: 780, 200
   offset: 0, 0
   index: 4
-city-bg
+place
   rotate: false
-  xy: 641, 658
-  size: 375, 350
-  orig: 375, 350
+  xy: 0, 810
+  size: 780, 200
+  orig: 780, 200
   offset: 0, 0
-  index: 4
+  index: 7
+place
+  rotate: false
+  xy: 0, 608
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 2
+place
+  rotate: false
+  xy: 0, 608
+  size: 780, 200
+  orig: 780, 200
+  offset: 0, 0
+  index: 8
 city-mg
   rotate: false
-  xy: 0, 307
+  xy: 0, 256
   size: 525, 350
   orig: 525, 350
   offset: 0, 0
   index: 1
 smoke-bg
   rotate: false
-  xy: 0, 104
+  xy: 0, 52
   size: 354, 202
   orig: 354, 202
   offset: 0, 0
   index: 1
-cloak-touched
+smoke
   rotate: false
-  xy: 0, 3
+  xy: 527, 404
+  size: 354, 202
+  orig: 354, 202
+  offset: 0, 0
+  index: 1
+smoke-bg
+  rotate: false
+  xy: 527, 213
+  size: 358, 189
+  orig: 358, 189
+  offset: 0, 0
+  index: 4
+smoke
+  rotate: false
+  xy: 356, 22
+  size: 358, 189
+  orig: 358, 189
+  offset: 0, 0
+  index: 4
+smoke-bg
+  rotate: false
+  xy: 716, 33
+  size: 303, 178
+  orig: 303, 178
+  offset: 0, 0
+  index: 3
+card-success
+  rotate: false
+  xy: 782, 890
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+chemicals-touched
+  rotate: false
+  xy: 782, 788
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
+chemicals
+  rotate: false
+  xy: 904, 910
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloak-touched
+  rotate: false
+  xy: 782, 686
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+forward
+  rotate: false
+  xy: 782, 620
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
 cloak
   rotate: false
-  xy: 101, 3
+  xy: 884, 788
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 cloak_ii-touched
   rotate: false
-  xy: 202, 3
+  xy: 884, 686
   size: 100, 100
   orig: 100, 100
+  offset: 0, 0
+  index: -1
+ok-touched
+  rotate: false
+  xy: 848, 620
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
 cloak_ii
   rotate: false
-  xy: 303, 3
+  xy: 914, 584
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-smoke
-  rotate: false
-  xy: 355, 104
-  size: 354, 202
-  orig: 354, 202
-  offset: 0, 0
-  index: 1
-smoke-bg
-  rotate: false
-  xy: 710, 469
-  size: 305, 188
-  orig: 305, 188
-  offset: 0, 0
-  index: 2
-smoke
-  rotate: false
-  xy: 710, 280
-  size: 305, 188
-  orig: 305, 188
-  offset: 0, 0
-  index: 2
-smoke-bg
-  rotate: false
-  xy: 710, 101
-  size: 303, 178
-  orig: 303, 178
-  offset: 0, 0
-  index: 3
 clock-touched
   rotate: false
-  xy: 404, 0
+  xy: 883, 482
   size: 100, 100
   orig: 100, 100
+  offset: 0, 0
+  index: -1
+ok
+  rotate: false
+  xy: 883, 416
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
 clock
   rotate: false
-  xy: 505, 0
+  xy: 887, 314
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-cloth-touched
+pin
   rotate: false
-  xy: 606, 3
-  size: 100, 100
-  orig: 100, 100
+  xy: 949, 416
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
-cloth
+return-touched
   rotate: false
-  xy: 707, 0
-  size: 100, 100
-  orig: 100, 100
+  xy: 887, 248
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
-eyeglasses-touched
+life-mg
   rotate: false
-  xy: 808, 0
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-eyeglasses
-  rotate: false
-  xy: 909, 0
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-eyeglasses_ii-touched
-  rotate: false
-  xy: 526, 557
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-metro-station-recreational-touched
-  rotate: false
-  xy: 627, 607
-  size: 50, 50
-  orig: 50, 50
+  xy: 986, 858
+  size: 34, 50
+  orig: 34, 50
   offset: 0, 0
   index: -1
 metro-station-recreational
   rotate: false
-  xy: 627, 556
+  xy: 0, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-eyeglasses_ii
-  rotate: false
-  xy: 526, 456
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
 metro-station-residential-touched
   rotate: false
-  xy: 627, 505
+  xy: 52, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 metro-station-residential
   rotate: false
-  xy: 627, 454
+  xy: 104, 0
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
-gears-touched
+return
   rotate: false
-  xy: 526, 355
-  size: 100, 100
-  orig: 100, 100
+  xy: 953, 248
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
-atention
+marker-right
   rotate: false
-  xy: 526, 308
-  size: 46, 46
-  orig: 46, 46
-  offset: 0, 0
-  index: -1
-high-atention
-  rotate: false
-  xy: 573, 308
-  size: 46, 46
-  orig: 46, 46
+  xy: 356, 224
+  size: 17, 30
+  orig: 17, 30
   offset: 0, 0
   index: -1
 
@@ -699,308 +650,315 @@ filter: Linear,Linear
 repeat: none
 city-mg
   rotate: false
-  xy: 0, 659
+  xy: 0, 668
   size: 525, 350
   orig: 525, 350
   offset: 0, 0
   index: 2
+city-mg
+  rotate: false
+  xy: 0, 316
+  size: 525, 350
+  orig: 525, 350
+  offset: 0, 0
+  index: 3
 smoke-bg
   rotate: false
-  xy: 526, 820
-  size: 358, 189
-  orig: 358, 189
+  xy: 0, 126
+  size: 305, 188
+  orig: 305, 188
   offset: 0, 0
-  index: 4
+  index: 2
+smoke
+  rotate: false
+  xy: 307, 126
+  size: 305, 188
+  orig: 305, 188
+  offset: 0, 0
+  index: 2
+smoke
+  rotate: false
+  xy: 527, 840
+  size: 303, 178
+  orig: 303, 178
+  offset: 0, 0
+  index: 3
+cloth-touched
+  rotate: false
+  xy: 527, 738
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+cloth
+  rotate: false
+  xy: 527, 636
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses-touched
+  rotate: false
+  xy: 527, 534
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses
+  rotate: false
+  xy: 527, 432
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses_ii-touched
+  rotate: false
+  xy: 614, 330
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+eyeglasses_ii
+  rotate: false
+  xy: 614, 228
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+gears-touched
+  rotate: false
+  xy: 614, 126
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
 gears
   rotate: false
-  xy: 885, 909
+  xy: 629, 738
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 gems-touched
   rotate: false
-  xy: 885, 808
+  xy: 629, 636
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-smoke
-  rotate: false
-  xy: 526, 630
-  size: 358, 189
-  orig: 358, 189
-  offset: 0, 0
-  index: 4
 gems
   rotate: false
-  xy: 885, 707
+  xy: 629, 534
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 glass-touched
   rotate: false
-  xy: 885, 606
+  xy: 629, 432
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
-city-mg
-  rotate: false
-  xy: 0, 308
-  size: 525, 350
-  orig: 525, 350
-  offset: 0, 0
-  index: 3
-smoke
-  rotate: false
-  xy: 526, 451
-  size: 303, 178
-  orig: 303, 178
-  offset: 0, 0
-  index: 3
 glass
   rotate: false
-  xy: 830, 505
+  xy: 716, 330
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 inventory-touched
   rotate: false
-  xy: 830, 404
+  xy: 716, 228
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 inventory
   rotate: false
-  xy: 526, 350
+  xy: 716, 126
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 item-none
   rotate: false
-  xy: 627, 350
+  xy: 731, 738
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 lamps-touched
   rotate: false
-  xy: 728, 350
+  xy: 832, 918
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 lamps
   rotate: false
-  xy: 829, 303
+  xy: 731, 636
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 life-decrease
   rotate: false
-  xy: 526, 249
+  xy: 731, 534
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 life-increase
   rotate: false
-  xy: 627, 249
+  xy: 731, 432
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 mahogany_cane-touched
   rotate: false
-  xy: 728, 249
+  xy: 818, 330
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 mahogany_cane
   rotate: false
-  xy: 829, 202
+  xy: 818, 228
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 medal-touched
   rotate: false
-  xy: 0, 207
+  xy: 818, 126
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 medal
   rotate: false
-  xy: 101, 207
+  xy: 833, 816
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 metal-touched
   rotate: false
-  xy: 202, 207
+  xy: 833, 714
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 metal
   rotate: false
-  xy: 303, 207
+  xy: 833, 612
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 money-decrease
   rotate: false
-  xy: 404, 207
+  xy: 833, 510
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 money-increase
   rotate: false
-  xy: 505, 148
+  xy: 920, 408
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 money
   rotate: false
-  xy: 606, 148
+  xy: 920, 306
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 oil-touched
   rotate: false
-  xy: 707, 148
+  xy: 920, 204
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 oil
   rotate: false
-  xy: 808, 101
+  xy: 920, 102
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 paper-touched
   rotate: false
-  xy: 909, 101
+  xy: 0, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 paper
   rotate: false
-  xy: 0, 106
+  xy: 102, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 pause-touched
   rotate: false
-  xy: 101, 106
+  xy: 204, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 pause
   rotate: false
-  xy: 202, 106
+  xy: 306, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 pendant-touched
   rotate: false
-  xy: 303, 106
+  xy: 408, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 pendant
   rotate: false
-  xy: 404, 106
+  xy: 510, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 playing_card-touched
   rotate: false
-  xy: 505, 47
+  xy: 612, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 playing_card
   rotate: false
-  xy: 606, 47
+  xy: 714, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 playing_club_ring-touched
   rotate: false
-  xy: 707, 47
+  xy: 816, 24
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 playing_club_ring
   rotate: false
-  xy: 808, 0
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-screws-touched
-  rotate: false
-  xy: 909, 0
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-screws
-  rotate: false
-  xy: 0, 5
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-shield-touched
-  rotate: false
-  xy: 101, 5
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-shield
-  rotate: false
-  xy: 202, 5
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-shield_ii-touched
-  rotate: false
-  xy: 303, 5
-  size: 100, 100
-  orig: 100, 100
-  offset: 0, 0
-  index: -1
-shield_ii
-  rotate: false
-  xy: 404, 5
+  xy: 918, 0
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
@@ -1012,70 +970,112 @@ filter: Linear,Linear
 repeat: none
 city-mg
   rotate: false
-  xy: 0, 101
+  xy: 0, 102
   size: 525, 350
   orig: 525, 350
   offset: 0, 0
   index: 4
-silver_ball-touched
+screws-touched
   rotate: false
   xy: 0, 0
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
+screws
+  rotate: false
+  xy: 527, 352
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield-touched
+  rotate: false
+  xy: 102, 0
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield
+  rotate: false
+  xy: 527, 250
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield_ii-touched
+  rotate: false
+  xy: 629, 352
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+shield_ii
+  rotate: false
+  xy: 204, 0
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+silver_ball-touched
+  rotate: false
+  xy: 527, 148
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
 silver_ball
   rotate: false
-  xy: 526, 351
+  xy: 629, 250
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 sprayer-touched
   rotate: false
-  xy: 101, 0
+  xy: 731, 352
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 sprayer
   rotate: false
-  xy: 526, 250
+  xy: 306, 0
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 success
   rotate: false
-  xy: 627, 351
+  xy: 629, 148
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 tubes-touched
   rotate: false
-  xy: 202, 0
+  xy: 731, 250
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 tubes
   rotate: false
-  xy: 526, 149
+  xy: 833, 352
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 wood-touched
   rotate: false
-  xy: 627, 250
+  xy: 408, 0
   size: 100, 100
   orig: 100, 100
   offset: 0, 0
   index: -1
 wood
   rotate: false
-  xy: 728, 351
+  xy: 731, 148
   size: 100, 100
   orig: 100, 100
   offset: 0, 0

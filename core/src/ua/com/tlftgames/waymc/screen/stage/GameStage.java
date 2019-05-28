@@ -210,7 +210,7 @@ public class GameStage extends ReturnHandlingStage {
             @Override
             public void act(float delta) {
                 if (GameStage.this.worldScrollPane != null) {
-                    this.setX(-1 * GameStage.this.worldScrollPane.getScrollX() * GameStage.this.cityBgToFg);
+                    this.setX((int) (-1 * GameStage.this.worldScrollPane.getScrollX() * GameStage.this.cityBgToFg));
                 }
                 super.act(delta);
             }
@@ -231,7 +231,7 @@ public class GameStage extends ReturnHandlingStage {
             @Override
             public void act(float delta) {
                 if (GameStage.this.worldScrollPane != null) {
-                    this.setX(-1 * GameStage.this.worldScrollPane.getScrollX() * GameStage.this.cityMgToFg);
+                    this.setX((int) (-1 * GameStage.this.worldScrollPane.getScrollX() * GameStage.this.cityMgToFg));
                 }
                 super.act(delta);
             }

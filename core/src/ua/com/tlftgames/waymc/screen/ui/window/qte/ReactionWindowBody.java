@@ -9,6 +9,8 @@ import static com.badlogic.gdx.scenes.scene2d.actions.Actions.touchable;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
@@ -39,14 +41,22 @@ public class ReactionWindowBody extends QTEWindowBody {
     private int lifeDecrease = -3;
     private int cardShowCount = 1;
     private Image timer;
-    private float[] timeOuts = { 0.48f, 0.43f, 0.45f, 0.39f };
+    private float[] timeOuts = { 0.48f, 0.56f, 0.68f };
+    private float[] mobileTimeOuts = { 0.39f, 0.42f, 0.45f };
 
     public ReactionWindowBody(PlaceWindowManager manager, int difficultLevel) {
         super(manager, difficultLevel, "qte.reaction");
+
+        boolean isMobile = Gdx.app.getType() == Application.ApplicationType.Android
+                || Gdx.app.getType() == Application.ApplicationType.iOS;
+
+        if (isMobile) {
+            waitTime = 1.2f;
+        }
         cardCount = rowCount * colCount;
-        cardShowCount += (int) (difficultLevel / 2f);
+        cardShowCount += difficultLevel;
         cards = new ArrayList<Button>(cardCount);
-        timeOut = timeOuts[difficultLevel];
+        timeOut = isMobile ? mobileTimeOuts[difficultLevel] : timeOuts[difficultLevel];
         fullTimeOut -= difficultLevel;
     }
 

@@ -10,7 +10,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import ua.com.tlftgames.waymc.Config;
 import ua.com.tlftgames.waymc.GameCore;
-import ua.com.tlftgames.waymc.Save;
 import ua.com.tlftgames.waymc.Settings;
 import ua.com.tlftgames.waymc.Translator;
 import ua.com.tlftgames.waymc.item.Item;
@@ -51,15 +50,16 @@ public class PlaceWindowManager extends ActionWindowManager {
     private boolean needQTESpeedTutorial = true;
     private boolean needQTEMemoryTutorial = true;
     private int[] testQTE = { QTE_LUCK, QTE_MEMORY };
-    private int[] lifeQTE = { QTE_REACTION, QTE_SPEED, QTE_LUCK };
+    private int[] lifeQTE = { QTE_REACTION, QTE_SPEED, QTE_REACTION, QTE_SPEED, QTE_LUCK };
     private int qte = -1;
     private int crimeTestCount = 10;
-    private int crimeTestStep = 10;
+    private int crimeTestStep = 20;
     private int crimeTestKey = 1;
     private LinkedList<Boolean> crimeTests;
 
     public PlaceWindowManager(UIGroup group) {
         super(group, "place");
+        crimeSubLife = Config.getInstance().crimeSubLife;
         crimeTests = new LinkedList<Boolean>();
         needTutorial = Settings.getInstance().getTutorialEnable()
                 && !Tutorial.isTutorialShowed(Tutorial.TUTORIAL_CRIME);
@@ -93,7 +93,7 @@ public class PlaceWindowManager extends ActionWindowManager {
 
     public boolean testCrime() {
         boolean result = this.isCrimeAttack(
-                Math.min((int) (GameCore.getInstance().getPlaceManager().getStepCount() / this.crimeTestStep) + 1, 9));
+                Math.min((int) (GameCore.getInstance().getPlaceManager().getStepCount() / this.crimeTestStep) + 1, 6));
         GameCore.getInstance().getPlaceManager().incStepCount();
         return result;
     }
@@ -128,11 +128,10 @@ public class PlaceWindowManager extends ActionWindowManager {
     }
 
     public void showCrimeWindow() {
-        if (!GameCore.getInstance().setCurrentStep(GameCore.STEP_CRIME))
+        if (!GameCore.getInstance().setCurrentStep(GameCore.STEP_CRIME)) {
             return;
+        }
         this.getUIGroup().getStage().playSound(GameStage.CRIME_SOUND);
-        crimeSubLife = Config.getInstance().crimeSubLife + (int) (Math.random() * 3);
-        GameCore.getInstance().getSave().saveProgress(Save.SUBEDLIFE_KEY, crimeSubLife);
 
         int action = needTutorial ? ACTION_TUTORIAL : ((moving && Math.random() < 0.5f) ? ACTION_WAIT : ACTION_SEARCH);
         this.setAction(action);
@@ -212,7 +211,7 @@ public class PlaceWindowManager extends ActionWindowManager {
     }
 
     protected void showQTE() {
-        int difficultLevel = Math.min(GameCore.getInstance().getPlaceManager().getStepCount() / 20, 3);
+        int difficultLevel = Math.min(GameCore.getInstance().getPlaceManager().getStepCount() / 40, 2);
         switch (this.qte) {
         case QTE_REACTION:
             this.getWindow().updateBody(new ReactionWindowBody(this, difficultLevel));
@@ -385,12 +384,6 @@ public class PlaceWindowManager extends ActionWindowManager {
                     });
         }
         PlaceWindowManager.this.getUIGroup().getStage().getWorld().updateAttentions();
-    }
-
-    @Override
-    public void loadParams() {
-        crimeSubLife = GameCore.getInstance().getSave().loadSubedLife();
-        super.loadParams();
     }
 
     @Override

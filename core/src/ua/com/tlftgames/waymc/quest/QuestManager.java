@@ -15,7 +15,9 @@ public class QuestManager {
     private HashMap<Integer, ArrayList<Integer>> placeQuests;
     private HashMap<Integer, ArrayList<Integer>> mandatoryQuests;
     private ArrayList<Quest> quests;
-    private int lastQuest = -1;
+    private int stepAddition = 0;
+    private int nextQuestStep = 0;
+    private int questStepPeriod = 3;
 
     public QuestManager() {
         placeQuests = new HashMap<Integer, ArrayList<Integer>>();
@@ -34,6 +36,14 @@ public class QuestManager {
                 quests.add(i);
             }
         }
+
+        updateNextQuestStep();
+    }
+
+    private void updateNextQuestStep() {
+        this.stepAddition = (int) (Math.random() * 6);
+        this.nextQuestStep = GameCore.getInstance().getPlaceManager().getStepCount() + this.questStepPeriod
+                + this.stepAddition;
     }
 
     private Quest createQuest(JsonValue questData, int index) {
@@ -259,14 +269,11 @@ public class QuestManager {
         }
 
         while (!quests.isEmpty()) {
-            if (lastQuest >= 0) {
-                quests.remove(Integer.valueOf(lastQuest));
-            }
             int randowIndex = (int) (Math.random() * quests.size());
             int questIndex = quests.get(randowIndex);
             Quest placeQuest = this.quests.get(questIndex);
             if (placeQuest.isActual()) {
-                lastQuest = questIndex;
+                this.updateNextQuestStep();
                 return placeQuest;
             }
             quests.remove(randowIndex);
@@ -276,8 +283,7 @@ public class QuestManager {
     }
 
     private boolean isChanceForQuest(int size) {
-        float chance = (float) size / 27;
-        return size > 0 && Math.random() < chance;
+        return size > 0 && this.nextQuestStep <= GameCore.getInstance().getPlaceManager().getStepCount();
     }
 
     public Quest getQuest(int index) {

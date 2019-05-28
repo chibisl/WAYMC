@@ -56,9 +56,9 @@ public class GameCore {
     private void init() {
         this.life = Config.getInstance().maxLife;
         this.money = Config.getInstance().startMoney;
-        this.questManager = new QuestManager();
         this.itemManager = new ItemManager();
         this.placeManager = new PlaceManager();
+        this.questManager = new QuestManager();
         this.notificationManager = new NotificationManager();
         this.information = new ArrayList<String>();
     }
@@ -77,9 +77,10 @@ public class GameCore {
         }
         if (addLife < 0) {
             if (this.itemManager.hasItem("shield_ii")) {
-                addLife = addLife + 3;
-            } else if (this.itemManager.hasItem("shield"))
-                addLife++;
+                addLife += 4;
+            } else if (this.itemManager.hasItem("shield")) {
+                addLife += 2;
+            }
             addLife = Math.min(-1, addLife);
         }
         int beforeLife = this.life;

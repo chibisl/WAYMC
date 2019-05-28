@@ -40,7 +40,7 @@ public class RecreationalWindowManager extends TypeWindowManager {
     private float[] racesChances = { 0.4f, 0.1f };
     private float[] racesMultiply = { 1f, 3, 5 };
     private int[] casinoPrises = { 20, 50, 100 };
-    private float[] casinoChances = { 0.05f, 0.1f, 0.25f };
+    private float[] casinoChances = { 0.2f, 0.35f, 0.55f };
     private CoolRandomizer<Integer> events;
     private String clubReceipt = "";
     private int casinoWin = 0;

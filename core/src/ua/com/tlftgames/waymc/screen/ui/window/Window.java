@@ -85,23 +85,24 @@ public class Window extends ShadowGroup {
     }
 
     public void show() {
-        if (this.isVisible() == false) {
-            this.windowGroup.setY(this.getHeight() + this.windowHeight);
-            this.windowGroup.setX(this.windowX);
-            this.windowGroup.setVisible(true);
-            this.windowGroup
-                    .addAction(sequence(moveTo(this.windowGroup.getX(), this.windowY, 0.5f, exp10), run(new Runnable() {
-                        @Override
-                        public void run() {
-                            Window.this.afterShow();
-                        }
-                    })));
-            if (this.bg != null) {
-                this.bg.getColor().a = 0f;
-                this.bg.addAction(fadeIn(0.5f));
-            }
-            this.setVisible(true);
+        if (this.isVisible()) {
+            return;
         }
+        this.windowGroup.setY(this.getHeight() + this.windowHeight);
+        this.windowGroup.setX(this.windowX);
+        this.windowGroup.setVisible(true);
+        this.windowGroup
+                .addAction(sequence(moveTo(this.windowGroup.getX(), this.windowY, 0.5f, exp10), run(new Runnable() {
+                    @Override
+                    public void run() {
+                        Window.this.afterShow();
+                    }
+                })));
+        if (this.bg != null) {
+            this.bg.getColor().a = 0f;
+            this.bg.addAction(fadeIn(0.5f));
+        }
+        this.setVisible(true);
     }
 
     public void hide() {

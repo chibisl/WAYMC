@@ -33,6 +33,7 @@ public class ResidentialWindowManager extends TypeWindowManager {
     private int restCost = 10;
     private int restCheapCost = 10;
     private float[] playChances = { 0, 0.1f, 0.25f, 0.5f, 0.85f };
+    private int lastResult = RESULT_BAD;
 
     public ResidentialWindowManager(UIGroup group) {
         super(group, "residential", Tutorial.TUTORIAL_RESIDENTIAL);
@@ -210,8 +211,10 @@ public class ResidentialWindowManager extends TypeWindowManager {
         switch (this.getVariant()) {
         case VARIANT_CHEAP:
         case VARIANT_EXPENSIVE:
-            if (Math.random() > 0.8f)
-                result = (Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
+            if (Math.random() > 0.8f) {
+                result = (lastResult == RESULT_BAD || Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD;
+                lastResult = result;
+            }
             if (getVariant() == VARIANT_CHEAP && result == RESULT_BAD) {
                 if (GameCore.getInstance().getItemManager().getOwnResources().size() == 0) {
                     result = RESULT_NORMAL;

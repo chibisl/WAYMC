@@ -23,7 +23,6 @@ public class MerchantWindowManager extends TypeWindowManager {
     public final static int VARIANT_CANCEL = 3;
     public final static int VARIANT_SALE = 4;
     public final static int VARIANT_SALE_CANCEL = 5;
-    public final static int RESULT_BAD = 0;
     public final static int RESULT_NORMAL = 1;
     public final static int RESULT_GOOD = 2;
     public final static int ACTION_SEARCH = 0;
@@ -216,8 +215,7 @@ public class MerchantWindowManager extends TypeWindowManager {
             if (getVariant() == VARIANT_SALE) {
                 GameCore.getInstance().getItemManager().removeOwnItem(this.saleItem);
             }
-            this.setResult(
-                    (Math.random() < 0.8f) ? RESULT_NORMAL : ((Math.random() < 0.65f) ? RESULT_GOOD : RESULT_BAD));
+            this.setResult((Math.random() < 0.8f) ? RESULT_NORMAL : RESULT_GOOD);
         }
     }
 
@@ -249,24 +247,14 @@ public class MerchantWindowManager extends TypeWindowManager {
             if (getResult() == RESULT_GOOD) {
                 price = (int) (price * (1 - Config.getInstance().saleLostPercent));
             }
-            if (getResult() == RESULT_BAD) {
-                item = null;
-            }
-            if (item != null) {
-                GameCore.getInstance().getItemManager().addOwnItem(item);
-            }
+            GameCore.getInstance().getItemManager().addOwnItem(item);
             GameCore.getInstance().addMoney(-1 * price);
         } else if (getVariant() == VARIANT_SALE) {
             int price = this.getItemSaleCost(this.saleItem);
             if (getResult() == RESULT_GOOD) {
                 price = (int) (price * (1 + Config.getInstance().saleLostPercent));
             }
-            if (getResult() == RESULT_BAD) {
-                price = 0;
-            }
-            if (price > 0) {
-                GameCore.getInstance().addMoney(price);
-            }
+            GameCore.getInstance().addMoney(price);
         }
         this.setQuestStartText("quest.after." + (this.getAction() == ACTION_SEARCH ? "search"
                 : "sale." + (this.getVariant() == VARIANT_SALE_CANCEL ? "fail" : "done")));
