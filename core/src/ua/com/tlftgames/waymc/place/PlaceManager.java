@@ -82,14 +82,19 @@ public class PlaceManager {
     }
 
     public void updateCurrentSearchPlace() {
-        this.currentSearchPlaceIndex++;
+        if (this.currentSearchPlaceIndex >= this.searchPlaces.size() - 1) {
+            GameCore.getInstance().setGameWin();
+        } else {
+            this.currentSearchPlaceIndex++;
+        }
         this.clearSearchedPlaces();
         GameCore.getInstance().getSave().saveProgress(Save.CURRENT_SEARCH_PLACE_KEY, this.currentSearchPlaceIndex);
-        if (this.currentSearchPlaceIndex == this.searchPlaces.size())
-            GameCore.getInstance().setGameWin();
     }
 
     public void setCurrentSearchPlaceIndex(int currentSearchPlace) {
+        if (currentSearchPlace > this.searchPlaces.size() - 1) {
+            currentSearchPlace = this.searchPlaces.size() - 1;
+        }
         this.currentSearchPlaceIndex = currentSearchPlace;
     }
 
